@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5N2-2l-xzX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5N2-2l-xzX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -16,31 +16,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vgR-yp-hEe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vgR-yp-hEe">
                                 <rect key="frame" x="0.0" y="64" width="80" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="dzf-pE-Y8U"/>
+                                    <constraint firstAttribute="width" constant="80" id="9cc-1k-9GW"/>
                                 </constraints>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXn-H4-jPT">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXn-H4-jPT">
                                 <rect key="frame" x="80" y="64" width="295" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="554" id="YJR-Nt-LDc"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0Pj-m2-HON" firstAttribute="top" secondItem="vgR-yp-hEe" secondAttribute="bottom" id="APO-rk-9h3"/>
-                            <constraint firstItem="vgR-yp-hEe" firstAttribute="top" secondItem="gjR-Z5-UwR" secondAttribute="bottom" id="WwD-XQ-P6q"/>
-                            <constraint firstItem="vgR-yp-hEe" firstAttribute="leading" secondItem="kCm-dr-2TX" secondAttribute="leading" id="Z6O-41-VhK"/>
-                            <constraint firstItem="0Pj-m2-HON" firstAttribute="top" secondItem="fXn-H4-jPT" secondAttribute="bottom" id="ZNh-lH-WIF"/>
-                            <constraint firstItem="fXn-H4-jPT" firstAttribute="leading" secondItem="vgR-yp-hEe" secondAttribute="trailing" id="hgt-i0-gFp"/>
-                            <constraint firstAttribute="trailing" secondItem="fXn-H4-jPT" secondAttribute="trailing" id="kue-Ya-XbA"/>
+                            <constraint firstAttribute="trailing" secondItem="fXn-H4-jPT" secondAttribute="trailing" id="0fC-sr-i9p"/>
+                            <constraint firstAttribute="trailing" secondItem="fXn-H4-jPT" secondAttribute="trailing" id="HaO-dj-o61"/>
+                            <constraint firstAttribute="bottom" secondItem="fXn-H4-jPT" secondAttribute="bottom" id="JOb-Eg-ljt"/>
+                            <constraint firstItem="fXn-H4-jPT" firstAttribute="top" secondItem="kCm-dr-2TX" secondAttribute="top" constant="64" id="RAD-bb-KJd"/>
+                            <constraint firstItem="fXn-H4-jPT" firstAttribute="leading" secondItem="vgR-yp-hEe" secondAttribute="trailing" id="Rgr-W6-PST"/>
+                            <constraint firstItem="vgR-yp-hEe" firstAttribute="top" secondItem="kCm-dr-2TX" secondAttribute="top" constant="64" id="dFc-Wv-gMd"/>
+                            <constraint firstAttribute="bottom" secondItem="fXn-H4-jPT" secondAttribute="bottom" id="hnX-lW-rfm"/>
+                            <constraint firstItem="fXn-H4-jPT" firstAttribute="leading" secondItem="kCm-dr-2TX" secondAttribute="leading" constant="76" id="leZ-wB-aPz"/>
+                            <constraint firstItem="0Pj-m2-HON" firstAttribute="top" secondItem="vgR-yp-hEe" secondAttribute="bottom" id="uFW-cF-WAL"/>
+                            <constraint firstItem="vgR-yp-hEe" firstAttribute="leading" secondItem="kCm-dr-2TX" secondAttribute="leading" id="xzP-C0-Mu5"/>
+                            <constraint firstItem="fXn-H4-jPT" firstAttribute="top" secondItem="kCm-dr-2TX" secondAttribute="top" constant="64" id="yNO-8X-HFF"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HaO-dj-o61"/>
+                                <exclude reference="JOb-Eg-ljt"/>
+                                <exclude reference="leZ-wB-aPz"/>
+                                <exclude reference="yNO-8X-HFF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="目的地" id="8fG-r7-7Yb"/>
                     <connections>
