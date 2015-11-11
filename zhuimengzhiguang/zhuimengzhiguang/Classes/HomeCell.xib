@@ -14,38 +14,36 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="egO-1g-WwC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="226.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="224.5"/>
                         <animations/>
                     </imageView>
                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-59-kMs">
-                        <rect key="frame" x="0.0" y="196" width="320" height="30"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-gO-LDv">
-                                <rect key="frame" x="143" y="4.5" width="34" height="20.5"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
+                        <rect key="frame" x="0.0" y="194" width="320" height="30"/>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4p7-gO-LDv" firstAttribute="centerY" secondItem="eeX-59-kMs" secondAttribute="centerY" id="6VC-c7-iBE"/>
                             <constraint firstAttribute="height" constant="30" id="Kec-8F-vBQ"/>
-                            <constraint firstItem="4p7-gO-LDv" firstAttribute="centerX" secondItem="eeX-59-kMs" secondAttribute="centerX" id="O1x-7m-n7u"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-gO-LDv">
+                        <rect key="frame" x="143" y="198.5" width="34" height="20.5"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <animations/>
                 <constraints>
+                    <constraint firstItem="eeX-59-kMs" firstAttribute="top" secondItem="4p7-gO-LDv" secondAttribute="bottom" constant="-25" id="6wS-JI-nax"/>
                     <constraint firstAttribute="trailing" secondItem="egO-1g-WwC" secondAttribute="trailing" id="DoH-lS-wzS"/>
-                    <constraint firstAttribute="bottom" secondItem="eeX-59-kMs" secondAttribute="bottom" id="SXp-Vv-uWm"/>
+                    <constraint firstAttribute="bottom" secondItem="eeX-59-kMs" secondAttribute="bottom" constant="2" id="SXp-Vv-uWm"/>
                     <constraint firstItem="eeX-59-kMs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VSf-mw-GlB"/>
                     <constraint firstAttribute="trailing" secondItem="eeX-59-kMs" secondAttribute="trailing" id="bPX-3R-BXs"/>
-                    <constraint firstAttribute="bottom" secondItem="egO-1g-WwC" secondAttribute="bottom" id="hYB-ar-dvL"/>
+                    <constraint firstAttribute="bottom" secondItem="egO-1g-WwC" secondAttribute="bottom" constant="2" id="hYB-ar-dvL"/>
                     <constraint firstItem="egO-1g-WwC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hpx-52-w7G"/>
                     <constraint firstItem="egO-1g-WwC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="mbE-m2-DQE"/>
+                    <constraint firstItem="4p7-gO-LDv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="w2f-Fv-NqC"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>

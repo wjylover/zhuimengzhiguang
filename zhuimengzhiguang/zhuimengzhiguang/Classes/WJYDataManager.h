@@ -14,6 +14,7 @@ typedef void (^BackBlock) (void);
 @property (nonatomic, strong) NSMutableArray *carouselImageArray;
 @property (nonatomic, strong) NSMutableArray *cityListArray;
 @property (nonatomic, strong) NSMutableArray *homeHotDataArray;
+@property (nonatomic, strong) NSMutableArray *hotContentDataArray;
 @property (nonatomic, copy) BackBlock carouselBlock;
 @property (nonatomic, copy) BackBlock cityBlock;
 @property (nonatomic, copy) BackBlock homeHotBlock;
@@ -21,5 +22,6 @@ typedef void (^BackBlock) (void);
 + (instancetype)sharedManager;
 - (void)getCarouselImageData;
 - (void)getHomeHotDataArrayWithCityID:(NSInteger)cityID Page:(NSInteger)page;
+- (void)getHotContentDataArray:();
 - (void)getCityList;
 @end

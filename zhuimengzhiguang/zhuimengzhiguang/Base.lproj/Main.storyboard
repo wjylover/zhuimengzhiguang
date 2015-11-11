@@ -146,6 +146,45 @@
             </objects>
             <point key="canvasLocation" x="211" y="-647"/>
         </scene>
+        <!--Hot Content View Controller-->
+        <scene sceneID="RpF-Yv-la6">
+            <objects>
+                <viewController storyboardIdentifier="HotContent" id="BP5-DO-UWV" customClass="HotContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kLu-uA-hwU"/>
+                        <viewControllerLayoutGuide type="bottom" id="8HM-Ex-ghn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v5X-W8-sAt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="oqC-UQ-Trc">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <animations/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BP5-DO-UWV" id="pam-jo-FOl"/>
+                                    <outlet property="delegate" destination="BP5-DO-UWV" id="vBd-Pc-U4Q"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8HM-Ex-ghn" firstAttribute="top" secondItem="oqC-UQ-Trc" secondAttribute="bottom" id="4ep-Pl-k4M"/>
+                            <constraint firstAttribute="trailing" secondItem="oqC-UQ-Trc" secondAttribute="trailing" id="MA7-Tj-MS3"/>
+                            <constraint firstItem="oqC-UQ-Trc" firstAttribute="leading" secondItem="v5X-W8-sAt" secondAttribute="leading" id="Tj6-cd-shf"/>
+                            <constraint firstItem="oqC-UQ-Trc" firstAttribute="top" secondItem="kLu-uA-hwU" secondAttribute="bottom" id="ng8-67-uS3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hotContentTableView" destination="oqC-UQ-Trc" id="ZA3-m7-Oco"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PrW-h2-9Tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="-647"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ryY-LE-eQI">
             <objects>
@@ -154,7 +193,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="ZDA-95-eBX" kind="relationship" relationship="viewControllers" id="Ktu-yr-AtS"/>

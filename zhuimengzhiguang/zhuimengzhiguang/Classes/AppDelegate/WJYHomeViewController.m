@@ -7,6 +7,7 @@
 //
 
 #import "WJYHomeViewController.h"
+#import "HotContentViewController.h"
 #import "Hot.h"
 #import "City.h"
 #import <CoreLocation/CoreLocation.h>
@@ -120,6 +121,12 @@ static NSInteger page = 1;
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HotContentViewController *hotContentVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HotContent"];
+    [self showDetailViewController:hotContentVC sender:nil];
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     
@@ -131,11 +138,15 @@ static NSInteger page = 1;
             CLPlacemark *mark = placemarks[0];
             NSDictionary *dict = mark.addressDictionary;
             _city = dict[@"City"];
-            [[WJYDataManager sharedManager] getCityList];
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                
+                [[WJYDataManager sharedManager] getCityList];
+            });
         }
     }];
     // 停止位置更新
-   // [manager stopUpdatingLocation];
+    [manager stopUpdatingLocation];
 }
 
 // 定位失误时触发

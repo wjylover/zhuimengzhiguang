@@ -12,6 +12,9 @@
 		57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D761BF09059006530C1 /* WJYHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D7A1BF0BDC0006530C1 /* HotCity.m */; settings = {ASSET_TAGS = (); }; };
 		57497D1D1BF20D250012AD33 /* Hot.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D1C1BF20D250012AD33 /* Hot.m */; settings = {ASSET_TAGS = (); }; };
+		57497D201BF2DE690012AD33 /* HotContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D1F1BF2DE690012AD33 /* HotContentViewController.m */; settings = {ASSET_TAGS = (); }; };
+		57497D241BF2EB9D0012AD33 /* HotContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D221BF2EB9D0012AD33 /* HotContentCell.m */; settings = {ASSET_TAGS = (); }; };
+		57497D251BF2EB9D0012AD33 /* HotContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57497D231BF2EB9D0012AD33 /* HotContentCell.xib */; settings = {ASSET_TAGS = (); }; };
 		576FB65F1BF1D7C900577BB4 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FB65D1BF1D7C900577BB4 /* HomeCell.m */; settings = {ASSET_TAGS = (); }; };
 		576FB6601BF1D7C900577BB4 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576FB65E1BF1D7C900577BB4 /* HomeCell.xib */; settings = {ASSET_TAGS = (); }; };
 		576FB6631BF1F5EB00577BB4 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FB6621BF1F5EB00577BB4 /* City.m */; settings = {ASSET_TAGS = (); }; };
@@ -53,6 +56,11 @@
 		57086D7A1BF0BDC0006530C1 /* HotCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCity.m; sourceTree = "<group>"; };
 		57497D1B1BF20D250012AD33 /* Hot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hot.h; sourceTree = "<group>"; };
 		57497D1C1BF20D250012AD33 /* Hot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hot.m; sourceTree = "<group>"; };
+		57497D1E1BF2DE690012AD33 /* HotContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotContentViewController.h; sourceTree = "<group>"; };
+		57497D1F1BF2DE690012AD33 /* HotContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotContentViewController.m; sourceTree = "<group>"; };
+		57497D211BF2EB9D0012AD33 /* HotContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotContentCell.h; sourceTree = "<group>"; };
+		57497D221BF2EB9D0012AD33 /* HotContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotContentCell.m; sourceTree = "<group>"; };
+		57497D231BF2EB9D0012AD33 /* HotContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotContentCell.xib; sourceTree = "<group>"; };
 		576FB65C1BF1D7C900577BB4 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		576FB65D1BF1D7C900577BB4 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		576FB65E1BF1D7C900577BB4 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
@@ -167,6 +175,8 @@
 			children = (
 				57086D751BF09059006530C1 /* WJYHomeViewController.h */,
 				57086D761BF09059006530C1 /* WJYHomeViewController.m */,
+				57497D1E1BF2DE690012AD33 /* HotContentViewController.h */,
+				57497D1F1BF2DE690012AD33 /* HotContentViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -198,6 +208,9 @@
 				576FB65C1BF1D7C900577BB4 /* HomeCell.h */,
 				576FB65D1BF1D7C900577BB4 /* HomeCell.m */,
 				576FB65E1BF1D7C900577BB4 /* HomeCell.xib */,
+				57497D211BF2EB9D0012AD33 /* HotContentCell.h */,
+				57497D221BF2EB9D0012AD33 /* HotContentCell.m */,
+				57497D231BF2EB9D0012AD33 /* HotContentCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -586,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */,
+				57497D251BF2EB9D0012AD33 /* HotContentCell.xib in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */,
 				C27714151BF20A8100953289 /* companion_bg_blue.png in Resources */,
@@ -676,7 +690,9 @@
 				576FB6631BF1F5EB00577BB4 /* City.m in Sources */,
 				C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */,
 				C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */,
+				57497D201BF2DE690012AD33 /* HotContentViewController.m in Sources */,
 				C277141E1BF2387900953289 /* Loglist.m in Sources */,
+				57497D241BF2EB9D0012AD33 /* HotContentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,9 +807,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/PrefixHeader.pch;
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -804,9 +822,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/PrefixHeader.pch;
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
