@@ -7,6 +7,7 @@
 //
 
 #import "DestinationContinentsModel.h"
+#import "DestinationCountryModel.h"
 
 @implementation DestinationContinentsModel
 
@@ -14,6 +15,23 @@
 {
     if ([key isEqualToString:@"id"]) {
         self.ID = value;
+    }
+    if ([key isEqualToString:@"country"]) {
+        
+        self.country = [NSMutableArray array];
+        
+        for (NSDictionary *dic in value) {
+            DestinationCountryModel *model = [DestinationCountryModel new];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.country addObject:dic];
+        }
+    }
+    if ([key isEqualToString:@"hot_country"]) {
+        self.hot_country = [NSMutableArray array];
+        for (NSDictionary *dic in value) {
+            DestinationCountryModel *model = [DestinationCountryModel new];
+            
+        }
     }
 }
 

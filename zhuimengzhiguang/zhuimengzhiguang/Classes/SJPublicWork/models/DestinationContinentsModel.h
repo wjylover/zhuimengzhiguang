@@ -13,5 +13,7 @@
 @property (nonatomic, copy) NSString *cnname;//洲的中文名字
 @property (nonatomic, copy) NSString *enname;//英文名字
 @property (nonatomic, copy) NSString *ID;//原来是 id
+@property (nonatomic, strong) NSMutableArray *country;
+@property (nonatomic, strong) NSMutableArray *hot_country;
 
 @end
