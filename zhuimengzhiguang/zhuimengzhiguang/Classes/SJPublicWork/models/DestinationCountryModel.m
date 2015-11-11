@@ -15,6 +15,13 @@
     if ([key isEqualToString:@"id"]) {
         self.ID = value;
     }
+    if ([key isEqualToString:@"cnname"]) {
+        self.cnname = value;
+    }
+    if ([key isEqualToString:@"count"]) {
+        self.count = [value stringValue];
+        NSLog(@"%@",self.count);
+    }
 }
 
 //重写description方法

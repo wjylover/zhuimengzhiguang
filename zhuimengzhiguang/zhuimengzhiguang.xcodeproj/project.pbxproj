@@ -42,9 +42,12 @@
 		C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */; settings = {ASSET_TAGS = (); }; };
 		C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19211BF1C83A005D29C9 /* RequestHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19151BF1C83A005D29C9 /* RequestHandle.m */; settings = {ASSET_TAGS = (); }; };
 		C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB191B1BF1C83A005D29C9 /* SJPublicObject.m */; settings = {ASSET_TAGS = (); }; };
 		C2EB19231BF1C83A005D29C9 /* SJPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB191D1BF1C83A005D29C9 /* SJPublicViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19761BF1E8F1005D29C9 /* SJPbulicTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		C2EB19791BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EB19771BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C2EB19821BF1EEE0005D29C9 /* DestinationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19801BF1EEE0005D29C9 /* DestinationCell.m */; settings = {ASSET_TAGS = (); }; };
+		C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EB19811BF1EEE0005D29C9 /* DestinationCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,18 +113,22 @@
 		C27714201BF23AA900953289 /* ShowInformationDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInformationDataManager.m; sourceTree = "<group>"; };
 		C2EB19091BF1C83A005D29C9 /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationViewController.h; sourceTree = "<group>"; };
 		C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationViewController.m; sourceTree = "<group>"; };
-		C2EB190E1BF1C83A005D29C9 /* DestinationContinentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationContinentsModel.h; sourceTree = "<group>"; };
-		C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationContinentsModel.m; sourceTree = "<group>"; };
-		C2EB19101BF1C83A005D29C9 /* DestinationCountryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationCountryModel.h; sourceTree = "<group>"; };
-		C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationCountryModel.m; sourceTree = "<group>"; };
-		C2EB19141BF1C83A005D29C9 /* RequestHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestHandle.h; sourceTree = "<group>"; };
-		C2EB19151BF1C83A005D29C9 /* RequestHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestHandle.m; sourceTree = "<group>"; };
+		C2EB190E1BF1C83A005D29C9 /* DestinationContinentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DestinationContinentsModel.h; path = ../DestinationContinentsModel.h; sourceTree = "<group>"; };
+		C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DestinationContinentsModel.m; path = ../DestinationContinentsModel.m; sourceTree = "<group>"; };
+		C2EB19101BF1C83A005D29C9 /* DestinationCountryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DestinationCountryModel.h; path = ../DestinationCountryModel.h; sourceTree = "<group>"; };
+		C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DestinationCountryModel.m; path = ../DestinationCountryModel.m; sourceTree = "<group>"; };
 		C2EB19171BF1C83A005D29C9 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C2EB19181BF1C83A005D29C9 /* URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URL.h; sourceTree = "<group>"; };
 		C2EB191A1BF1C83A005D29C9 /* SJPublicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPublicObject.h; sourceTree = "<group>"; };
 		C2EB191B1BF1C83A005D29C9 /* SJPublicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPublicObject.m; sourceTree = "<group>"; };
 		C2EB191C1BF1C83A005D29C9 /* SJPublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPublicViewController.h; sourceTree = "<group>"; };
 		C2EB191D1BF1C83A005D29C9 /* SJPublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPublicViewController.m; sourceTree = "<group>"; };
+		C2EB19751BF1E8F1005D29C9 /* SJPbulicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPbulicTableViewCell.h; sourceTree = "<group>"; };
+		C2EB19761BF1E8F1005D29C9 /* SJPbulicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPbulicTableViewCell.m; sourceTree = "<group>"; };
+		C2EB19771BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJPbulicTableViewCell.xib; sourceTree = "<group>"; };
+		C2EB197F1BF1EEE0005D29C9 /* DestinationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationCell.h; sourceTree = "<group>"; };
+		C2EB19801BF1EEE0005D29C9 /* DestinationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationCell.m; sourceTree = "<group>"; };
+		C2EB19811BF1EEE0005D29C9 /* DestinationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +463,7 @@
 		C2EB19071BF1C83A005D29C9 /* SJPublicWork */ = {
 			isa = PBXGroup;
 			children = (
+				C2EB19711BF1E855005D29C9 /* View */,
 				C2EB19081BF1C83A005D29C9 /* Controller */,
 				C2EB190C1BF1C83A005D29C9 /* Help */,
 				C2EB190D1BF1C83A005D29C9 /* models */,
@@ -493,10 +501,6 @@
 		C2EB190D1BF1C83A005D29C9 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				C2EB190E1BF1C83A005D29C9 /* DestinationContinentsModel.h */,
-				C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */,
-				C2EB19101BF1C83A005D29C9 /* DestinationCountryModel.h */,
-				C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */,
 				C2EB19121BF1C83A005D29C9 /* 目的地列表 */,
 			);
 			path = models;
@@ -505,6 +509,10 @@
 		C2EB19121BF1C83A005D29C9 /* 目的地列表 */ = {
 			isa = PBXGroup;
 			children = (
+				C2EB190E1BF1C83A005D29C9 /* DestinationContinentsModel.h */,
+				C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */,
+				C2EB19101BF1C83A005D29C9 /* DestinationCountryModel.h */,
+				C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */,
 			);
 			path = "目的地列表";
 			sourceTree = "<group>";
@@ -512,8 +520,6 @@
 		C2EB19131BF1C83A005D29C9 /* RequestHandle */ = {
 			isa = PBXGroup;
 			children = (
-				C2EB19141BF1C83A005D29C9 /* RequestHandle.h */,
-				C2EB19151BF1C83A005D29C9 /* RequestHandle.m */,
 			);
 			path = RequestHandle;
 			sourceTree = "<group>";
@@ -534,8 +540,21 @@
 				C2EB191B1BF1C83A005D29C9 /* SJPublicObject.m */,
 				C2EB191C1BF1C83A005D29C9 /* SJPublicViewController.h */,
 				C2EB191D1BF1C83A005D29C9 /* SJPublicViewController.m */,
+				C2EB19751BF1E8F1005D29C9 /* SJPbulicTableViewCell.h */,
+				C2EB19761BF1E8F1005D29C9 /* SJPbulicTableViewCell.m */,
+				C2EB19771BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib */,
 			);
 			path = SJPublic;
+			sourceTree = "<group>";
+		};
+		C2EB19711BF1E855005D29C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2EB197F1BF1EEE0005D29C9 /* DestinationCell.h */,
+				C2EB19801BF1EEE0005D29C9 /* DestinationCell.m */,
+				C2EB19811BF1EEE0005D29C9 /* DestinationCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,6 +617,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */,
+				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
+				C2EB19791BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib in Resources */,
 				C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */,
 				57497D251BF2EB9D0012AD33 /* HotContentCell.xib in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
@@ -680,7 +702,10 @@
 				C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */,
 				C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */,
 				57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */,
-				C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */,
+
+                C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */,
+
+                C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */,
 				C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */,
 				57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */,
 				C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */,
@@ -688,6 +713,7 @@
 				C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */,
 				C2EB19231BF1C83A005D29C9 /* SJPublicViewController.m in Sources */,
 				576FB6631BF1F5EB00577BB4 /* City.m in Sources */,
+				C2EB19821BF1EEE0005D29C9 /* DestinationCell.m in Sources */,
 				C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */,
 				C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */,
 				57497D201BF2DE690012AD33 /* HotContentViewController.m in Sources */,

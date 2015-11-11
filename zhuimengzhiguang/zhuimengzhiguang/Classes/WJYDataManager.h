@@ -22,6 +22,6 @@ typedef void (^BackBlock) (void);
 + (instancetype)sharedManager;
 - (void)getCarouselImageData;
 - (void)getHomeHotDataArrayWithCityID:(NSInteger)cityID Page:(NSInteger)page;
-- (void)getHotContentDataArray:();
+//- (void)getHotContentDataArray:();
 - (void)getCityList;
 @end
