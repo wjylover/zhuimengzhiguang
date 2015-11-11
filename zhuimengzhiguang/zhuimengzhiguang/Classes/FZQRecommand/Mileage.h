@@ -19,13 +19,19 @@
 //图片url
 @property(nonatomic,strong) NSArray *imageUrls;
 //参加id
-@property(nonatomic,copy) NSString *journeyId;
+@property(nonatomic,assign) NSInteger journeyId;
 //旅行开始地方
 @property(nonatomic,copy) NSString *travelStart;
 //旅行结束地方
 @property(nonatomic,copy) NSString *travelEnd;
 //旅行时长
 @property(nonatomic,copy) NSString *days;
+
+
+//旅行内容
+@property(nonatomic,copy)NSString *travelContent;
+//距离
+@property(nonatomic,copy)NSString *distance;
 
 
 

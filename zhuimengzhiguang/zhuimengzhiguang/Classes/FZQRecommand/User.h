@@ -25,6 +25,8 @@
 @property(nonatomic,strong) NSString *distanceOrlocation;
 
 
+//空间照片url
+@property(nonatomic,strong)NSString *spaceImage;
 
 
 

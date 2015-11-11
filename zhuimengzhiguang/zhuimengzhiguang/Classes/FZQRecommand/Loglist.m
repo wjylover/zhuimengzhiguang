@@ -1,30 +1,25 @@
 //
-//  Mileage.m
+//  Loglist.m
 //  zhuimengzhiguang
 //
-//  Created by lanou3g on 15/11/9.
+//  Created by lanou3g on 15/11/10.
 //  Copyright © 2015年 王建业. All rights reserved.
 //
 
-#import "Mileage.h"
+#import "Loglist.h"
 
-@implementation Mileage
+@implementation Loglist
 
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key{
     if ([key isEqualToString:@"id"]) {
         NSLog(@"%@",key);
     }
-    
 }
 
-
-//校验
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"journeyId=%ld", _journeyId];
+    return [NSString stringWithFormat:@"logId=%@", _logId];
 }
-
-
 
 @end

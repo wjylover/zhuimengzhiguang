@@ -94,14 +94,14 @@
             }
             
             //校验
-            for (User *user in _allUsers) {
-                NSLog(@"%@",user);
-            }
-            
-            for (Mileage *mileage in _allMiles) {
-                NSLog(@"%@",mileage);
-            }
-            
+//            for (User *user in _allUsers) {
+//                NSLog(@"%@",user);
+//            }
+//            
+//            for (Mileage *mileage in _allMiles) {
+//                NSLog(@"%@",mileage);
+//            }
+//            
             //page加一
             _page ++;
             

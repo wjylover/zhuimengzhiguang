@@ -26,8 +26,6 @@
     
     //创建导航栏视图控制器
     SCNavTabBarController *scNTC = [[SCNavTabBarController alloc] initWithSubViewControllers:@[recommandTVC]];
-    //scNTC.navTabBarColor = [UIColor colorWithRed:41/255.0 green:158/255.0 blue:206/255.0 alpha:1.0];
-    scNTC.view.frame = CGRectMake(0, 20, kUIScreenWidth, kUIScreenHeight-20) ;
     scNTC.scrollAnimation = YES;
     scNTC.mainViewBounces = YES;
     scNTC.navTabBarLineColor = [UIColor redColor];
@@ -35,6 +33,21 @@
   
   
     
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    // 隐藏状态栏
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        [self prefersStatusBarHidden];
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+    }
+}
+
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;//隐藏为YES，显示为NO
 }
 
 - (void)didReceiveMemoryWarning {

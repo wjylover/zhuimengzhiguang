@@ -16,17 +16,28 @@
 
 //发现控制器
 #import "FZQRecommandTableViewController.h"
+//详情控制器
+#import "ShowInformationCollectionViewController.h"
 
+
+
+
+//自定义cell
 //发现cell
 #import "FZQRecommandTableViewCell.h"
+
+
+
+
 
 //数据模型
 #import "User.h"
 #import "Mileage.h"
+#import "Loglist.h"
 
 //帮助类
 #import "RecommandDataManager.h"
-
+#import "ShowInformationDataManager.h"
 
 //第三方
 //导航栏
@@ -34,8 +45,10 @@
 #import "SCNavTabBar.h"
 #import "SCPopView.h"
 
-
+//异步解析图片
 #import "UIImageView+WebCache.h"
 
+//上拉刷新
+#import "MJRefresh.h"
 
 #endif /* PrefixHeader_pch */
