@@ -12,7 +12,14 @@ typedef void (^BackBlock) (void);
 @interface WJYDataManager : NSObject
 
 @property (nonatomic, strong) NSMutableArray *carouselImageArray;
+@property (nonatomic, strong) NSMutableArray *cityListArray;
+@property (nonatomic, strong) NSMutableArray *homeHotDataArray;
 @property (nonatomic, copy) BackBlock carouselBlock;
+@property (nonatomic, copy) BackBlock cityBlock;
+@property (nonatomic, copy) BackBlock homeHotBlock;
+
 + (instancetype)sharedManager;
 - (void)getCarouselImageData;
+- (void)getHomeHotDataArrayWithCityID:(NSInteger)cityID Page:(NSInteger)page;
+- (void)getCityList;
 @end

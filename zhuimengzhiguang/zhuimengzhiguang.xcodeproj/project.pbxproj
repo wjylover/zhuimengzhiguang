@@ -11,6 +11,10 @@
 		57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D711BF08CD1006530C1 /* WJYDataManager.m */; settings = {ASSET_TAGS = (); }; };
 		57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D761BF09059006530C1 /* WJYHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D7A1BF0BDC0006530C1 /* HotCity.m */; settings = {ASSET_TAGS = (); }; };
+		57497D1D1BF20D250012AD33 /* Hot.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D1C1BF20D250012AD33 /* Hot.m */; settings = {ASSET_TAGS = (); }; };
+		576FB65F1BF1D7C900577BB4 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FB65D1BF1D7C900577BB4 /* HomeCell.m */; settings = {ASSET_TAGS = (); }; };
+		576FB6601BF1D7C900577BB4 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576FB65E1BF1D7C900577BB4 /* HomeCell.xib */; settings = {ASSET_TAGS = (); }; };
+		576FB6631BF1F5EB00577BB4 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FB6621BF1F5EB00577BB4 /* City.m */; settings = {ASSET_TAGS = (); }; };
 		57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BB40FB1BF041AA00EB915E /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		57DEF4F31BF040A200E0134A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEF4F21BF040A200E0134A /* main.m */; };
 		57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DEF4FA1BF040A200E0134A /* Main.storyboard */; };
@@ -43,6 +47,13 @@
 		57086D761BF09059006530C1 /* WJYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WJYHomeViewController.m; path = AppDelegate/WJYHomeViewController.m; sourceTree = "<group>"; };
 		57086D791BF0BDC0006530C1 /* HotCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCity.h; sourceTree = "<group>"; };
 		57086D7A1BF0BDC0006530C1 /* HotCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCity.m; sourceTree = "<group>"; };
+		57497D1B1BF20D250012AD33 /* Hot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hot.h; sourceTree = "<group>"; };
+		57497D1C1BF20D250012AD33 /* Hot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hot.m; sourceTree = "<group>"; };
+		576FB65C1BF1D7C900577BB4 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		576FB65D1BF1D7C900577BB4 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		576FB65E1BF1D7C900577BB4 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		576FB6611BF1F5EB00577BB4 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		576FB6621BF1F5EB00577BB4 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		57BB40FA1BF041AA00EB915E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57BB40FB1BF041AA00EB915E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		57DEF4EE1BF040A200E0134A /* zhuimengzhiguang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zhuimengzhiguang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,13 +165,36 @@
 			children = (
 				57086D791BF0BDC0006530C1 /* HotCity.h */,
 				57086D7A1BF0BDC0006530C1 /* HotCity.m */,
+				576FB6611BF1F5EB00577BB4 /* City.h */,
+				576FB6621BF1F5EB00577BB4 /* City.m */,
+				57497D1B1BF20D250012AD33 /* Hot.h */,
+				57497D1C1BF20D250012AD33 /* Hot.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		576FB65A1BF1D79200577BB4 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				576FB65B1BF1D79D00577BB4 /* Views */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		576FB65B1BF1D79D00577BB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				576FB65C1BF1D7C900577BB4 /* HomeCell.h */,
+				576FB65D1BF1D7C900577BB4 /* HomeCell.m */,
+				576FB65E1BF1D7C900577BB4 /* HomeCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		57BB40F81BF041AA00EB915E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				576FB65A1BF1D79200577BB4 /* General */,
 				C27713AD1BF1CD4F00953289 /* FZQRecommand */,
 				C2EB19071BF1C83A005D29C9 /* SJPublicWork */,
 				57BB40F91BF041AA00EB915E /* AppDelegate */,
@@ -423,6 +457,7 @@
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */,
 				57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */,
+				576FB6601BF1D7C900577BB4 /* HomeCell.xib in Resources */,
 				57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +519,8 @@
 			files = (
 				C27713CD1BF1CD4F00953289 /* RecommandDataManager.m in Sources */,
 				C27713C91BF1CD4F00953289 /* FZQRecommandTableViewCell.m in Sources */,
+				576FB65F1BF1D7C900577BB4 /* HomeCell.m in Sources */,
+				57497D1D1BF20D250012AD33 /* Hot.m in Sources */,
 				C27713D11BF1CD4F00953289 /* SCPopView.m in Sources */,
 				C27713D01BF1CD4F00953289 /* SCNavTabBar.m in Sources */,
 				57DEF4FF1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld in Sources */,
@@ -501,6 +538,7 @@
 				57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */,
 				C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */,
 				C2EB19231BF1C83A005D29C9 /* SJPublicViewController.m in Sources */,
+				576FB6631BF1F5EB00577BB4 /* City.m in Sources */,
 				C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */,
 				C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */,
 			);
