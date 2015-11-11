@@ -17,6 +17,21 @@
 		57DEF4FF1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57DEF4FD1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld */; };
 		57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DEF5001BF040A200E0134A /* Assets.xcassets */; };
 		57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DEF5021BF040A200E0134A /* LaunchScreen.storyboard */; };
+		C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713AF1BF1CD4F00953289 /* FZQFindViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C27713C91BF1CD4F00953289 /* FZQRecommandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713B21BF1CD4F00953289 /* FZQRecommandTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27713B31BF1CD4F00953289 /* FZQRecommandTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713B51BF1CD4F00953289 /* FZQRecommandTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713B71BF1CD4F00953289 /* Mileage.m */; settings = {ASSET_TAGS = (); }; };
+		C27713CD1BF1CD4F00953289 /* RecommandDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713BA1BF1CD4F00953289 /* RecommandDataManager.m */; settings = {ASSET_TAGS = (); }; };
+		C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C27713BD1BF1CD4F00953289 /* SCNavTabBar.bundle */; settings = {ASSET_TAGS = (); }; };
+		C27713CF1BF1CD4F00953289 /* SCNavTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C01BF1CD4F00953289 /* SCNavTabBarController.m */; settings = {ASSET_TAGS = (); }; };
+		C27713D01BF1CD4F00953289 /* SCNavTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C31BF1CD4F00953289 /* SCNavTabBar.m */; settings = {ASSET_TAGS = (); }; };
+		C27713D11BF1CD4F00953289 /* SCPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C51BF1CD4F00953289 /* SCPopView.m */; settings = {ASSET_TAGS = (); }; };
+		C27713D21BF1CD4F00953289 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C71BF1CD4F00953289 /* User.m */; settings = {ASSET_TAGS = (); }; };
+		C27714151BF20A8100953289 /* companion_bg_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = C27714141BF20A8100953289 /* companion_bg_blue.png */; settings = {ASSET_TAGS = (); }; };
+		C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C277141A1BF22FED00953289 /* ShowInformationCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C277141E1BF2387900953289 /* Loglist.m in Sources */ = {isa = PBXBuildFile; fileRef = C277141D1BF2387900953289 /* Loglist.m */; settings = {ASSET_TAGS = (); }; };
+		C27714211BF23AA900953289 /* ShowInformationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C27714201BF23AA900953289 /* ShowInformationDataManager.m */; settings = {ASSET_TAGS = (); }; };
 		C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */; settings = {ASSET_TAGS = (); }; };
 		C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */; settings = {ASSET_TAGS = (); }; };
@@ -47,6 +62,36 @@
 		67271C243F2A3DDE50873EC3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE2060FD7B92530083339EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8A5483E820C11A481B12ADA9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C27713AE1BF1CD4F00953289 /* FZQFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZQFindViewController.h; path = FZQRecommand/FZQFindViewController.h; sourceTree = "<group>"; };
+		C27713AF1BF1CD4F00953289 /* FZQFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FZQFindViewController.m; path = FZQRecommand/FZQFindViewController.m; sourceTree = "<group>"; };
+		C27713B01BF1CD4F00953289 /* FZQHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZQHeader.h; path = ../FZQHeader.h; sourceTree = "<group>"; };
+		C27713B11BF1CD4F00953289 /* FZQRecommandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZQRecommandTableViewCell.h; path = ../../FZQRecommandTableViewCell.h; sourceTree = "<group>"; };
+		C27713B21BF1CD4F00953289 /* FZQRecommandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FZQRecommandTableViewCell.m; path = ../../FZQRecommandTableViewCell.m; sourceTree = "<group>"; };
+		C27713B31BF1CD4F00953289 /* FZQRecommandTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FZQRecommandTableViewCell.xib; path = ../../FZQRecommandTableViewCell.xib; sourceTree = "<group>"; };
+		C27713B41BF1CD4F00953289 /* FZQRecommandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZQRecommandTableViewController.h; path = FZQRecommand/FZQRecommandTableViewController.h; sourceTree = "<group>"; };
+		C27713B51BF1CD4F00953289 /* FZQRecommandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FZQRecommandTableViewController.m; path = FZQRecommand/FZQRecommandTableViewController.m; sourceTree = "<group>"; };
+		C27713B61BF1CD4F00953289 /* Mileage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mileage.h; sourceTree = "<group>"; };
+		C27713B71BF1CD4F00953289 /* Mileage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mileage.m; sourceTree = "<group>"; };
+		C27713B81BF1CD4F00953289 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C27713B91BF1CD4F00953289 /* RecommandDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommandDataManager.h; path = ../RecommandDataManager.h; sourceTree = "<group>"; };
+		C27713BA1BF1CD4F00953289 /* RecommandDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommandDataManager.m; path = ../RecommandDataManager.m; sourceTree = "<group>"; };
+		C27713BC1BF1CD4F00953289 /* CommonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMacro.h; sourceTree = "<group>"; };
+		C27713BD1BF1CD4F00953289 /* SCNavTabBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SCNavTabBar.bundle; sourceTree = "<group>"; };
+		C27713BF1BF1CD4F00953289 /* SCNavTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavTabBarController.h; sourceTree = "<group>"; };
+		C27713C01BF1CD4F00953289 /* SCNavTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavTabBarController.m; sourceTree = "<group>"; };
+		C27713C21BF1CD4F00953289 /* SCNavTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavTabBar.h; sourceTree = "<group>"; };
+		C27713C31BF1CD4F00953289 /* SCNavTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavTabBar.m; sourceTree = "<group>"; };
+		C27713C41BF1CD4F00953289 /* SCPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPopView.h; sourceTree = "<group>"; };
+		C27713C51BF1CD4F00953289 /* SCPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPopView.m; sourceTree = "<group>"; };
+		C27713C61BF1CD4F00953289 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		C27713C71BF1CD4F00953289 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		C27714141BF20A8100953289 /* companion_bg_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = companion_bg_blue.png; sourceTree = "<group>"; };
+		C27714191BF22FED00953289 /* ShowInformationCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowInformationCollectionViewController.h; sourceTree = "<group>"; };
+		C277141A1BF22FED00953289 /* ShowInformationCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInformationCollectionViewController.m; sourceTree = "<group>"; };
+		C277141C1BF2387900953289 /* Loglist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loglist.h; sourceTree = "<group>"; };
+		C277141D1BF2387900953289 /* Loglist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loglist.m; sourceTree = "<group>"; };
+		C277141F1BF23AA900953289 /* ShowInformationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowInformationDataManager.h; sourceTree = "<group>"; };
+		C27714201BF23AA900953289 /* ShowInformationDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInformationDataManager.m; sourceTree = "<group>"; };
 		C2EB19091BF1C83A005D29C9 /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationViewController.h; sourceTree = "<group>"; };
 		C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationViewController.m; sourceTree = "<group>"; };
 		C2EB190E1BF1C83A005D29C9 /* DestinationContinentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DestinationContinentsModel.h; path = ../DestinationContinentsModel.h; sourceTree = "<group>"; };
@@ -134,6 +179,7 @@
 		57BB40F81BF041AA00EB915E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C27713AD1BF1CD4F00953289 /* FZQRecommand */,
 				C2EB19071BF1C83A005D29C9 /* SJPublicWork */,
 				57BB40F91BF041AA00EB915E /* AppDelegate */,
 				57086D6F1BF08C91006530C1 /* Helpers */,
@@ -190,6 +236,181 @@
 				57DEF4F21BF040A200E0134A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C27713AD1BF1CD4F00953289 /* FZQRecommand */ = {
+			isa = PBXGroup;
+			children = (
+				C27714131BF20A4400953289 /* Resource */,
+				C27713E01BF1DBBC00953289 /* Helpers */,
+				C27713DD1BF1DBA300953289 /* Scences */,
+				C27713DC1BF1DB5900953289 /* Vendors */,
+				C27713DA1BF1D0B700953289 /* Marco */,
+				C27713D51BF1D08D00953289 /* General */,
+				C27713D31BF1D05B00953289 /* Model */,
+				C27713B81BF1CD4F00953289 /* PrefixHeader.pch */,
+			);
+			path = FZQRecommand;
+			sourceTree = "<group>";
+		};
+		C27713BB1BF1CD4F00953289 /* SCNavTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				C27713BC1BF1CD4F00953289 /* CommonMacro.h */,
+				C27713BD1BF1CD4F00953289 /* SCNavTabBar.bundle */,
+				C27713BE1BF1CD4F00953289 /* ViewControllers */,
+				C27713C11BF1CD4F00953289 /* Views */,
+			);
+			name = SCNavTabBarController;
+			path = ../SCNavTabBarController;
+			sourceTree = "<group>";
+		};
+		C27713BE1BF1CD4F00953289 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C27713BF1BF1CD4F00953289 /* SCNavTabBarController.h */,
+				C27713C01BF1CD4F00953289 /* SCNavTabBarController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C27713C11BF1CD4F00953289 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C27713C21BF1CD4F00953289 /* SCNavTabBar.h */,
+				C27713C31BF1CD4F00953289 /* SCNavTabBar.m */,
+				C27713C41BF1CD4F00953289 /* SCPopView.h */,
+				C27713C51BF1CD4F00953289 /* SCPopView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C27713D31BF1D05B00953289 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C27713B61BF1CD4F00953289 /* Mileage.h */,
+				C27713B71BF1CD4F00953289 /* Mileage.m */,
+				C27713C61BF1CD4F00953289 /* User.h */,
+				C27713C71BF1CD4F00953289 /* User.m */,
+				C277141C1BF2387900953289 /* Loglist.h */,
+				C277141D1BF2387900953289 /* Loglist.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C27713D51BF1D08D00953289 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				C27713D61BF1D08D00953289 /* Categories */,
+				C27713D81BF1D08D00953289 /* ViewControllers */,
+				C27713D91BF1D08D00953289 /* Views */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		C27713D61BF1D08D00953289 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C27713D71BF1D08D00953289 /* SDWebImage */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		C27713D71BF1D08D00953289 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		C27713D81BF1D08D00953289 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C27713D91BF1D08D00953289 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C27713B11BF1CD4F00953289 /* FZQRecommandTableViewCell.h */,
+				C27713B21BF1CD4F00953289 /* FZQRecommandTableViewCell.m */,
+				C27713B31BF1CD4F00953289 /* FZQRecommandTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C27713DA1BF1D0B700953289 /* Marco */ = {
+			isa = PBXGroup;
+			children = (
+				C27713B01BF1CD4F00953289 /* FZQHeader.h */,
+			);
+			path = Marco;
+			sourceTree = "<group>";
+		};
+		C27713DB1BF1D0FB00953289 /* RecommandController */ = {
+			isa = PBXGroup;
+			children = (
+				C27713AE1BF1CD4F00953289 /* FZQFindViewController.h */,
+				C27713AF1BF1CD4F00953289 /* FZQFindViewController.m */,
+				C27713B41BF1CD4F00953289 /* FZQRecommandTableViewController.h */,
+				C27713B51BF1CD4F00953289 /* FZQRecommandTableViewController.m */,
+				C27714191BF22FED00953289 /* ShowInformationCollectionViewController.h */,
+				C277141A1BF22FED00953289 /* ShowInformationCollectionViewController.m */,
+			);
+			name = RecommandController;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		C27713DC1BF1DB5900953289 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				C27713BB1BF1CD4F00953289 /* SCNavTabBarController */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		C27713DD1BF1DBA300953289 /* Scences */ = {
+			isa = PBXGroup;
+			children = (
+				C27713DE1BF1DBA300953289 /* View */,
+				C27713DF1BF1DBA300953289 /* ViewController */,
+			);
+			path = Scences;
+			sourceTree = "<group>";
+		};
+		C27713DE1BF1DBA300953289 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C27713DF1BF1DBA300953289 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C27713DB1BF1D0FB00953289 /* RecommandController */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C27713E01BF1DBBC00953289 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C27713B91BF1CD4F00953289 /* RecommandDataManager.h */,
+				C27713BA1BF1CD4F00953289 /* RecommandDataManager.m */,
+				C277141F1BF23AA900953289 /* ShowInformationDataManager.h */,
+				C27714201BF23AA900953289 /* ShowInformationDataManager.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C27714131BF20A4400953289 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C27714141BF20A8100953289 /* companion_bg_blue.png */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		C2EB19071BF1C83A005D29C9 /* SJPublicWork */ = {
@@ -349,9 +570,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C2EB19791BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib in Resources */,
+=======
+				C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */,
+				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
+				C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */,
+				C27714151BF20A8100953289 /* companion_bg_blue.png in Resources */,
+>>>>>>> f7d8485aee44e811ee154e13ba73a5a1e6a8af83
 				57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */,
 				57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */,
 			);
@@ -412,19 +640,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C27713CD1BF1CD4F00953289 /* RecommandDataManager.m in Sources */,
+				C27713C91BF1CD4F00953289 /* FZQRecommandTableViewCell.m in Sources */,
+				C27713D11BF1CD4F00953289 /* SCPopView.m in Sources */,
+				C27714211BF23AA900953289 /* ShowInformationDataManager.m in Sources */,
+				C27713D01BF1CD4F00953289 /* SCNavTabBar.m in Sources */,
 				57DEF4FF1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld in Sources */,
 				57DEF4F31BF040A200E0134A /* main.m in Sources */,
 				57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */,
+<<<<<<< HEAD
+=======
+				C27713CF1BF1CD4F00953289 /* SCNavTabBarController.m in Sources */,
+				C27713D21BF1CD4F00953289 /* User.m in Sources */,
+				C2EB19211BF1C83A005D29C9 /* RequestHandle.m in Sources */,
+>>>>>>> f7d8485aee44e811ee154e13ba73a5a1e6a8af83
 				C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */,
+				C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */,
 				57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */,
+<<<<<<< HEAD
 				C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */,
+=======
+				C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */,
+				C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */,
+>>>>>>> f7d8485aee44e811ee154e13ba73a5a1e6a8af83
 				57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */,
 				C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */,
 				57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */,
 				C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */,
 				C2EB19231BF1C83A005D29C9 /* SJPublicViewController.m in Sources */,
+<<<<<<< HEAD
 				C2EB19821BF1EEE0005D29C9 /* DestinationCell.m in Sources */,
+=======
+				C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */,
+>>>>>>> f7d8485aee44e811ee154e13ba73a5a1e6a8af83
 				C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */,
+				C277141E1BF2387900953289 /* Loglist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +787,7 @@
 			baseConfigurationReference = 7CE2060FD7B92530083339EA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/PrefixHeader.pch;
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang;
@@ -549,6 +800,7 @@
 			baseConfigurationReference = 8A5483E820C11A481B12ADA9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/PrefixHeader.pch;
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang;
