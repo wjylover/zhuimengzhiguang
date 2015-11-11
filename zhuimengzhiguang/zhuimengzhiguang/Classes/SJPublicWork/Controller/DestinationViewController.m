@@ -10,6 +10,7 @@
 #import "DestinationContinentsModel.h"
 #import "DestinationCountryModel.h"
 #import "DestinationCell.h"
+#import <UIImageView+WebCache.h>
 #import "URL.h"
 @interface DestinationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -84,7 +85,6 @@ static NSString *const cellIdentifier = @"destinationCell";
 -(void)getvalues
 {
     [self.destinationArray removeAllObjects];
-    [self.countryArray removeAllObjects];
     
     NSURLSession *urlSession = [NSURLSession sharedSession];
     
@@ -104,23 +104,8 @@ static NSString *const cellIdentifier = @"destinationCell";
             DestinationContinentsModel *continentsModel = [DestinationContinentsModel new];
             [continentsModel setValuesForKeysWithDictionary:dict];
             [self.destinationArray addObject:continentsModel];
-            
-//            //遍历目的地
-//            for (NSDictionary *dictionary in dict[@"country"]) {
-//                
-//                DestinationCountryModel *model = [DestinationCountryModel new];
-//                [model setValuesForKeysWithDictionary:dictionary];
-//                [self.countryArray addObject:model];
-//                
-//            }
-//            //遍历热门目的地
-//            for (NSDictionary *dictionary in dict[@"hot_country"]) {
-//                DestinationCountryModel *model = [DestinationCountryModel new];
-//                [model setValuesForKeysWithDictionary:dictionary];
-//                [self.countryArray addObject:model];
-//            }
-//            NSLog(@"%@",self.countryArray);
         }
+        
         [self.tableView reloadData];
         [self.collectionView reloadData];
     }];
@@ -175,30 +160,60 @@ static NSString *const cellIdentifier = @"destinationCell";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    DestinationContinentsModel *model = self.destinationArray[indexPath.row];
-//    self.countryArray = [NSMutableArray arrayWithArray:model.country];
+
 }
 
 
 #pragma mark -- CollectionView 代理 --
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return self.destinationArray.count;
+}
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     DestinationContinentsModel *model = [DestinationContinentsModel new];
     model = self.destinationArray[section];
     
-    return [model.country.count + model.hot_country.count];
+    //将普通国家的个数和热门国家的个数加在一起   就是洲中的国家个数
+    NSInteger count = model.countries.count + model.hot_countries.count;
+    
+    return count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DestinationCell *collectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    NSLog(@"%@",self.countryArray[indexPath.item]);
-    DestinationCountryModel *model = self.countryArray[indexPath.item];
     
-    collectionCell.cnnameLabel.text = model.cnname;
-    collectionCell.ennameLabel.text = model.enname;
+    DestinationContinentsModel *model = [DestinationContinentsModel new];
+    //洲的数据模型
+    model = self.destinationArray[indexPath.section];
     
-    return collectionCell;
+    DestinationCountryModel *countryModel = [DestinationCountryModel new];
+    
+    
+    //如果itme的个数和count的个数相等或者小于count 就显示 热门 中的国家
+    if (model.hot_countries.count - 1 >= indexPath.item) {
+        
+        countryModel = model.hot_countries[indexPath.item];
+        
+        NSLog(@"%@",countryModel.photo);
+        collectionCell.cnnameLabel.text = countryModel.cnname;
+        collectionCell.ennameLabel.text = countryModel.enname;
+        [collectionCell.picView sd_setImageWithURL:[NSURL URLWithString:countryModel.photo] placeholderImage:[UIImage imageNamed:@"12"] completed:nil];
+        return collectionCell;
+        
+        
+    }else{
+        //否则 显示普通的国家
+        countryModel = model.countries[indexPath.item - model.hot_countries.count];
+        collectionCell.cnnameLabel.text = countryModel.cnname;
+        collectionCell.ennameLabel.text = countryModel.enname;
+        [collectionCell.picView sd_setImageWithURL:[NSURL URLWithString:countryModel.photo] placeholderImage:[UIImage imageNamed:@"12"] completed:nil];
+        return collectionCell;
+    }
+    
 }
 
 //设置item的大小

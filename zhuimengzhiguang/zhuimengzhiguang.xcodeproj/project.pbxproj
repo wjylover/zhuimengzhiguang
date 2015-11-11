@@ -570,16 +570,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C2EB19791BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib in Resources */,
-=======
 				C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */,
 				C27714151BF20A8100953289 /* companion_bg_blue.png in Resources */,
->>>>>>> f7d8485aee44e811ee154e13ba73a5a1e6a8af83
 				57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */,
 				57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */,
 			);
@@ -648,31 +645,24 @@
 				57DEF4FF1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld in Sources */,
 				57DEF4F31BF040A200E0134A /* main.m in Sources */,
 				57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */,
-<<<<<<< HEAD
-=======
 				C27713CF1BF1CD4F00953289 /* SCNavTabBarController.m in Sources */,
 				C27713D21BF1CD4F00953289 /* User.m in Sources */,
 				C2EB19211BF1C83A005D29C9 /* RequestHandle.m in Sources */,
->>>>>>> f7d8485aee44e811ee154e13ba73a5a1e6a8af83
 				C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */,
 				C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */,
 				57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */,
-<<<<<<< HEAD
-				C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */,
-=======
-				C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */,
+
+                C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */,
+
+                C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */,
 				C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */,
->>>>>>> f7d8485aee44e811ee154e13ba73a5a1e6a8af83
 				57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */,
 				C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */,
 				57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */,
 				C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */,
 				C2EB19231BF1C83A005D29C9 /* SJPublicViewController.m in Sources */,
-<<<<<<< HEAD
 				C2EB19821BF1EEE0005D29C9 /* DestinationCell.m in Sources */,
-=======
 				C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */,
->>>>>>> f7d8485aee44e811ee154e13ba73a5a1e6a8af83
 				C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */,
 				C277141E1BF2387900953289 /* Loglist.m in Sources */,
 			);
