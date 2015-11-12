@@ -16,6 +16,7 @@
 
 //发现控制器
 #import "FZQRecommandTableViewController.h"
+
 //详情控制器
 #import "ShowInformationCollectionViewController.h"
 
@@ -26,9 +27,15 @@
 //发现cell
 #import "FZQRecommandTableViewCell.h"
 
+#import "ShowInforCollectionViewCell.h"
 
+#import "CollectionHeaderReusableView.h"
 
+#import "CollectionFooterReusableView.h"
 
+#import "CollectionHeaderReusableView.h"
+
+#import "CollectionFooterReusableView.h"
 
 //数据模型
 #import "User.h"

@@ -9,9 +9,13 @@
 #ifndef FZQHeader_h
 #define FZQHeader_h
 
-
+//主屏幕的高和宽
 #define kUIScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kUIScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//底片图片的高
+#define imageHeight 150
+
 
 //推荐页面
 

@@ -33,6 +33,9 @@ static NSString *const cellIdentify = @"recommandCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+     
     
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"FZQRecommandTableViewCell" bundle:nil]  forCellReuseIdentifier:cellIdentify];
@@ -102,6 +105,13 @@ static NSString *const cellIdentify = @"recommandCellID";
     return cell;
 }
 
+//
+//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+//    
+//    return 49;
+//}
+
+
 //设置表示图的头视图大小
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 30;
@@ -145,7 +155,7 @@ static NSString *const cellIdentify = @"recommandCellID";
     ShowInformationCollectionViewController *showInformationCVC = [[ShowInformationCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
     
     //创建控制器的跳转形式
-    showInformationCVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    showInformationCVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     //传值
     showInformationCVC.mileage = [RecommandDataManager sharedRecommandDataManager].miles[indexPath.row];

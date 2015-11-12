@@ -32,6 +32,15 @@
 		C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C277141A1BF22FED00953289 /* ShowInformationCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C277141E1BF2387900953289 /* Loglist.m in Sources */ = {isa = PBXBuildFile; fileRef = C277141D1BF2387900953289 /* Loglist.m */; settings = {ASSET_TAGS = (); }; };
 		C27714211BF23AA900953289 /* ShowInformationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C27714201BF23AA900953289 /* ShowInformationDataManager.m */; settings = {ASSET_TAGS = (); }; };
+		C28D0F421BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F411BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png */; settings = {ASSET_TAGS = (); }; };
+		C28D0F461BF32F8400D265A9 /* ShowInforCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28D0F441BF32F8400D265A9 /* ShowInforCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		C28D0F471BF32F8400D265A9 /* ShowInforCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F451BF32F8400D265A9 /* ShowInforCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C28D0F4B1BF345B700D265A9 /* CollectionHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C28D0F491BF345B700D265A9 /* CollectionHeaderReusableView.m */; settings = {ASSET_TAGS = (); }; };
+		C28D0F4C1BF345B700D265A9 /* CollectionHeaderReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F4A1BF345B700D265A9 /* CollectionHeaderReusableView.xib */; settings = {ASSET_TAGS = (); }; };
+		C28D0F501BF345C500D265A9 /* CollectionFooterReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C28D0F4E1BF345C500D265A9 /* CollectionFooterReusableView.m */; settings = {ASSET_TAGS = (); }; };
+		C28D0F511BF345C500D265A9 /* CollectionFooterReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F4F1BF345C500D265A9 /* CollectionFooterReusableView.xib */; settings = {ASSET_TAGS = (); }; };
+		C28D0F631BF35EEF00D265A9 /* placeImage5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F621BF35EEF00D265A9 /* placeImage5.jpg */; settings = {ASSET_TAGS = (); }; };
+		C28D0F651BF365A700D265A9 /* iconfont-pinglun.png in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F641BF365A700D265A9 /* iconfont-pinglun.png */; settings = {ASSET_TAGS = (); }; };
 		C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */; settings = {ASSET_TAGS = (); }; };
 		C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */; settings = {ASSET_TAGS = (); }; };
@@ -92,6 +101,18 @@
 		C277141D1BF2387900953289 /* Loglist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loglist.m; sourceTree = "<group>"; };
 		C277141F1BF23AA900953289 /* ShowInformationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowInformationDataManager.h; sourceTree = "<group>"; };
 		C27714201BF23AA900953289 /* ShowInformationDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInformationDataManager.m; sourceTree = "<group>"; };
+		C28D0F411BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com_taobao_tae_sdk_web_view_title_bar_back.9.png; sourceTree = "<group>"; };
+		C28D0F431BF32F8400D265A9 /* ShowInforCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowInforCollectionViewCell.h; sourceTree = "<group>"; };
+		C28D0F441BF32F8400D265A9 /* ShowInforCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInforCollectionViewCell.m; sourceTree = "<group>"; };
+		C28D0F451BF32F8400D265A9 /* ShowInforCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowInforCollectionViewCell.xib; sourceTree = "<group>"; };
+		C28D0F481BF345B700D265A9 /* CollectionHeaderReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionHeaderReusableView.h; sourceTree = "<group>"; };
+		C28D0F491BF345B700D265A9 /* CollectionHeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionHeaderReusableView.m; sourceTree = "<group>"; };
+		C28D0F4A1BF345B700D265A9 /* CollectionHeaderReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionHeaderReusableView.xib; sourceTree = "<group>"; };
+		C28D0F4D1BF345C500D265A9 /* CollectionFooterReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionFooterReusableView.h; sourceTree = "<group>"; };
+		C28D0F4E1BF345C500D265A9 /* CollectionFooterReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionFooterReusableView.m; sourceTree = "<group>"; };
+		C28D0F4F1BF345C500D265A9 /* CollectionFooterReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionFooterReusableView.xib; sourceTree = "<group>"; };
+		C28D0F621BF35EEF00D265A9 /* placeImage5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeImage5.jpg; sourceTree = "<group>"; };
+		C28D0F641BF365A700D265A9 /* iconfont-pinglun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-pinglun.png"; sourceTree = "<group>"; };
 		C2EB19091BF1C83A005D29C9 /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationViewController.h; sourceTree = "<group>"; };
 		C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationViewController.m; sourceTree = "<group>"; };
 		C2EB190E1BF1C83A005D29C9 /* DestinationContinentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DestinationContinentsModel.h; path = ../DestinationContinentsModel.h; sourceTree = "<group>"; };
@@ -336,6 +357,15 @@
 				C27713B11BF1CD4F00953289 /* FZQRecommandTableViewCell.h */,
 				C27713B21BF1CD4F00953289 /* FZQRecommandTableViewCell.m */,
 				C27713B31BF1CD4F00953289 /* FZQRecommandTableViewCell.xib */,
+				C28D0F431BF32F8400D265A9 /* ShowInforCollectionViewCell.h */,
+				C28D0F441BF32F8400D265A9 /* ShowInforCollectionViewCell.m */,
+				C28D0F451BF32F8400D265A9 /* ShowInforCollectionViewCell.xib */,
+				C28D0F481BF345B700D265A9 /* CollectionHeaderReusableView.h */,
+				C28D0F491BF345B700D265A9 /* CollectionHeaderReusableView.m */,
+				C28D0F4A1BF345B700D265A9 /* CollectionHeaderReusableView.xib */,
+				C28D0F4D1BF345C500D265A9 /* CollectionFooterReusableView.h */,
+				C28D0F4E1BF345C500D265A9 /* CollectionFooterReusableView.m */,
+				C28D0F4F1BF345C500D265A9 /* CollectionFooterReusableView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -408,6 +438,9 @@
 		C27714131BF20A4400953289 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C28D0F641BF365A700D265A9 /* iconfont-pinglun.png */,
+				C28D0F621BF35EEF00D265A9 /* placeImage5.jpg */,
+				C28D0F411BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png */,
 				C27714141BF20A8100953289 /* companion_bg_blue.png */,
 			);
 			name = Resource;
@@ -570,12 +603,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28D0F4C1BF345B700D265A9 /* CollectionHeaderReusableView.xib in Resources */,
+				C28D0F631BF35EEF00D265A9 /* placeImage5.jpg in Resources */,
 				C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
+				C28D0F651BF365A700D265A9 /* iconfont-pinglun.png in Resources */,
+				C28D0F511BF345C500D265A9 /* CollectionFooterReusableView.xib in Resources */,
 				C2EB19791BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib in Resources */,
 				C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */,
+				C28D0F421BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */,
+				C28D0F471BF32F8400D265A9 /* ShowInforCollectionViewCell.xib in Resources */,
 				C27714151BF20A8100953289 /* companion_bg_blue.png in Resources */,
 				57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */,
 				57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */,
@@ -645,25 +684,25 @@
 				57DEF4FF1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld in Sources */,
 				57DEF4F31BF040A200E0134A /* main.m in Sources */,
 				57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */,
+				C28D0F4B1BF345B700D265A9 /* CollectionHeaderReusableView.m in Sources */,
 				C27713CF1BF1CD4F00953289 /* SCNavTabBarController.m in Sources */,
 				C27713D21BF1CD4F00953289 /* User.m in Sources */,
-				C2EB19211BF1C83A005D29C9 /* RequestHandle.m in Sources */,
 				C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */,
 				C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */,
 				57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */,
-
-                C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */,
-
-                C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */,
+				C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */,
+				C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */,
 				C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */,
 				57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */,
 				C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */,
 				57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */,
 				C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */,
 				C2EB19231BF1C83A005D29C9 /* SJPublicViewController.m in Sources */,
+				C28D0F501BF345C500D265A9 /* CollectionFooterReusableView.m in Sources */,
 				C2EB19821BF1EEE0005D29C9 /* DestinationCell.m in Sources */,
 				C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */,
 				C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */,
+				C28D0F461BF32F8400D265A9 /* ShowInforCollectionViewCell.m in Sources */,
 				C277141E1BF2387900953289 /* Loglist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

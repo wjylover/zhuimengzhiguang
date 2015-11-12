@@ -31,6 +31,7 @@
 
     if (self = [super init]) {
         _logArray = [NSMutableArray array];
+        _allLogs = [NSArray array];
     }
     return self;
 }
@@ -85,8 +86,8 @@
             }
             
             //校验
-            NSLog(@"1111111%@",user.spaceImage);
-            NSLog(@"122222222222%@",mileage);
+//            NSLog(@"1111111%@",user.spaceImage);
+//            NSLog(@"122222222222%@",mileage);
             for (Loglist *log in _logArray) {
                 NSLog(@"2111111111111%@",log);
             }
@@ -95,8 +96,10 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 //调用block变量,将值传出
-                //self.getValue(user,mileage);
+                self.getValue(user,mileage);
                 
+                //调用block变量,刷新集合视图
+                self.flash();
                 
             });
         }];
