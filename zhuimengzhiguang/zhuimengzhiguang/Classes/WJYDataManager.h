@@ -18,10 +18,11 @@ typedef void (^BackBlock) (void);
 @property (nonatomic, copy) BackBlock carouselBlock;
 @property (nonatomic, copy) BackBlock cityBlock;
 @property (nonatomic, copy) BackBlock homeHotBlock;
+@property (nonatomic, copy) BackBlock hotContentBlock;
 
 + (instancetype)sharedManager;
 - (void)getCarouselImageData;
 - (void)getHomeHotDataArrayWithCityID:(NSInteger)cityID Page:(NSInteger)page;
-//- (void)getHotContentDataArray:();
+- (void)getHotContentDataArrayWithHotID:(NSInteger)hotID;
 - (void)getCityList;
 @end

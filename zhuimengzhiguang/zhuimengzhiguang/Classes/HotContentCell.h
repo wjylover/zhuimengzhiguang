@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface HotContentCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *titelLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *contentImage;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tipsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lineLabel;
 
 @end

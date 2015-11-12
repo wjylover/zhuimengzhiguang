@@ -123,10 +123,14 @@ static NSInteger page = 1;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.hidesBottomBarWhenPushed=YES;
     HotContentViewController *hotContentVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HotContent"];
-    [self showDetailViewController:hotContentVC sender:nil];
-}
+    hotContentVC.hot = self.homeHotArray[indexPath.row];
+    [self showViewController:hotContentVC sender:nil];
+    self.hidesBottomBarWhenPushed=NO;
 
+}
+// 获取用户当前位置
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     
@@ -154,11 +158,12 @@ static NSInteger page = 1;
 {
     NSLog(@"error:%@",error);
 }
+// 分组数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
-
+// cell数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _homeHotArray.count;

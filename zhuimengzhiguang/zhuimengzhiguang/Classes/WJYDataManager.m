@@ -7,6 +7,7 @@
 //
 
 #import "WJYDataManager.h"
+#import "HotContent.h"
 #import "Hot.h"
 #import "City.h"
 #import "HotCity.h"
@@ -16,6 +17,8 @@
 #define kHomeHotDataURL @"http://app.xialv.com/index2.php?a=sList2&page=%ld&city_id=%ld&type=2"
 
 #define kCityListURL @"http://app.xialv.com/index2.php?a=city&all=1"
+
+#define kHotContentURL @"http://app.xialv.com/index2.php?a=bangdandetail&id=%ld"
 //#define kHomeURL @"http://open.qyer.com/qyer/recommands/entry?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1"
 //发现下一站  http://open.qyer.com/qyer/special/topic/special_list?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&page=1&count=10
 @implementation WJYDataManager
@@ -94,6 +97,28 @@
             }
         }
         self.cityBlock();
+    }];
+
+}
+// 获取热门内容
+- (void)getHotContentDataArrayWithHotID:(NSInteger)hotID
+{
+    self.hotContentDataArray = [NSMutableArray arrayWithCapacity:20];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:kHotContentURL,hotID]]];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        if (!data) {
+            NSLog(@"无网络访问");
+            return ;
+        }
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        NSArray *cellsDataArray = dict[@"result"];
+        // 获取头内容
+        for (NSDictionary *dic in cellsDataArray) {
+            HotContent *hotContent = [HotContent new];
+            [hotContent setValuesForKeysWithDictionary:dic];
+            [_hotContentDataArray addObject:hotContent];
+        }
+        self.hotContentBlock();
     }];
 
 }

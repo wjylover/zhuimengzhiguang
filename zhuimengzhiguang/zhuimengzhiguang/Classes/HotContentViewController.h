@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Hot;
 @interface HotContentViewController : UIViewController
+
+@property (nonatomic, strong) Hot *hot;
 
 @end

@@ -8,46 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		55CADAD705F767FF2C794497 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67271C243F2A3DDE50873EC3 /* libPods.a */; };
-		57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D711BF08CD1006530C1 /* WJYDataManager.m */; settings = {ASSET_TAGS = (); }; };
-		57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D761BF09059006530C1 /* WJYHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D7A1BF0BDC0006530C1 /* HotCity.m */; settings = {ASSET_TAGS = (); }; };
-		57497D1D1BF20D250012AD33 /* Hot.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D1C1BF20D250012AD33 /* Hot.m */; settings = {ASSET_TAGS = (); }; };
-		57497D201BF2DE690012AD33 /* HotContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D1F1BF2DE690012AD33 /* HotContentViewController.m */; settings = {ASSET_TAGS = (); }; };
-		57497D241BF2EB9D0012AD33 /* HotContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D221BF2EB9D0012AD33 /* HotContentCell.m */; settings = {ASSET_TAGS = (); }; };
-		57497D251BF2EB9D0012AD33 /* HotContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57497D231BF2EB9D0012AD33 /* HotContentCell.xib */; settings = {ASSET_TAGS = (); }; };
-		576FB65F1BF1D7C900577BB4 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FB65D1BF1D7C900577BB4 /* HomeCell.m */; settings = {ASSET_TAGS = (); }; };
-		576FB6601BF1D7C900577BB4 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576FB65E1BF1D7C900577BB4 /* HomeCell.xib */; settings = {ASSET_TAGS = (); }; };
-		576FB6631BF1F5EB00577BB4 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FB6621BF1F5EB00577BB4 /* City.m */; settings = {ASSET_TAGS = (); }; };
-		57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BB40FB1BF041AA00EB915E /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D711BF08CD1006530C1 /* WJYDataManager.m */; };
+		57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D761BF09059006530C1 /* WJYHomeViewController.m */; };
+		57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D7A1BF0BDC0006530C1 /* HotCity.m */; };
+		5726EED61BF31C0300443BFB /* HotContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5726EED51BF31C0300443BFB /* HotContent.m */; };
+		5726EEDB1BF3581700443BFB /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5726EEDA1BF3581700443BFB /* 1.jpg */; };
+		57497D1D1BF20D250012AD33 /* Hot.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D1C1BF20D250012AD33 /* Hot.m */; };
+		57497D201BF2DE690012AD33 /* HotContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D1F1BF2DE690012AD33 /* HotContentViewController.m */; };
+		57497D241BF2EB9D0012AD33 /* HotContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D221BF2EB9D0012AD33 /* HotContentCell.m */; };
+		57497D251BF2EB9D0012AD33 /* HotContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57497D231BF2EB9D0012AD33 /* HotContentCell.xib */; };
+		576FB65F1BF1D7C900577BB4 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FB65D1BF1D7C900577BB4 /* HomeCell.m */; };
+		576FB6601BF1D7C900577BB4 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576FB65E1BF1D7C900577BB4 /* HomeCell.xib */; };
+		576FB6631BF1F5EB00577BB4 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FB6621BF1F5EB00577BB4 /* City.m */; };
+		57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BB40FB1BF041AA00EB915E /* AppDelegate.m */; };
 		57DEF4F31BF040A200E0134A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEF4F21BF040A200E0134A /* main.m */; };
 		57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DEF4FA1BF040A200E0134A /* Main.storyboard */; };
 		57DEF4FF1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57DEF4FD1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld */; };
 		57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DEF5001BF040A200E0134A /* Assets.xcassets */; };
 		57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DEF5021BF040A200E0134A /* LaunchScreen.storyboard */; };
-		C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713AF1BF1CD4F00953289 /* FZQFindViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C27713C91BF1CD4F00953289 /* FZQRecommandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713B21BF1CD4F00953289 /* FZQRecommandTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27713B31BF1CD4F00953289 /* FZQRecommandTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713B51BF1CD4F00953289 /* FZQRecommandTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713B71BF1CD4F00953289 /* Mileage.m */; settings = {ASSET_TAGS = (); }; };
-		C27713CD1BF1CD4F00953289 /* RecommandDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713BA1BF1CD4F00953289 /* RecommandDataManager.m */; settings = {ASSET_TAGS = (); }; };
-		C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C27713BD1BF1CD4F00953289 /* SCNavTabBar.bundle */; settings = {ASSET_TAGS = (); }; };
-		C27713CF1BF1CD4F00953289 /* SCNavTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C01BF1CD4F00953289 /* SCNavTabBarController.m */; settings = {ASSET_TAGS = (); }; };
-		C27713D01BF1CD4F00953289 /* SCNavTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C31BF1CD4F00953289 /* SCNavTabBar.m */; settings = {ASSET_TAGS = (); }; };
-		C27713D11BF1CD4F00953289 /* SCPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C51BF1CD4F00953289 /* SCPopView.m */; settings = {ASSET_TAGS = (); }; };
-		C27713D21BF1CD4F00953289 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C71BF1CD4F00953289 /* User.m */; settings = {ASSET_TAGS = (); }; };
-		C27714151BF20A8100953289 /* companion_bg_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = C27714141BF20A8100953289 /* companion_bg_blue.png */; settings = {ASSET_TAGS = (); }; };
-		C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C277141A1BF22FED00953289 /* ShowInformationCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C277141E1BF2387900953289 /* Loglist.m in Sources */ = {isa = PBXBuildFile; fileRef = C277141D1BF2387900953289 /* Loglist.m */; settings = {ASSET_TAGS = (); }; };
-		C27714211BF23AA900953289 /* ShowInformationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C27714201BF23AA900953289 /* ShowInformationDataManager.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB191B1BF1C83A005D29C9 /* SJPublicObject.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19231BF1C83A005D29C9 /* SJPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB191D1BF1C83A005D29C9 /* SJPublicViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19761BF1E8F1005D29C9 /* SJPbulicTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19791BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EB19771BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		C2EB19821BF1EEE0005D29C9 /* DestinationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19801BF1EEE0005D29C9 /* DestinationCell.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EB19811BF1EEE0005D29C9 /* DestinationCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713AF1BF1CD4F00953289 /* FZQFindViewController.m */; };
+		C27713C91BF1CD4F00953289 /* FZQRecommandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713B21BF1CD4F00953289 /* FZQRecommandTableViewCell.m */; };
+		C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27713B31BF1CD4F00953289 /* FZQRecommandTableViewCell.xib */; };
+		C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713B51BF1CD4F00953289 /* FZQRecommandTableViewController.m */; };
+		C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713B71BF1CD4F00953289 /* Mileage.m */; };
+		C27713CD1BF1CD4F00953289 /* RecommandDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713BA1BF1CD4F00953289 /* RecommandDataManager.m */; };
+		C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C27713BD1BF1CD4F00953289 /* SCNavTabBar.bundle */; };
+		C27713CF1BF1CD4F00953289 /* SCNavTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C01BF1CD4F00953289 /* SCNavTabBarController.m */; };
+		C27713D01BF1CD4F00953289 /* SCNavTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C31BF1CD4F00953289 /* SCNavTabBar.m */; };
+		C27713D11BF1CD4F00953289 /* SCPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C51BF1CD4F00953289 /* SCPopView.m */; };
+		C27713D21BF1CD4F00953289 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C27713C71BF1CD4F00953289 /* User.m */; };
+		C27714151BF20A8100953289 /* companion_bg_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = C27714141BF20A8100953289 /* companion_bg_blue.png */; };
+		C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C277141A1BF22FED00953289 /* ShowInformationCollectionViewController.m */; };
+		C277141E1BF2387900953289 /* Loglist.m in Sources */ = {isa = PBXBuildFile; fileRef = C277141D1BF2387900953289 /* Loglist.m */; };
+		C27714211BF23AA900953289 /* ShowInformationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C27714201BF23AA900953289 /* ShowInformationDataManager.m */; };
+		C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */; };
+		C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */; };
+		C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */; };
+		C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB191B1BF1C83A005D29C9 /* SJPublicObject.m */; };
+		C2EB19231BF1C83A005D29C9 /* SJPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB191D1BF1C83A005D29C9 /* SJPublicViewController.m */; };
+		C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19761BF1E8F1005D29C9 /* SJPbulicTableViewCell.m */; };
+		C2EB19791BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EB19771BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib */; };
+		C2EB19821BF1EEE0005D29C9 /* DestinationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19801BF1EEE0005D29C9 /* DestinationCell.m */; };
+		C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EB19811BF1EEE0005D29C9 /* DestinationCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,9 @@
 		57086D761BF09059006530C1 /* WJYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WJYHomeViewController.m; path = AppDelegate/WJYHomeViewController.m; sourceTree = "<group>"; };
 		57086D791BF0BDC0006530C1 /* HotCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCity.h; sourceTree = "<group>"; };
 		57086D7A1BF0BDC0006530C1 /* HotCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCity.m; sourceTree = "<group>"; };
+		5726EED41BF31C0300443BFB /* HotContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotContent.h; sourceTree = "<group>"; };
+		5726EED51BF31C0300443BFB /* HotContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotContent.m; sourceTree = "<group>"; };
+		5726EEDA1BF3581700443BFB /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		57497D1B1BF20D250012AD33 /* Hot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hot.h; sourceTree = "<group>"; };
 		57497D1C1BF20D250012AD33 /* Hot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hot.m; sourceTree = "<group>"; };
 		57497D1E1BF2DE690012AD33 /* HotContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotContentViewController.h; sourceTree = "<group>"; };
@@ -191,12 +196,15 @@
 		57086D781BF09513006530C1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5726EEDA1BF3581700443BFB /* 1.jpg */,
 				57086D791BF0BDC0006530C1 /* HotCity.h */,
 				57086D7A1BF0BDC0006530C1 /* HotCity.m */,
 				576FB6611BF1F5EB00577BB4 /* City.h */,
 				576FB6621BF1F5EB00577BB4 /* City.m */,
 				57497D1B1BF20D250012AD33 /* Hot.h */,
 				57497D1C1BF20D250012AD33 /* Hot.m */,
+				5726EED41BF31C0300443BFB /* HotContent.h */,
+				5726EED51BF31C0300443BFB /* HotContent.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -623,6 +631,7 @@
 				C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */,
 				57497D251BF2EB9D0012AD33 /* HotContentCell.xib in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
+				5726EEDB1BF3581700443BFB /* 1.jpg in Resources */,
 				C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */,
 				C27714151BF20A8100953289 /* companion_bg_blue.png in Resources */,
 				57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */,
@@ -698,14 +707,11 @@
 				57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */,
 				C27713CF1BF1CD4F00953289 /* SCNavTabBarController.m in Sources */,
 				C27713D21BF1CD4F00953289 /* User.m in Sources */,
-				C2EB19211BF1C83A005D29C9 /* RequestHandle.m in Sources */,
 				C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */,
 				C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */,
 				57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */,
-
-                C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */,
-
-                C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */,
+				C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */,
+				C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */,
 				C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */,
 				57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */,
 				C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */,
@@ -716,6 +722,7 @@
 				C2EB19821BF1EEE0005D29C9 /* DestinationCell.m in Sources */,
 				C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */,
 				C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */,
+				5726EED61BF31C0300443BFB /* HotContent.m in Sources */,
 				57497D201BF2DE690012AD33 /* HotContentViewController.m in Sources */,
 				C277141E1BF2387900953289 /* Loglist.m in Sources */,
 				57497D241BF2EB9D0012AD33 /* HotContentCell.m in Sources */,

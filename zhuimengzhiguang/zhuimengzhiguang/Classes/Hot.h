@@ -12,6 +12,10 @@
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *cover;
-@property (nonatomic, strong) NSString *hotID;
+@property (nonatomic, assign) NSInteger hotID;
+@property (nonatomic, strong) NSString *face;
+@property (nonatomic, strong) NSString *nickname;
+@property (nonatomic, strong) NSString *content;
+@property (nonatomic, strong) NSString *ts_create;
 
 @end
