@@ -21,8 +21,10 @@
 @property (nonatomic,strong) NSMutableArray *destinationArray;
 //国家对象数组
 @property (nonatomic,strong) NSMutableArray *countryArray;
-
+//collectionView
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic,assign)NSInteger index;
+@property (nonatomic,assign)NSInteger countIndex;
 
 @end
 
@@ -36,6 +38,7 @@ static NSString *const cellIdentifier = @"destinationCell";
     
     //当页面将要出现的时候 进行一次刷新
     [self.tableView reloadData];
+    [self.collectionView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -49,6 +52,8 @@ static NSString *const cellIdentifier = @"destinationCell";
     //布局collectionView
     [self layoutCollectionView];
     
+    //给index默认值
+    self.index = 0;
 }
 
 //布局collectionView
@@ -77,7 +82,7 @@ static NSString *const cellIdentifier = @"destinationCell";
     [_collectionView registerNib:[UINib nibWithNibName:@"DestinationCell" bundle:nil] forCellWithReuseIdentifier:@"destinationCell"];
     
     //给collectionView一个背景颜色
-    _collectionView.backgroundColor = [UIColor lightGrayColor];
+    _collectionView.backgroundColor = [UIColor whiteColor];
     
 }
 
@@ -161,6 +166,18 @@ static NSString *const cellIdentifier = @"destinationCell";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
+    //将点击的对应cell下坐标 赋值给 _index
+    self.index = indexPath.row;
+    //用点击的时候 请求数据
+    DestinationContinentsModel *model = [DestinationContinentsModel new];
+    model = self.destinationArray[_index];
+    
+    //将普通国家的个数和热门国家的个数加在一起   就是洲中的国家个数
+    self.countIndex = model.countries.count + model.hot_countries.count;
+    //刷新
+    //如果不刷新数据, _countIndex 的值不会变, 就会一直出现item的数据个数不对称问题
+    [self.collectionView reloadData];
+    
 }
 
 
@@ -168,18 +185,19 @@ static NSString *const cellIdentifier = @"destinationCell";
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return self.destinationArray.count;
+    return 1;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+    //当第一次运行,还没有手动点击七大洲的时候,给它一个默认数据
     DestinationContinentsModel *model = [DestinationContinentsModel new];
-    model = self.destinationArray[section];
+    model = self.destinationArray[_index];
     
     //将普通国家的个数和热门国家的个数加在一起   就是洲中的国家个数
-    NSInteger count = model.countries.count + model.hot_countries.count;
-    
-    return count;
+    self.countIndex = model.countries.count + model.hot_countries.count;
+
+    return self.countIndex;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -188,7 +206,8 @@ static NSString *const cellIdentifier = @"destinationCell";
     
     DestinationContinentsModel *model = [DestinationContinentsModel new];
     //洲的数据模型
-    model = self.destinationArray[indexPath.section];
+    //通过点击的index来给数据模型赋值
+    model = self.destinationArray[self.index];
     
     DestinationCountryModel *countryModel = [DestinationCountryModel new];
     
@@ -198,19 +217,24 @@ static NSString *const cellIdentifier = @"destinationCell";
         
         countryModel = model.hot_countries[indexPath.item];
         
-        NSLog(@"%@",countryModel.photo);
+        //赋值cell
         collectionCell.cnnameLabel.text = countryModel.cnname;
         collectionCell.ennameLabel.text = countryModel.enname;
         [collectionCell.picView sd_setImageWithURL:[NSURL URLWithString:countryModel.photo] placeholderImage:[UIImage imageNamed:@"12"] completed:nil];
+        
         return collectionCell;
         
         
     }else{
         //否则 显示普通的国家
+        
         countryModel = model.countries[indexPath.item - model.hot_countries.count];
+        
+        //赋值cell
         collectionCell.cnnameLabel.text = countryModel.cnname;
         collectionCell.ennameLabel.text = countryModel.enname;
         [collectionCell.picView sd_setImageWithURL:[NSURL URLWithString:countryModel.photo] placeholderImage:[UIImage imageNamed:@"12"] completed:nil];
+        
         return collectionCell;
     }
     

@@ -17,16 +17,16 @@
                         <color key="backgroundColor" red="0.61852009962187959" green="1" blue="0.88678757247005813" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGy-DB-HpT">
-                        <rect key="frame" x="0.0" y="119" width="197" height="55"/>
+                        <rect key="frame" x="0.0" y="129" width="197" height="45"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阿富汗" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRQ-i9-2lz">
-                                <rect key="frame" x="5" y="35" width="187" height="15"/>
+                                <rect key="frame" x="5" y="25" width="187" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阿富汗" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDk-oN-fQa">
-                                <rect key="frame" x="5" y="8" width="187" height="17"/>
+                                <rect key="frame" x="5" y="3" width="187" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,8 +39,8 @@
                             <constraint firstAttribute="trailing" secondItem="mRQ-i9-2lz" secondAttribute="trailing" constant="5" id="ez8-6Q-e2N"/>
                             <constraint firstItem="mRQ-i9-2lz" firstAttribute="leading" secondItem="sGy-DB-HpT" secondAttribute="leading" constant="5" id="fR5-y4-d7J"/>
                             <constraint firstItem="yDk-oN-fQa" firstAttribute="leading" secondItem="sGy-DB-HpT" secondAttribute="leading" constant="5" id="jnP-ER-C6g"/>
-                            <constraint firstItem="mRQ-i9-2lz" firstAttribute="top" secondItem="yDk-oN-fQa" secondAttribute="bottom" constant="10" id="wLE-t0-aV0"/>
-                            <constraint firstAttribute="height" constant="55" id="yPG-EA-Cyu"/>
+                            <constraint firstItem="mRQ-i9-2lz" firstAttribute="top" secondItem="yDk-oN-fQa" secondAttribute="bottom" constant="5" id="wLE-t0-aV0"/>
+                            <constraint firstAttribute="height" constant="45" id="yPG-EA-Cyu"/>
                         </constraints>
                     </view>
                 </subviews>
