@@ -15,5 +15,6 @@
 @property (nonatomic, copy) NSString *ID;//原来是 id
 @property (nonatomic, strong) NSMutableArray *countries;
 @property (nonatomic, strong) NSMutableArray *hot_countries;
+@property (nonatomic, strong) NSMutableArray *allCountry;
 
 @end

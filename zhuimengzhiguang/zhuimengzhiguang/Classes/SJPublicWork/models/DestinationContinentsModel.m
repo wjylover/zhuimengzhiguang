@@ -19,6 +19,7 @@
     
     //字典获取对应的key, 如果是字典中的数组 "country", 就将其数据遍历
     if ([key isEqualToString:@"country"]) {
+        
         //创建对象数组
         self.countries = [NSMutableArray array];
         //遍历 "country" 数据数组
@@ -30,6 +31,7 @@
             //添加到对象数组中
             [self.countries addObject:model];
         }
+        NSLog(@"country: %ld",_countries.count);
     }
     if ([key isEqualToString:@"hot_country"]) {
         self.hot_countries = [NSMutableArray array];
@@ -38,7 +40,9 @@
             [model setValuesForKeysWithDictionary:dic];
             [self.hot_countries addObject:model];
         }
+        NSLog(@"hot_country: %ld",_hot_countries.count);
     }
+    
 }
 
 //重写description方法

@@ -71,6 +71,7 @@
 		67271C243F2A3DDE50873EC3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE2060FD7B92530083339EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8A5483E820C11A481B12ADA9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C26ADC1A1BF4246400010217 /* FZQPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FZQPrefixHeader.pch; sourceTree = "<group>"; };
 		C27713AE1BF1CD4F00953289 /* FZQFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZQFindViewController.h; path = FZQRecommand/FZQFindViewController.h; sourceTree = "<group>"; };
 		C27713AF1BF1CD4F00953289 /* FZQFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FZQFindViewController.m; path = FZQRecommand/FZQFindViewController.m; sourceTree = "<group>"; };
 		C27713B01BF1CD4F00953289 /* FZQHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FZQHeader.h; path = ../FZQHeader.h; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		C27713B51BF1CD4F00953289 /* FZQRecommandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FZQRecommandTableViewController.m; path = FZQRecommand/FZQRecommandTableViewController.m; sourceTree = "<group>"; };
 		C27713B61BF1CD4F00953289 /* Mileage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mileage.h; sourceTree = "<group>"; };
 		C27713B71BF1CD4F00953289 /* Mileage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mileage.m; sourceTree = "<group>"; };
-		C27713B81BF1CD4F00953289 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C27713B91BF1CD4F00953289 /* RecommandDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommandDataManager.h; path = ../RecommandDataManager.h; sourceTree = "<group>"; };
 		C27713BA1BF1CD4F00953289 /* RecommandDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommandDataManager.m; path = ../RecommandDataManager.m; sourceTree = "<group>"; };
 		C27713BC1BF1CD4F00953289 /* CommonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMacro.h; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 				C27713DA1BF1D0B700953289 /* Marco */,
 				C27713D51BF1D08D00953289 /* General */,
 				C27713D31BF1D05B00953289 /* Model */,
-				C27713B81BF1CD4F00953289 /* PrefixHeader.pch */,
+				C26ADC1A1BF4246400010217 /* FZQPrefixHeader.pch */,
 			);
 			path = FZQRecommand;
 			sourceTree = "<group>";
@@ -816,7 +816,7 @@
 			baseConfigurationReference = 7CE2060FD7B92530083339EA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/FZQPrefixHeader.pch;
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang;
@@ -829,7 +829,7 @@
 			baseConfigurationReference = 8A5483E820C11A481B12ADA9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/FZQPrefixHeader.pch;
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang;

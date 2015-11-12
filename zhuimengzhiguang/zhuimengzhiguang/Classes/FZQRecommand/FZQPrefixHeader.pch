@@ -1,13 +1,13 @@
 //
-//  PrefixHeader.pch
+//  FZQPrefixHeader.pch
 //  zhuimengzhiguang
 //
-//  Created by lanou3g on 15/11/9.
+//  Created by lanou3g on 15/11/12.
 //  Copyright © 2015年 王建业. All rights reserved.
 //
 
-#ifndef PrefixHeader_pch
-#define PrefixHeader_pch
+#ifndef FZQPrefixHeader_pch
+#define FZQPrefixHeader_pch
 
 
 //宏
@@ -58,4 +58,4 @@
 //上拉刷新
 #import "MJRefresh.h"
 
-#endif /* PrefixHeader_pch */
+#endif /* FZQPrefixHeader_pch */

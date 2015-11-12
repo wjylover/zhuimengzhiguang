@@ -20,7 +20,6 @@
     }
     if ([key isEqualToString:@"count"]) {
         self.count = [value stringValue];
-        NSLog(@"%@",self.count);
     }
 }
 
