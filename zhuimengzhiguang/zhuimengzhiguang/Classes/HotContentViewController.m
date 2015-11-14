@@ -7,17 +7,20 @@
 //
 
 #import "HotContentViewController.h"
+#import "WJYHeadView.h"
 #import "HotContentCell.h"
 #import "WJYDataManager.h"
 #import <MJRefresh.h>
 #import "HotContent.h"
 #import "Hot.h"
 
+#define kImageHight [UIScreen mainScreen].bounds.size.width / (490 / 285.0)
 @interface HotContentViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *hotContentTableView;
 @property (nonatomic, strong) NSMutableArray *hotContentArray;
-@property (nonatomic, strong) UIImageView *headImageView;
+@property (nonatomic, strong) UIVisualEffectView *visualView;
+@property (weak, nonatomic) IBOutlet UIView *backView;
 @end
 
 @implementation HotContentViewController
@@ -25,30 +28,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 自适应高度
+    
     _hotContentTableView.rowHeight = UITableViewAutomaticDimension;
     _hotContentTableView.estimatedRowHeight = 100;
     // 初始化cell
     [_hotContentTableView registerNib:[UINib nibWithNibName:@"HotContentCell" bundle:nil] forCellReuseIdentifier:@"HotContent"];
-    
-    
-    _hotContentTableView.contentInset = UIEdgeInsetsMake(136, 0, 0, 0);
-    
-    _headImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1.jpg"]];
-    _headImageView.frame = CGRectMake(0, -200, self.view.frame.size.width, 200);
-    _headImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [_hotContentTableView addSubview:_headImageView];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    _hotContentTableView.estimatedSectionHeaderHeight = 100;
+    _hotContentTableView.sectionHeaderHeight = UITableViewAutomaticDimension;
 
+    _hotContentTableView.contentInset = UIEdgeInsetsMake(kImageHight , 0, 0, 0);
+    [_hotContentTableView addSubview:_headImageView];
+    
+    // 设置图片拉伸方式为等比例
+    _headImageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    //毛玻璃效果
+    _visualView = [[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:(UIBlurEffectStyleLight)]];
+    _visualView.frame = _headImageView.bounds;
+    
+    _visualView.alpha = 0;
+    [_headImageView addSubview:_visualView];
+    [self.view insertSubview:_backView aboveSubview:_visualView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat y = scrollView.contentOffset.y ;
-    NSLog(@"%f",y);
-    if (y < - 136) {
+ 
+    if (y <= - kImageHight) {
+        _visualView.alpha = 0;
+
         CGRect frame = _headImageView.frame;
         frame.origin.y = y;
         frame.size.height = -y;
         _headImageView.frame = frame;
+    }else if(y >= -44){
+        [_headImageView removeFromSuperview];
+        _headImageView.frame = CGRectMake(0, -kImageHight+44, self.view.frame.size.width, kImageHight);
+        [self.view addSubview:_headImageView];
+        _visualView.alpha = 0.95;
+        [self.view insertSubview:_backView aboveSubview:_visualView];
+    }else if(y < -44){
+        [_headImageView removeFromSuperview];
+        _headImageView.frame = CGRectMake(0, -kImageHight, self.view.frame.size.width, kImageHight);
+        [_hotContentTableView addSubview:_headImageView];
+        _visualView.alpha = (kImageHight + y) / 166 +0.05;
     }
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -61,13 +86,31 @@
     };
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+- (IBAction)backButton:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return 1;
+    if (section == 0) {
+        // 获取xib  view
+        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"WjyHeadView" owner:self options:nil];
+        
+        WJYHeadView *header = (WJYHeadView *)[nib objectAtIndex:0];
+        header.titelLabel.text = self.hot.title;
+        header.timeLabel.text = self.hot.ts_create;
+        header.contentLabel.text = self.hot.content;
+        return header;
+    }else{
+        return nil;
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 20;
+    return 2;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

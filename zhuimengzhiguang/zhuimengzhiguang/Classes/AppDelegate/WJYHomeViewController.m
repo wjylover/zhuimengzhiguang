@@ -8,6 +8,10 @@
 
 #import "WJYHomeViewController.h"
 #import "HotContentViewController.h"
+#import "WJYScenerySpotViewController.h"
+#import "ScenerySpotContent.h"
+#import "ScenerySpot.h"
+#import "WJYCityViewController.h"
 #import "Hot.h"
 #import "City.h"
 #import <CoreLocation/CoreLocation.h>
@@ -17,6 +21,7 @@
 #import <UIImageView+WebCache.h>
 #import <SDCycleScrollView.h>
 #import <MJRefresh.h>
+#define kImageHight [UIScreen mainScreen].bounds.size.width / (490 / 285.0)
 
 @interface WJYHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>
 // 轮播图控件
@@ -25,7 +30,10 @@
 @property (nonatomic, strong) NSMutableArray *carouselImageArray;
 @property (nonatomic, strong) NSMutableArray *carouselTextArray;
 @property (nonatomic, strong) NSMutableArray *cityListArray;
+// 热门城市数据
 @property (nonatomic, strong) NSMutableArray *homeHotArray;
+// 普通城市景点数据
+@property (nonatomic, strong) NSMutableArray *scenicSpotArray;
 
 @property (weak, nonatomic) IBOutlet UITableView *homeTableview;
 // 定位服务
@@ -41,7 +49,6 @@
 
 @implementation WJYHomeViewController
 
-static NSInteger page = 1;
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -71,24 +78,34 @@ static NSInteger page = 1;
                 break;
             }
         }
-        _homeHotArray = [NSMutableArray arrayWithCapacity:20];
-        [[WJYDataManager sharedManager] getHomeHotDataArrayWithCityID:_cityID Page:page];
-        [WJYDataManager sharedManager].homeHotBlock = ^(){
-            [_homeHotArray addObjectsFromArray:[WJYDataManager sharedManager].homeHotDataArray];
-            [self.homeTableview reloadData];
-                [self.homeTableview.mj_footer endRefreshing];
-            if ([WJYDataManager sharedManager].homeHotDataArray.count == 0) {
-                
-                [self.homeTableview.mj_footer endRefreshingWithNoMoreData];
-            }
+        _scenicSpotArray = [NSMutableArray arrayWithCapacity:20];
+        
+        [[WJYDataManager sharedManager] getScenicSpotDataArrayWithCityID:_cityID];
+        
+        [WJYDataManager sharedManager].scenerySpotBlock = ^(){
+        [_scenicSpotArray addObjectsFromArray:[WJYDataManager sharedManager].scenerySpotDataArray];
+        [self.homeTableview reloadData];
+        
         };
+
+//        _homeHotArray = [NSMutableArray arrayWithCapacity:20];
+//        [[WJYDataManager sharedManager] getHomeHotDataArrayWithCityID:_cityID Page:page];
+//        [WJYDataManager sharedManager].homeHotBlock = ^(){
+//            [_homeHotArray addObjectsFromArray:[WJYDataManager sharedManager].homeHotDataArray];
+//            [self.homeTableview reloadData];
+//                [self.homeTableview.mj_footer endRefreshing];
+//            if ([WJYDataManager sharedManager].homeHotDataArray.count == 0) {
+//                
+//                [self.homeTableview.mj_footer endRefreshingWithNoMoreData];
+//            }
+//        };
     };
 }
 
 // 加载数据
 - (void)loadData
 {
-    [[WJYDataManager sharedManager] getHomeHotDataArrayWithCityID:_cityID Page:page];
+    //[[WJYDataManager sharedManager] getHomeHotDataArrayWithCityID:_cityID Page:page];
 
 }
 
@@ -113,21 +130,29 @@ static NSInteger page = 1;
     }
     [self.manager startUpdatingLocation];
     
-    self.homeTableview.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        page ++;
-        [self loadData];
-    }];
+//    self.homeTableview.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+//        page ++;
+//        [self loadData];
+//    }];
+    self.navigationController.navigationBar.translucent = NO;
 
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.hidesBottomBarWhenPushed=YES;
-    HotContentViewController *hotContentVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HotContent"];
-    hotContentVC.hot = self.homeHotArray[indexPath.row];
-    [self showViewController:hotContentVC sender:nil];
-    self.hidesBottomBarWhenPushed=NO;
+    [[WJYDataManager sharedManager] getScenicSpotContentArrayWithTypeID:[_scenicSpotArray[indexPath.row] typeID]];
+    
+    self.hidesBottomBarWhenPushed = YES;
+    WJYScenerySpotViewController *scenerySpotVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ScenetySpot"];
+    //hotContentVC.hot = self.homeHotArray[indexPath.row];
+    //HomeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    //hotContentVC.headImageView.frame = CGRectMake(0, -kImageHight, self.view.frame.size.width, kImageHight);
+    //hotContentVC.headImageView = [[UIImageView alloc] initWithImage:cell.homeImage.image ];
+
+    scenerySpotVC.headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -kImageHight, self.view.frame.size.width, kImageHight)];
+    [self.navigationController pushViewController:scenerySpotVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 
 }
 // 获取用户当前位置
@@ -166,13 +191,13 @@ static NSInteger page = 1;
 // cell数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _homeHotArray.count;
+    return _scenicSpotArray.count;
 }
 // 定义tableView头区的高度
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 100;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return 100;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -183,9 +208,10 @@ static NSInteger page = 1;
 {
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    Hot *hot = _homeHotArray[indexPath.row];
-    [cell.homeImage sd_setImageWithURL:[NSURL URLWithString:hot.cover] placeholderImage:nil];
-    cell.homeLabel.text = hot.title;
+    ScenerySpot *scenerySpot = _scenicSpotArray[indexPath.row];
+    
+    [cell.homeImage sd_setImageWithURL:[NSURL URLWithString:scenerySpot.image] placeholderImage:nil];
+    cell.homeLabel.text = scenerySpot.name;
     return cell;
 }
 // 轮播图点击事件
@@ -199,6 +225,22 @@ static NSInteger page = 1;
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)cityBarButtonAcyion:(UIBarButtonItem *)sender {
+    self.hidesBottomBarWhenPushed = YES;
+
+    WJYCityViewController *cityVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"City"];
+    [self showViewController:cityVC sender:nil];
+    self.hidesBottomBarWhenPushed = NO;
+    cityVC.reloadBlock = ^(NSInteger cityid){
+//        [self.homeHotArray removeAllObjects];
+        [self.scenicSpotArray removeAllObjects];
+        [self.homeTableview reloadData];
+        //[[WJYDataManager sharedManager] getHomeHotDataArrayWithCityID:cityid Page:page];
+        [[WJYDataManager sharedManager] getScenicSpotDataArrayWithCityID:cityid];
+    };
+
+
+}
 
 
 @end

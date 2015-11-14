@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		55CADAD705F767FF2C794497 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67271C243F2A3DDE50873EC3 /* libPods.a */; };
+		570743771BF5766200C1414D /* WJYCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570743761BF5766200C1414D /* WJYCityViewController.m */; };
+		5707437A1BF5DF5F00C1414D /* ScenerySpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 570743791BF5DF5F00C1414D /* ScenerySpot.m */; };
+		5707437D1BF5FAB600C1414D /* ScenerySpotContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5707437C1BF5FAB600C1414D /* ScenerySpotContent.m */; };
+		570743801BF5FDF900C1414D /* WJYScenerySpotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5707437F1BF5FDF900C1414D /* WJYScenerySpotViewController.m */; };
+		570743871BF61D8200C1414D /* ScenicSpotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 570743851BF61D8200C1414D /* ScenicSpotCell.m */; };
+		570743881BF61D8200C1414D /* ScenicSpotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570743861BF61D8200C1414D /* ScenicSpotCell.xib */; };
 		57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D711BF08CD1006530C1 /* WJYDataManager.m */; };
 		57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D761BF09059006530C1 /* WJYHomeViewController.m */; };
 		57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D7A1BF0BDC0006530C1 /* HotCity.m */; };
 		5726EED61BF31C0300443BFB /* HotContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5726EED51BF31C0300443BFB /* HotContent.m */; };
 		5726EEDB1BF3581700443BFB /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5726EEDA1BF3581700443BFB /* 1.jpg */; };
+		5726EEDD1BF4445800443BFB /* WjyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5726EEDC1BF4445800443BFB /* WjyHeadView.xib */; };
+		5726EEE01BF4447100443BFB /* WJYHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5726EEDF1BF4447100443BFB /* WJYHeadView.m */; };
 		57497D1D1BF20D250012AD33 /* Hot.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D1C1BF20D250012AD33 /* Hot.m */; };
 		57497D201BF2DE690012AD33 /* HotContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D1F1BF2DE690012AD33 /* HotContentViewController.m */; };
 		57497D241BF2EB9D0012AD33 /* HotContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57497D221BF2EB9D0012AD33 /* HotContentCell.m */; };
@@ -53,6 +61,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570743751BF5766200C1414D /* WJYCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYCityViewController.h; sourceTree = "<group>"; };
+		570743761BF5766200C1414D /* WJYCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYCityViewController.m; sourceTree = "<group>"; };
+		570743781BF5DF5F00C1414D /* ScenerySpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenerySpot.h; sourceTree = "<group>"; };
+		570743791BF5DF5F00C1414D /* ScenerySpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScenerySpot.m; sourceTree = "<group>"; };
+		5707437B1BF5FAB600C1414D /* ScenerySpotContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenerySpotContent.h; sourceTree = "<group>"; };
+		5707437C1BF5FAB600C1414D /* ScenerySpotContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScenerySpotContent.m; sourceTree = "<group>"; };
+		5707437E1BF5FDF900C1414D /* WJYScenerySpotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYScenerySpotViewController.h; sourceTree = "<group>"; };
+		5707437F1BF5FDF900C1414D /* WJYScenerySpotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYScenerySpotViewController.m; sourceTree = "<group>"; };
+		570743841BF61D8200C1414D /* ScenicSpotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenicSpotCell.h; sourceTree = "<group>"; };
+		570743851BF61D8200C1414D /* ScenicSpotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScenicSpotCell.m; sourceTree = "<group>"; };
+		570743861BF61D8200C1414D /* ScenicSpotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScenicSpotCell.xib; sourceTree = "<group>"; };
 		57086D701BF08CD1006530C1 /* WJYDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYDataManager.h; sourceTree = "<group>"; };
 		57086D711BF08CD1006530C1 /* WJYDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYDataManager.m; sourceTree = "<group>"; };
 		57086D751BF09059006530C1 /* WJYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WJYHomeViewController.h; path = AppDelegate/WJYHomeViewController.h; sourceTree = "<group>"; };
@@ -62,6 +81,9 @@
 		5726EED41BF31C0300443BFB /* HotContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotContent.h; sourceTree = "<group>"; };
 		5726EED51BF31C0300443BFB /* HotContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotContent.m; sourceTree = "<group>"; };
 		5726EEDA1BF3581700443BFB /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		5726EEDC1BF4445800443BFB /* WjyHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WjyHeadView.xib; sourceTree = "<group>"; };
+		5726EEDE1BF4447100443BFB /* WJYHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYHeadView.h; sourceTree = "<group>"; };
+		5726EEDF1BF4447100443BFB /* WJYHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYHeadView.m; sourceTree = "<group>"; };
 		57497D1B1BF20D250012AD33 /* Hot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hot.h; sourceTree = "<group>"; };
 		57497D1C1BF20D250012AD33 /* Hot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hot.m; sourceTree = "<group>"; };
 		57497D1E1BF2DE690012AD33 /* HotContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotContentViewController.h; sourceTree = "<group>"; };
@@ -189,6 +211,10 @@
 				57086D761BF09059006530C1 /* WJYHomeViewController.m */,
 				57497D1E1BF2DE690012AD33 /* HotContentViewController.h */,
 				57497D1F1BF2DE690012AD33 /* HotContentViewController.m */,
+				570743751BF5766200C1414D /* WJYCityViewController.h */,
+				570743761BF5766200C1414D /* WJYCityViewController.m */,
+				5707437E1BF5FDF900C1414D /* WJYScenerySpotViewController.h */,
+				5707437F1BF5FDF900C1414D /* WJYScenerySpotViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -205,6 +231,10 @@
 				57497D1C1BF20D250012AD33 /* Hot.m */,
 				5726EED41BF31C0300443BFB /* HotContent.h */,
 				5726EED51BF31C0300443BFB /* HotContent.m */,
+				570743781BF5DF5F00C1414D /* ScenerySpot.h */,
+				570743791BF5DF5F00C1414D /* ScenerySpot.m */,
+				5707437B1BF5FAB600C1414D /* ScenerySpotContent.h */,
+				5707437C1BF5FAB600C1414D /* ScenerySpotContent.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -226,6 +256,12 @@
 				57497D211BF2EB9D0012AD33 /* HotContentCell.h */,
 				57497D221BF2EB9D0012AD33 /* HotContentCell.m */,
 				57497D231BF2EB9D0012AD33 /* HotContentCell.xib */,
+				5726EEDC1BF4445800443BFB /* WjyHeadView.xib */,
+				5726EEDE1BF4447100443BFB /* WJYHeadView.h */,
+				5726EEDF1BF4447100443BFB /* WJYHeadView.m */,
+				570743841BF61D8200C1414D /* ScenicSpotCell.h */,
+				570743851BF61D8200C1414D /* ScenicSpotCell.m */,
+				570743861BF61D8200C1414D /* ScenicSpotCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -599,6 +635,7 @@
 				TargetAttributes = {
 					57DEF4ED1BF040A200E0134A = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = EPF635AX3J;
 					};
 				};
 			};
@@ -625,6 +662,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570743881BF61D8200C1414D /* ScenicSpotCell.xib in Resources */,
 				C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C2EB19791BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib in Resources */,
@@ -633,6 +671,7 @@
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				5726EEDB1BF3581700443BFB /* 1.jpg in Resources */,
 				C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */,
+				5726EEDD1BF4445800443BFB /* WjyHeadView.xib in Resources */,
 				C27714151BF20A8100953289 /* companion_bg_blue.png in Resources */,
 				57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */,
 				576FB6601BF1D7C900577BB4 /* HomeCell.xib in Resources */,
@@ -698,7 +737,10 @@
 				C27713CD1BF1CD4F00953289 /* RecommandDataManager.m in Sources */,
 				C27713C91BF1CD4F00953289 /* FZQRecommandTableViewCell.m in Sources */,
 				576FB65F1BF1D7C900577BB4 /* HomeCell.m in Sources */,
+				5707437D1BF5FAB600C1414D /* ScenerySpotContent.m in Sources */,
 				57497D1D1BF20D250012AD33 /* Hot.m in Sources */,
+				570743801BF5FDF900C1414D /* WJYScenerySpotViewController.m in Sources */,
+				570743871BF61D8200C1414D /* ScenicSpotCell.m in Sources */,
 				C27713D11BF1CD4F00953289 /* SCPopView.m in Sources */,
 				C27714211BF23AA900953289 /* ShowInformationDataManager.m in Sources */,
 				C27713D01BF1CD4F00953289 /* SCNavTabBar.m in Sources */,
@@ -710,9 +752,11 @@
 				C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */,
 				C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */,
 				57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */,
+				5726EEE01BF4447100443BFB /* WJYHeadView.m in Sources */,
 				C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */,
 				C27713CC1BF1CD4F00953289 /* Mileage.m in Sources */,
 				C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */,
+				5707437A1BF5DF5F00C1414D /* ScenerySpot.m in Sources */,
 				57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */,
 				C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */,
 				57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */,
@@ -725,6 +769,7 @@
 				5726EED61BF31C0300443BFB /* HotContent.m in Sources */,
 				57497D201BF2DE690012AD33 /* HotContentViewController.m in Sources */,
 				C277141E1BF2387900953289 /* Loglist.m in Sources */,
+				570743771BF5766200C1414D /* WJYCityViewController.m in Sources */,
 				57497D241BF2EB9D0012AD33 /* HotContentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -838,9 +883,10 @@
 			baseConfigurationReference = 7CE2060FD7B92530083339EA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/PrefixHeader.pch;
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -853,9 +899,10 @@
 			baseConfigurationReference = 8A5483E820C11A481B12ADA9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/PrefixHeader.pch;
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
