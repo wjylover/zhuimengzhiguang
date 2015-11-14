@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *pinLunBtn;
 
-@property (weak, nonatomic) IBOutlet UILabel *pinLunNumberLabel;
+
 
 
 @end

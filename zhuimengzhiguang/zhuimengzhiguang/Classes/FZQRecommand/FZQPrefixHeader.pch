@@ -20,8 +20,11 @@
 //详情控制器
 #import "ShowInformationCollectionViewController.h"
 
+//评论控制器
+#import "PinLunTableViewController.h"
 
-
+//图片展示页面
+#import "ShowPhotoViewController.h"
 
 //自定义cell
 //发现cell
@@ -37,10 +40,15 @@
 
 #import "CollectionFooterReusableView.h"
 
+#import "pinLunTableViewCell.h"
+
+
+
 //数据模型
 #import "User.h"
 #import "Mileage.h"
 #import "Loglist.h"
+#import "pinLun.h"
 
 //帮助类
 #import "RecommandDataManager.h"
@@ -57,5 +65,18 @@
 
 //上拉刷新
 #import "MJRefresh.h"
+
+//动画表示图
+#import "ADLivelyTableView.h"
+
+//展示图片
+#import "PhotoCotentView.h"
+#import "PhotoBroswerVC.h"
+
+//提示图片
+#import "MONActivityIndicatorView.h"
+
+//动画按钮
+#import "CHTumblrMenuView.h"
 
 #endif /* FZQPrefixHeader_pch */

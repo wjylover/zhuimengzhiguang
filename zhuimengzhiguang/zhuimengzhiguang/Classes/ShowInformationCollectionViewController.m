@@ -35,7 +35,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     //注册item
     [self.collectionView registerNib:[UINib nibWithNibName:@"ShowInforCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
     
@@ -48,28 +48,34 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     //添加视图
     [self loadViews];
     
-   
-   
+    
+    //设置contentInset属性(上左下右的值),重点
+    self.collectionView.contentInset = UIEdgeInsetsMake(imageHeight, 0, 0, 0);
+    
+    //自定义cell的高度
+  
+
     //调用block
     [ShowInformationDataManager sharedShowInformationDataManager].getValue = ^(User *user,Mileage *mileage){
     
         
-            //设置contentInset属性(上左下右的值),重点
-            self.collectionView.contentInset = UIEdgeInsetsMake(imageHeight, 0, 0, 0);
+        
         
             //获得图片网址
             NSString *urlString = user.spaceImage;
         
         
-            _spaceImgView.frame = CGRectMake(0, -imageHeight, kUIScreenWidth , imageHeight);
+        
         
             //设置变焦图片的大小和位置
             [_spaceImgView sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"placeImage5.jpg"]];
         
+        //设置图片视图的内容尺寸
+        _spaceImgView.contentMode = UIViewContentModeScaleToFill;
         
+        _spaceImgView.frame = CGRectMake(0, -imageHeight, kUIScreenWidth , imageHeight);
             //设置图片的高度和宽度都改变(必须设置,否则只有高度改变)
-            _spaceImgView.contentMode = UIViewContentModeScaleAspectFill;
-            
+        
             //将图片加入集合视图上
             [self.collectionView addSubview:_spaceImgView];
             
@@ -97,7 +103,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     
     self.collectionView.alwaysBounceVertical = YES;
     
-    //self.collectionView.alwaysBounceHorizontal = YES;
+    //self.collectionView.alwaysBounceHorizontal = NO;
     _spaceImgView = [[UIImageView alloc] init];
     
     //打开图片视图的交互
@@ -167,10 +173,12 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat y = scrollView.contentOffset.y;
     if (y<-imageHeight) {
+        NSLog(@"%.2f",_spaceImgView.frame.size.height);
         CGRect frame = _spaceImgView.frame;
         frame.origin.y = y;
         frame.size.height = -y;
         _spaceImgView.frame = frame;
+        
     }
     
 }
@@ -187,7 +195,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 
 //设置总的分区数
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    NSLog(@"%ld",[ShowInformationDataManager sharedShowInformationDataManager].allLogs.count);
+   // NSLog(@"%ld",[ShowInformationDataManager sharedShowInformationDataManager].allLogs.count);
 //根据日志数组的个数分区
     return [ShowInformationDataManager sharedShowInformationDataManager].allLogs.count;
     
@@ -219,7 +227,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 //设置每个分区的头视图的大小
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
-  CGSize size =  CGSizeMake(kUIScreenWidth, 150);
+  CGSize size =  CGSizeMake(kUIScreenWidth, 100);
     return size;
 }
 
@@ -239,7 +247,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     return size;
     }
     else if(log.imageUrls.count == 1){
-        CGSize size = CGSizeMake(kUIScreenWidth-20, kUIScreenHeight-100);
+        CGSize size = CGSizeMake(kUIScreenWidth-20, 300);
         return size;
     }
     return CGSizeMake(0, 0);
@@ -259,35 +267,83 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 //设置头视图或尾视图
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-   
-    //根据section获得日志对象
-    Loglist *log = [ShowInformationDataManager sharedShowInformationDataManager].allLogs[indexPath.section];
-    
-    NSLog(@"11111111111111%@",log);
-    
-    //获得区头视图
+   //获得区头视图
     CollectionHeaderReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reuseHeaderIdentifier forIndexPath:indexPath];
     
     //获得区尾视图
     CollectionFooterReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:reuseFooterIdentifier forIndexPath:indexPath];
     
+    //根据section获得日志对象
+    Loglist *log = [ShowInformationDataManager sharedShowInformationDataManager].allLogs[indexPath.section];
+ 
+    //设置区头视图的内容
+    header.detailLabel.text = log.logcontent;
+    
+    //设置区尾视图内容
+    NSString *pinLun =[NSString stringWithFormat:@"%ld",log.commentsNum];
+   //设置评论按钮的标题
+    [footer.pinLunBtn setTitle:pinLun forState:UIControlStateNormal];
+    //绑定按钮事件
+    [footer.pinLunBtn addTarget:self action:@selector(pinLunBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
     //如果类型是区头视图
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-    
-        //设置区头视图的内容
-        header.detailLabel.text = log.logcontent;
-        
-        return header;
+      return header;
     }
     
-    else if([kind isEqualToString:UICollectionElementKindSectionFooter]){
-        //设置区尾视图内容
-        NSString *pinLun =[NSString stringWithFormat:@"%ld",log.commentsNum];
-        footer.pinLunNumberLabel.text = pinLun;
-        //NSLog(@"%@",footer.pinLunNumberLabel.text );
-        return footer;
+    if([kind isEqualToString:UICollectionElementKindSectionFooter]){
+      return footer;
     }
     return nil;
+}
+
+
+//点击每个item,跳转到图片展示界面
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //根据section获得每个日志对象
+    Loglist *logList = [ShowInformationDataManager sharedShowInformationDataManager].allLogs[indexPath.section];
+    
+    //创建图片显示控制器
+    ShowPhotoViewController *photoVC = [[ShowPhotoViewController alloc]init];
+//    
+    UINavigationController *photoNC = [[UINavigationController alloc] initWithRootViewController:photoVC];
+    
+    photoNC.navigationBar.backgroundColor = [UIColor lightGrayColor];
+    
+    //传值
+    photoVC.log = logList;
+    
+    //跳转页面
+    [self showDetailViewController:photoNC sender:nil];
+    
+  
+    
+}
+
+
+//点击评论按钮事件,跳转到评论详情页面
+-(void)pinLunBtnAction:(UIButton *)sender{
+    //NSLog(@"%@",sender.titleLabel.text);
+    
+    //跳转到评论视图控制器中
+    PinLunTableViewController *pinLnTVC = [[PinLunTableViewController alloc] init];
+    
+    //设置导航控制器
+    UINavigationController *pinLunNC = [[UINavigationController alloc] initWithRootViewController:pinLnTVC];
+
+    //根据按钮的标题判断日志对象
+    for (Loglist *log in [ShowInformationDataManager sharedShowInformationDataManager].allLogs) {
+        NSString *commentsNumber = [NSString stringWithFormat:@"%ld",log.commentsNum] ;
+        if ([commentsNumber isEqualToString:sender.titleLabel.text] ) {
+            //传值
+            pinLnTVC.logList = log;
+            break ;
+        }
+    }
+    //跳转
+    [self showViewController:pinLunNC sender:nil];
+    
 }
 
 @end

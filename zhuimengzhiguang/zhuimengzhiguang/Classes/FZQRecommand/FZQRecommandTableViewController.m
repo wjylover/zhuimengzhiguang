@@ -105,11 +105,7 @@ static NSString *const cellIdentify = @"recommandCellID";
     return cell;
 }
 
-//
-//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-//    
-//    return 49;
-//}
+
 
 
 //设置表示图的头视图大小
@@ -136,11 +132,6 @@ static NSString *const cellIdentify = @"recommandCellID";
     [view addSubview:label];
     view.backgroundColor = [UIColor clearColor];
     
-    
-//    NSArray *array = [UIFont familyNames];
-//    for (id object in array) {
-//        NSLog(@"%@",object);
-//    }
     
     return view;
 }

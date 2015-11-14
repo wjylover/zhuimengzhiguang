@@ -22,16 +22,29 @@
     
     //推荐视图控制器
     FZQRecommandTableViewController *recommandTVC = [[FZQRecommandTableViewController alloc] init];
-    recommandTVC.title = @"推荐";
+    recommandTVC.title = @"";
+    
+    
     
     //创建导航栏视图控制器
     SCNavTabBarController *scNTC = [[SCNavTabBarController alloc] initWithSubViewControllers:@[recommandTVC]];
     scNTC.scrollAnimation = YES;
     scNTC.mainViewBounces = YES;
-    scNTC.navTabBarLineColor = [UIColor redColor];
     [scNTC addParentController:self];
   
-  
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kUIScreenWidth, 44)];
+    view.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((kUIScreenWidth-20)/2, 10, (kUIScreenWidth-20)/2, 24)];
+    label.text = @"说走就走的旅行";
+    label.textAlignment = NSTextAlignmentCenter;
+    [view addSubview:label];
+    label.center = view.center;
+    view.backgroundColor = [UIColor colorWithRed:104/255.0 green:185/255.0 blue:231/255.0 alpha:1];
+   
+ 
+    [scNTC.view addSubview:view];
+    
     
 }
 
@@ -55,14 +68,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

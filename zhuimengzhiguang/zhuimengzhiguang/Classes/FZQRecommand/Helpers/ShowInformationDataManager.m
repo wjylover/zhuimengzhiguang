@@ -88,9 +88,9 @@
             //校验
 //            NSLog(@"1111111%@",user.spaceImage);
 //            NSLog(@"122222222222%@",mileage);
-            for (Loglist *log in _logArray) {
-                NSLog(@"2111111111111%@",log);
-            }
+//            for (Loglist *log in _logArray) {
+//                NSLog(@"2111111111111%@",log);
+//            }
             
             //回到主线程
             dispatch_async(dispatch_get_main_queue(), ^{

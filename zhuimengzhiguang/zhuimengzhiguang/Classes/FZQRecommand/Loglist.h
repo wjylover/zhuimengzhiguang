@@ -11,7 +11,7 @@
 @interface Loglist : NSObject
 
 //日志Id
-@property(nonatomic,copy)NSString *logId;
+@property(nonatomic,assign)NSInteger logId;
 //日志内容
 @property(nonatomic,copy)NSString *logcontent;
 //小图片url

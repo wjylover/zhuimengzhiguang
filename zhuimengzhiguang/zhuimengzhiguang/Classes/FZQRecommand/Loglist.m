@@ -19,7 +19,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"logId=%@", _logId];
+    return [NSString stringWithFormat:@"logId=%ld", _logId];
 }
 
 @end

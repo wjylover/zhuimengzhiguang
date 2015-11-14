@@ -14,7 +14,7 @@
 #define kUIScreenHeight [UIScreen mainScreen].bounds.size.height
 
 //底片图片的高
-#define imageHeight 150
+#define imageHeight 200
 
 
 //推荐页面
@@ -30,7 +30,10 @@
 
 //评论接口
 //参数:logId,每个cell的评论
-#define kDetailRecommandURL @"http://api.xingzhe01.com/xingzhe/personal/comments_details?logId=&commentId=0&redType=-1&flag=0&successToken=?&action=%2Fpersonal%2Fcomments_details"
+#define kDetailRecommandURL @"http://api.xingzhe01.com/xingzhe/personal/comments_details?logId="
+
+#define kDetailRecommandURL1 @"&commentId=0&redType=-1&flag=0&successToken=?&action=%2Fpersonal%2Fcomments_details"
+
 
 //留言板
 #define kMessageURL @"http://api.xingzhe01.com/xingzhe/message/list2?&action=%2Fmessage%2Flist2&lastMessageId=0"
