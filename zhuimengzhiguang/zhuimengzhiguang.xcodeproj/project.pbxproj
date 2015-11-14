@@ -46,6 +46,28 @@
 		C277141B1BF22FED00953289 /* ShowInformationCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C277141A1BF22FED00953289 /* ShowInformationCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C277141E1BF2387900953289 /* Loglist.m in Sources */ = {isa = PBXBuildFile; fileRef = C277141D1BF2387900953289 /* Loglist.m */; settings = {ASSET_TAGS = (); }; };
 		C27714211BF23AA900953289 /* ShowInformationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C27714201BF23AA900953289 /* ShowInformationDataManager.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43F31BF6E45400BFDD66 /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43BC1BF6E45400BFDD66 /* DestinationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43F41BF6E45400BFDD66 /* RegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43BF1BF6E45400BFDD66 /* RegionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43F51BF6E45400BFDD66 /* DesCityCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43C21BF6E45400BFDD66 /* DesCityCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43F61BF6E45400BFDD66 /* DesCityPriceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43C41BF6E45400BFDD66 /* DesCityPriceTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43F71BF6E45400BFDD66 /* DestinationContinentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43C91BF6E45400BFDD66 /* DestinationContinentsModel.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43F81BF6E45400BFDD66 /* DestinationCountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43CB1BF6E45400BFDD66 /* DestinationCountryModel.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43F91BF6E45400BFDD66 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43CE1BF6E45400BFDD66 /* CityModel.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43FA1BF6E45400BFDD66 /* CityPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43D01BF6E45400BFDD66 /* CityPriceModel.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43FB1BF6E45400BFDD66 /* CountryDesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43D21BF6E45400BFDD66 /* CountryDesModel.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43FC1BF6E45400BFDD66 /* CityRequestHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43D71BF6E45400BFDD66 /* CityRequestHandle.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43FD1BF6E45400BFDD66 /* DestinationRequestHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43DA1BF6E45400BFDD66 /* DestinationRequestHandle.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43FE1BF6E45400BFDD66 /* SJPbulicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43DF1BF6E45400BFDD66 /* SJPbulicTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		C27B43FF1BF6E45400BFDD66 /* SJPbulicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27B43E01BF6E45400BFDD66 /* SJPbulicTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C27B44001BF6E45400BFDD66 /* SJPublicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43E21BF6E45400BFDD66 /* SJPublicObject.m */; settings = {ASSET_TAGS = (); }; };
+		C27B44011BF6E45400BFDD66 /* SJPublicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43E41BF6E45400BFDD66 /* SJPublicView.m */; settings = {ASSET_TAGS = (); }; };
+		C27B44021BF6E45400BFDD66 /* SJPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43E61BF6E45400BFDD66 /* SJPublicViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C27B44031BF6E45400BFDD66 /* DestinationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43E91BF6E45400BFDD66 /* DestinationCell.m */; settings = {ASSET_TAGS = (); }; };
+		C27B44041BF6E45400BFDD66 /* DestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27B43EA1BF6E45400BFDD66 /* DestinationCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C27B44051BF6E45400BFDD66 /* CityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43EE1BF6E45400BFDD66 /* CityCell.m */; settings = {ASSET_TAGS = (); }; };
+		C27B44061BF6E45400BFDD66 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27B43EF1BF6E45400BFDD66 /* CityCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C27B44071BF6E45400BFDD66 /* CityPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27B43F11BF6E45400BFDD66 /* CityPriceCell.m */; settings = {ASSET_TAGS = (); }; };
+		C27B44081BF6E45400BFDD66 /* CityPriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27B43F21BF6E45400BFDD66 /* CityPriceCell.xib */; settings = {ASSET_TAGS = (); }; };
 		C27CAE3A1BF6C541004FCC38 /* WJYScenerySpotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27CAE391BF6C541004FCC38 /* WJYScenerySpotViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C27CAE3D1BF6C561004FCC38 /* ScenerySpotContent.m in Sources */ = {isa = PBXBuildFile; fileRef = C27CAE3C1BF6C561004FCC38 /* ScenerySpotContent.m */; settings = {ASSET_TAGS = (); }; };
 		C27CAE401BF6C57A004FCC38 /* ScenerySpot.m in Sources */ = {isa = PBXBuildFile; fileRef = C27CAE3F1BF6C57A004FCC38 /* ScenerySpot.m */; settings = {ASSET_TAGS = (); }; };
@@ -125,15 +147,6 @@
 		C2D9F36E1BF61ED6002CA9E0 /* P%D6YJ9@9WDBPTPDV_95RC3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D9F36A1BF61ED6002CA9E0 /* P%D6YJ9@9WDBPTPDV_95RC3.jpg */; settings = {ASSET_TAGS = (); }; };
 		C2D9F3741BF61F40002CA9E0 /* fff.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D9F3731BF61F40002CA9E0 /* fff.jpg */; settings = {ASSET_TAGS = (); }; };
 		C2D9F3761BF6212E002CA9E0 /* tab_bar_button_compose_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2D9F3751BF6212E002CA9E0 /* tab_bar_button_compose_unselected@2x.png */; settings = {ASSET_TAGS = (); }; };
-		C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB191B1BF1C83A005D29C9 /* SJPublicObject.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19231BF1C83A005D29C9 /* SJPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB191D1BF1C83A005D29C9 /* SJPublicViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19761BF1E8F1005D29C9 /* SJPbulicTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19791BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EB19771BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		C2EB19821BF1EEE0005D29C9 /* DestinationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EB19801BF1EEE0005D29C9 /* DestinationCell.m */; settings = {ASSET_TAGS = (); }; };
-		C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EB19811BF1EEE0005D29C9 /* DestinationCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +222,47 @@
 		C277141D1BF2387900953289 /* Loglist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loglist.m; sourceTree = "<group>"; };
 		C277141F1BF23AA900953289 /* ShowInformationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowInformationDataManager.h; sourceTree = "<group>"; };
 		C27714201BF23AA900953289 /* ShowInformationDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInformationDataManager.m; sourceTree = "<group>"; };
+		C27B43BB1BF6E45400BFDD66 /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationViewController.h; sourceTree = "<group>"; };
+		C27B43BC1BF6E45400BFDD66 /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationViewController.m; sourceTree = "<group>"; };
+		C27B43BE1BF6E45400BFDD66 /* RegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionViewController.h; sourceTree = "<group>"; };
+		C27B43BF1BF6E45400BFDD66 /* RegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionViewController.m; sourceTree = "<group>"; };
+		C27B43C11BF6E45400BFDD66 /* DesCityCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesCityCollectionViewController.h; sourceTree = "<group>"; };
+		C27B43C21BF6E45400BFDD66 /* DesCityCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesCityCollectionViewController.m; sourceTree = "<group>"; };
+		C27B43C31BF6E45400BFDD66 /* DesCityPriceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesCityPriceTableViewController.h; sourceTree = "<group>"; };
+		C27B43C41BF6E45400BFDD66 /* DesCityPriceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesCityPriceTableViewController.m; sourceTree = "<group>"; };
+		C27B43C81BF6E45400BFDD66 /* DestinationContinentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationContinentsModel.h; sourceTree = "<group>"; };
+		C27B43C91BF6E45400BFDD66 /* DestinationContinentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationContinentsModel.m; sourceTree = "<group>"; };
+		C27B43CA1BF6E45400BFDD66 /* DestinationCountryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationCountryModel.h; sourceTree = "<group>"; };
+		C27B43CB1BF6E45400BFDD66 /* DestinationCountryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationCountryModel.m; sourceTree = "<group>"; };
+		C27B43CD1BF6E45400BFDD66 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
+		C27B43CE1BF6E45400BFDD66 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
+		C27B43CF1BF6E45400BFDD66 /* CityPriceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityPriceModel.h; sourceTree = "<group>"; };
+		C27B43D01BF6E45400BFDD66 /* CityPriceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityPriceModel.m; sourceTree = "<group>"; };
+		C27B43D11BF6E45400BFDD66 /* CountryDesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryDesModel.h; sourceTree = "<group>"; };
+		C27B43D21BF6E45400BFDD66 /* CountryDesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryDesModel.m; sourceTree = "<group>"; };
+		C27B43D61BF6E45400BFDD66 /* CityRequestHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityRequestHandle.h; sourceTree = "<group>"; };
+		C27B43D71BF6E45400BFDD66 /* CityRequestHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityRequestHandle.m; sourceTree = "<group>"; };
+		C27B43D91BF6E45400BFDD66 /* DestinationRequestHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationRequestHandle.h; sourceTree = "<group>"; };
+		C27B43DA1BF6E45400BFDD66 /* DestinationRequestHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationRequestHandle.m; sourceTree = "<group>"; };
+		C27B43DC1BF6E45400BFDD66 /* URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URL.h; sourceTree = "<group>"; };
+		C27B43DE1BF6E45400BFDD66 /* SJPbulicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPbulicTableViewCell.h; sourceTree = "<group>"; };
+		C27B43DF1BF6E45400BFDD66 /* SJPbulicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPbulicTableViewCell.m; sourceTree = "<group>"; };
+		C27B43E01BF6E45400BFDD66 /* SJPbulicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJPbulicTableViewCell.xib; sourceTree = "<group>"; };
+		C27B43E11BF6E45400BFDD66 /* SJPublicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPublicObject.h; sourceTree = "<group>"; };
+		C27B43E21BF6E45400BFDD66 /* SJPublicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPublicObject.m; sourceTree = "<group>"; };
+		C27B43E31BF6E45400BFDD66 /* SJPublicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPublicView.h; sourceTree = "<group>"; };
+		C27B43E41BF6E45400BFDD66 /* SJPublicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPublicView.m; sourceTree = "<group>"; };
+		C27B43E51BF6E45400BFDD66 /* SJPublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPublicViewController.h; sourceTree = "<group>"; };
+		C27B43E61BF6E45400BFDD66 /* SJPublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPublicViewController.m; sourceTree = "<group>"; };
+		C27B43E81BF6E45400BFDD66 /* DestinationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationCell.h; sourceTree = "<group>"; };
+		C27B43E91BF6E45400BFDD66 /* DestinationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationCell.m; sourceTree = "<group>"; };
+		C27B43EA1BF6E45400BFDD66 /* DestinationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationCell.xib; sourceTree = "<group>"; };
+		C27B43ED1BF6E45400BFDD66 /* CityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityCell.h; sourceTree = "<group>"; };
+		C27B43EE1BF6E45400BFDD66 /* CityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityCell.m; sourceTree = "<group>"; };
+		C27B43EF1BF6E45400BFDD66 /* CityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
+		C27B43F01BF6E45400BFDD66 /* CityPriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityPriceCell.h; sourceTree = "<group>"; };
+		C27B43F11BF6E45400BFDD66 /* CityPriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityPriceCell.m; sourceTree = "<group>"; };
+		C27B43F21BF6E45400BFDD66 /* CityPriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityPriceCell.xib; sourceTree = "<group>"; };
 		C27CAE381BF6C541004FCC38 /* WJYScenerySpotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYScenerySpotViewController.h; sourceTree = "<group>"; };
 		C27CAE391BF6C541004FCC38 /* WJYScenerySpotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYScenerySpotViewController.m; sourceTree = "<group>"; };
 		C27CAE3B1BF6C561004FCC38 /* ScenerySpotContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenerySpotContent.h; sourceTree = "<group>"; };
@@ -343,24 +397,6 @@
 		C2D9F36A1BF61ED6002CA9E0 /* P%D6YJ9@9WDBPTPDV_95RC3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "P%D6YJ9@9WDBPTPDV_95RC3.jpg"; sourceTree = "<group>"; };
 		C2D9F3731BF61F40002CA9E0 /* fff.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fff.jpg; sourceTree = "<group>"; };
 		C2D9F3751BF6212E002CA9E0 /* tab_bar_button_compose_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_button_compose_unselected@2x.png"; sourceTree = "<group>"; };
-		C2EB19091BF1C83A005D29C9 /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationViewController.h; sourceTree = "<group>"; };
-		C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationViewController.m; sourceTree = "<group>"; };
-		C2EB190E1BF1C83A005D29C9 /* DestinationContinentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DestinationContinentsModel.h; path = ../DestinationContinentsModel.h; sourceTree = "<group>"; };
-		C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DestinationContinentsModel.m; path = ../DestinationContinentsModel.m; sourceTree = "<group>"; };
-		C2EB19101BF1C83A005D29C9 /* DestinationCountryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DestinationCountryModel.h; path = ../DestinationCountryModel.h; sourceTree = "<group>"; };
-		C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DestinationCountryModel.m; path = ../DestinationCountryModel.m; sourceTree = "<group>"; };
-		C2EB19171BF1C83A005D29C9 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		C2EB19181BF1C83A005D29C9 /* URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URL.h; sourceTree = "<group>"; };
-		C2EB191A1BF1C83A005D29C9 /* SJPublicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPublicObject.h; sourceTree = "<group>"; };
-		C2EB191B1BF1C83A005D29C9 /* SJPublicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPublicObject.m; sourceTree = "<group>"; };
-		C2EB191C1BF1C83A005D29C9 /* SJPublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPublicViewController.h; sourceTree = "<group>"; };
-		C2EB191D1BF1C83A005D29C9 /* SJPublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPublicViewController.m; sourceTree = "<group>"; };
-		C2EB19751BF1E8F1005D29C9 /* SJPbulicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPbulicTableViewCell.h; sourceTree = "<group>"; };
-		C2EB19761BF1E8F1005D29C9 /* SJPbulicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPbulicTableViewCell.m; sourceTree = "<group>"; };
-		C2EB19771BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJPbulicTableViewCell.xib; sourceTree = "<group>"; };
-		C2EB197F1BF1EEE0005D29C9 /* DestinationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationCell.h; sourceTree = "<group>"; };
-		C2EB19801BF1EEE0005D29C9 /* DestinationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationCell.m; sourceTree = "<group>"; };
-		C2EB19811BF1EEE0005D29C9 /* DestinationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,9 +483,9 @@
 		57BB40F81BF041AA00EB915E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C27B43B91BF6E45400BFDD66 /* SJPublicWork */,
 				C26ADC241BF429F400010217 /* General */,
 				C27713AD1BF1CD4F00953289 /* FZQRecommand */,
-				C2EB19071BF1C83A005D29C9 /* SJPublicWork */,
 				57BB40F91BF041AA00EB915E /* AppDelegate */,
 				57086D6F1BF08C91006530C1 /* Helpers */,
 				57086D781BF09513006530C1 /* Models */,
@@ -748,6 +784,182 @@
 				C27714141BF20A8100953289 /* companion_bg_blue.png */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		C27B43B91BF6E45400BFDD66 /* SJPublicWork */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43BA1BF6E45400BFDD66 /* Controller */,
+				C27B43C61BF6E45400BFDD66 /* Help */,
+				C27B43C71BF6E45400BFDD66 /* models */,
+				C27B43D41BF6E45400BFDD66 /* RequestHandle */,
+				C27B43DB1BF6E45400BFDD66 /* RequestUrl */,
+				C27B43DD1BF6E45400BFDD66 /* SJPublic */,
+				C27B43E71BF6E45400BFDD66 /* View */,
+				C27B43EC1BF6E45400BFDD66 /* 国家城市列表 */,
+			);
+			path = SJPublicWork;
+			sourceTree = "<group>";
+		};
+		C27B43BA1BF6E45400BFDD66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43BB1BF6E45400BFDD66 /* DestinationViewController.h */,
+				C27B43BC1BF6E45400BFDD66 /* DestinationViewController.m */,
+				C27B43BD1BF6E45400BFDD66 /* 国家城市列表 */,
+				C27B43C01BF6E45400BFDD66 /* 国家城市详情 */,
+				C27B43C51BF6E45400BFDD66 /* 目的地列表 */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C27B43BD1BF6E45400BFDD66 /* 国家城市列表 */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43BE1BF6E45400BFDD66 /* RegionViewController.h */,
+				C27B43BF1BF6E45400BFDD66 /* RegionViewController.m */,
+			);
+			path = "国家城市列表";
+			sourceTree = "<group>";
+		};
+		C27B43C01BF6E45400BFDD66 /* 国家城市详情 */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43C11BF6E45400BFDD66 /* DesCityCollectionViewController.h */,
+				C27B43C21BF6E45400BFDD66 /* DesCityCollectionViewController.m */,
+				C27B43C31BF6E45400BFDD66 /* DesCityPriceTableViewController.h */,
+				C27B43C41BF6E45400BFDD66 /* DesCityPriceTableViewController.m */,
+			);
+			path = "国家城市详情";
+			sourceTree = "<group>";
+		};
+		C27B43C51BF6E45400BFDD66 /* 目的地列表 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "目的地列表";
+			sourceTree = "<group>";
+		};
+		C27B43C61BF6E45400BFDD66 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		C27B43C71BF6E45400BFDD66 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43C81BF6E45400BFDD66 /* DestinationContinentsModel.h */,
+				C27B43C91BF6E45400BFDD66 /* DestinationContinentsModel.m */,
+				C27B43CA1BF6E45400BFDD66 /* DestinationCountryModel.h */,
+				C27B43CB1BF6E45400BFDD66 /* DestinationCountryModel.m */,
+				C27B43CC1BF6E45400BFDD66 /* 国家城市列表 */,
+				C27B43D31BF6E45400BFDD66 /* 目的地列表 */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		C27B43CC1BF6E45400BFDD66 /* 国家城市列表 */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43CD1BF6E45400BFDD66 /* CityModel.h */,
+				C27B43CE1BF6E45400BFDD66 /* CityModel.m */,
+				C27B43CF1BF6E45400BFDD66 /* CityPriceModel.h */,
+				C27B43D01BF6E45400BFDD66 /* CityPriceModel.m */,
+				C27B43D11BF6E45400BFDD66 /* CountryDesModel.h */,
+				C27B43D21BF6E45400BFDD66 /* CountryDesModel.m */,
+			);
+			path = "国家城市列表";
+			sourceTree = "<group>";
+		};
+		C27B43D31BF6E45400BFDD66 /* 目的地列表 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "目的地列表";
+			sourceTree = "<group>";
+		};
+		C27B43D41BF6E45400BFDD66 /* RequestHandle */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43D51BF6E45400BFDD66 /* 国家城市列表 */,
+			);
+			path = RequestHandle;
+			sourceTree = "<group>";
+		};
+		C27B43D51BF6E45400BFDD66 /* 国家城市列表 */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43D61BF6E45400BFDD66 /* CityRequestHandle.h */,
+				C27B43D71BF6E45400BFDD66 /* CityRequestHandle.m */,
+				C27B43D81BF6E45400BFDD66 /* 目的地列表 */,
+			);
+			path = "国家城市列表";
+			sourceTree = "<group>";
+		};
+		C27B43D81BF6E45400BFDD66 /* 目的地列表 */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43D91BF6E45400BFDD66 /* DestinationRequestHandle.h */,
+				C27B43DA1BF6E45400BFDD66 /* DestinationRequestHandle.m */,
+			);
+			path = "目的地列表";
+			sourceTree = "<group>";
+		};
+		C27B43DB1BF6E45400BFDD66 /* RequestUrl */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43DC1BF6E45400BFDD66 /* URL.h */,
+			);
+			path = RequestUrl;
+			sourceTree = "<group>";
+		};
+		C27B43DD1BF6E45400BFDD66 /* SJPublic */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43DE1BF6E45400BFDD66 /* SJPbulicTableViewCell.h */,
+				C27B43DF1BF6E45400BFDD66 /* SJPbulicTableViewCell.m */,
+				C27B43E01BF6E45400BFDD66 /* SJPbulicTableViewCell.xib */,
+				C27B43E11BF6E45400BFDD66 /* SJPublicObject.h */,
+				C27B43E21BF6E45400BFDD66 /* SJPublicObject.m */,
+				C27B43E31BF6E45400BFDD66 /* SJPublicView.h */,
+				C27B43E41BF6E45400BFDD66 /* SJPublicView.m */,
+				C27B43E51BF6E45400BFDD66 /* SJPublicViewController.h */,
+				C27B43E61BF6E45400BFDD66 /* SJPublicViewController.m */,
+			);
+			path = SJPublic;
+			sourceTree = "<group>";
+		};
+		C27B43E71BF6E45400BFDD66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43E81BF6E45400BFDD66 /* DestinationCell.h */,
+				C27B43E91BF6E45400BFDD66 /* DestinationCell.m */,
+				C27B43EA1BF6E45400BFDD66 /* DestinationCell.xib */,
+				C27B43EB1BF6E45400BFDD66 /* 目的地列表 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C27B43EB1BF6E45400BFDD66 /* 目的地列表 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "目的地列表";
+			sourceTree = "<group>";
+		};
+		C27B43EC1BF6E45400BFDD66 /* 国家城市列表 */ = {
+			isa = PBXGroup;
+			children = (
+				C27B43ED1BF6E45400BFDD66 /* CityCell.h */,
+				C27B43EE1BF6E45400BFDD66 /* CityCell.m */,
+				C27B43EF1BF6E45400BFDD66 /* CityCell.xib */,
+				C27B43F01BF6E45400BFDD66 /* CityPriceCell.h */,
+				C27B43F11BF6E45400BFDD66 /* CityPriceCell.m */,
+				C27B43F21BF6E45400BFDD66 /* CityPriceCell.xib */,
+			);
+			path = "国家城市列表";
 			sourceTree = "<group>";
 		};
 		C28FAE6A1BF5A88900721C1C /* CorePhotoBroswerVC */ = {
@@ -1118,103 +1330,6 @@
 			path = TumblrMenu;
 			sourceTree = "<group>";
 		};
-		C2EB19071BF1C83A005D29C9 /* SJPublicWork */ = {
-			isa = PBXGroup;
-			children = (
-				C2EB19711BF1E855005D29C9 /* View */,
-				C2EB19081BF1C83A005D29C9 /* Controller */,
-				C2EB190C1BF1C83A005D29C9 /* Help */,
-				C2EB190D1BF1C83A005D29C9 /* models */,
-				C2EB19131BF1C83A005D29C9 /* RequestHandle */,
-				C2EB19161BF1C83A005D29C9 /* RequestUrl */,
-				C2EB19191BF1C83A005D29C9 /* SJPublic */,
-			);
-			path = SJPublicWork;
-			sourceTree = "<group>";
-		};
-		C2EB19081BF1C83A005D29C9 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				C2EB19091BF1C83A005D29C9 /* DestinationViewController.h */,
-				C2EB190A1BF1C83A005D29C9 /* DestinationViewController.m */,
-				C2EB190B1BF1C83A005D29C9 /* 目的地列表 */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		C2EB190B1BF1C83A005D29C9 /* 目的地列表 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "目的地列表";
-			sourceTree = "<group>";
-		};
-		C2EB190C1BF1C83A005D29C9 /* Help */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Help;
-			sourceTree = "<group>";
-		};
-		C2EB190D1BF1C83A005D29C9 /* models */ = {
-			isa = PBXGroup;
-			children = (
-				C2EB19121BF1C83A005D29C9 /* 目的地列表 */,
-			);
-			path = models;
-			sourceTree = "<group>";
-		};
-		C2EB19121BF1C83A005D29C9 /* 目的地列表 */ = {
-			isa = PBXGroup;
-			children = (
-				C2EB190E1BF1C83A005D29C9 /* DestinationContinentsModel.h */,
-				C2EB190F1BF1C83A005D29C9 /* DestinationContinentsModel.m */,
-				C2EB19101BF1C83A005D29C9 /* DestinationCountryModel.h */,
-				C2EB19111BF1C83A005D29C9 /* DestinationCountryModel.m */,
-			);
-			path = "目的地列表";
-			sourceTree = "<group>";
-		};
-		C2EB19131BF1C83A005D29C9 /* RequestHandle */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RequestHandle;
-			sourceTree = "<group>";
-		};
-		C2EB19161BF1C83A005D29C9 /* RequestUrl */ = {
-			isa = PBXGroup;
-			children = (
-				C2EB19171BF1C83A005D29C9 /* PrefixHeader.pch */,
-				C2EB19181BF1C83A005D29C9 /* URL.h */,
-			);
-			path = RequestUrl;
-			sourceTree = "<group>";
-		};
-		C2EB19191BF1C83A005D29C9 /* SJPublic */ = {
-			isa = PBXGroup;
-			children = (
-				C2EB191A1BF1C83A005D29C9 /* SJPublicObject.h */,
-				C2EB191B1BF1C83A005D29C9 /* SJPublicObject.m */,
-				C2EB191C1BF1C83A005D29C9 /* SJPublicViewController.h */,
-				C2EB191D1BF1C83A005D29C9 /* SJPublicViewController.m */,
-				C2EB19751BF1E8F1005D29C9 /* SJPbulicTableViewCell.h */,
-				C2EB19761BF1E8F1005D29C9 /* SJPbulicTableViewCell.m */,
-				C2EB19771BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib */,
-			);
-			path = SJPublic;
-			sourceTree = "<group>";
-		};
-		C2EB19711BF1E855005D29C9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C2EB197F1BF1EEE0005D29C9 /* DestinationCell.h */,
-				C2EB19801BF1EEE0005D29C9 /* DestinationCell.m */,
-				C2EB19811BF1EEE0005D29C9 /* DestinationCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1279,19 +1394,19 @@
 				C28D0F4C1BF345B700D265A9 /* CollectionHeaderReusableView.xib in Resources */,
 				C2D9F3741BF61F40002CA9E0 /* fff.jpg in Resources */,
 				C28D0F631BF35EEF00D265A9 /* placeImage5.jpg in Resources */,
-				C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */,
 				C28FAE911BF5A88900721C1C /* PB.bundle in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C28D0F651BF365A700D265A9 /* iconfont-pinglun.png in Resources */,
+				C27B44081BF6E45400BFDD66 /* CityPriceCell.xib in Resources */,
 				C28FAF471BF5C16A00721C1C /* weibosdk_navigationbar_back.png in Resources */,
 				C28D0F511BF345C500D265A9 /* CollectionFooterReusableView.xib in Resources */,
 				C26ADC2A1BF42A7100010217 /* HomeCell.xib in Resources */,
 				C2D9F2E21BF5FC87002CA9E0 /* placeImage6.jpg in Resources */,
 				C2D9F2E01BF5E9A0002CA9E0 /* placeImage.jpg in Resources */,
 				C28FAF251BF5A89B00721C1C /* CoreSDWebImage.bundle in Resources */,
-				C2EB19791BF1E8F1005D29C9 /* SJPbulicTableViewCell.xib in Resources */,
 				C2D9F2E41BF5FDA1002CA9E0 /* placeImage7.jpg in Resources */,
 				C28FAF3B1BF5A89B00721C1C /* SVProgressHUD.bundle in Resources */,
+				C27B44041BF6E45400BFDD66 /* DestinationCell.xib in Resources */,
 				C2D9F36E1BF61ED6002CA9E0 /* P%D6YJ9@9WDBPTPDV_95RC3.jpg in Resources */,
 				C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */,
 				C28FAE9A1BF5A88900721C1C /* PhotoBroswerVC.xib in Resources */,
@@ -1300,6 +1415,7 @@
 				C2D9F3761BF6212E002CA9E0 /* tab_bar_button_compose_unselected@2x.png in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C2D9F36D1BF61ED6002CA9E0 /* FYE_E)J63%{V3~HG)`6BX[E.jpg in Resources */,
+				C27B44061BF6E45400BFDD66 /* CityCell.xib in Resources */,
 				C28FAF381BF5A89B00721C1C /* CoreSVP.bundle in Resources */,
 				C2D9F2ED1BF601A9002CA9E0 /* iconfont-dianjijiazai.png in Resources */,
 				C27713CE1BF1CD4F00953289 /* SCNavTabBar.bundle in Resources */,
@@ -1312,6 +1428,7 @@
 				C26ADC341BF42B3100010217 /* 1.jpg in Resources */,
 				C27CAE691BF6D69D004FCC38 /* WjyHeadView.xib in Resources */,
 				57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */,
+				C27B43FF1BF6E45400BFDD66 /* SJPbulicTableViewCell.xib in Resources */,
 				57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */,
 				C2D9F2E61BF5FEB0002CA9E0 /* placeImage8.jpg in Resources */,
 				C27CAE6E1BF6D6A9004FCC38 /* ScenicSpotCell.xib in Resources */,
@@ -1374,6 +1491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C27B44021BF6E45400BFDD66 /* SJPublicViewController.m in Sources */,
 				C27CAE3D1BF6C561004FCC38 /* ScenerySpotContent.m in Sources */,
 				C27713CD1BF1CD4F00953289 /* RecommandDataManager.m in Sources */,
 				C28FAF1A1BF5A89B00721C1C /* UIDevice+Extend.m in Sources */,
@@ -1382,15 +1500,24 @@
 				C27714211BF23AA900953289 /* ShowInformationDataManager.m in Sources */,
 				C27713D01BF1CD4F00953289 /* SCNavTabBar.m in Sources */,
 				C28FAF151BF5A89B00721C1C /* NSDate+Extend.m in Sources */,
+				C27B43FA1BF6E45400BFDD66 /* CityPriceModel.m in Sources */,
+				C27B43FD1BF6E45400BFDD66 /* DestinationRequestHandle.m in Sources */,
+				C27B43F71BF6E45400BFDD66 /* DestinationContinentsModel.m in Sources */,
 				C27CAE6D1BF6D6A9004FCC38 /* ScenicSpotCell.m in Sources */,
+				C27B43F61BF6E45400BFDD66 /* DesCityPriceTableViewController.m in Sources */,
+				C27B44031BF6E45400BFDD66 /* DestinationCell.m in Sources */,
 				C28FAE8E1BF5A88900721C1C /* PBConst.m in Sources */,
 				57DEF4FF1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld in Sources */,
 				C27CAE3A1BF6C541004FCC38 /* WJYScenerySpotViewController.m in Sources */,
+				C27B43F51BF6E45400BFDD66 /* DesCityCollectionViewController.m in Sources */,
 				C27CAE401BF6C57A004FCC38 /* ScenerySpot.m in Sources */,
 				57DEF4F31BF040A200E0134A /* main.m in Sources */,
+				C27B43FB1BF6E45400BFDD66 /* CountryDesModel.m in Sources */,
+				C27B43F81BF6E45400BFDD66 /* DestinationCountryModel.m in Sources */,
 				C28FAE901BF5A88900721C1C /* PhotoModel.m in Sources */,
 				C28FAE931BF5A88900721C1C /* PBPGView.m in Sources */,
 				C28FAE941BF5A88900721C1C /* PBSaveBtn.m in Sources */,
+				C27B44011BF6E45400BFDD66 /* SJPublicView.m in Sources */,
 				57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */,
 				C28FAF241BF5A89B00721C1C /* UIImage+ReMake.m in Sources */,
 				C28FAF391BF5A89B00721C1C /* CoreSVP.m in Sources */,
@@ -1398,25 +1525,28 @@
 				C28FAE961BF5A88900721C1C /* PhotoImageView.m in Sources */,
 				C28D0F4B1BF345B700D265A9 /* CollectionHeaderReusableView.m in Sources */,
 				C28FAE971BF5A88900721C1C /* PhotoItemView.m in Sources */,
+				C27B43FC1BF6E45400BFDD66 /* CityRequestHandle.m in Sources */,
 				C26ADC1D1BF4293D00010217 /* City.m in Sources */,
 				C28FAF1F1BF5A89B00721C1C /* UIImage+FixOrientation.m in Sources */,
 				C28FAE991BF5A88900721C1C /* PhotoBroswerVC.m in Sources */,
 				C28FAF371BF5A89B00721C1C /* UIImageView+SD.m in Sources */,
 				C28FAF181BF5A89B00721C1C /* NSString+Password.m in Sources */,
+				C27B43F31BF6E45400BFDD66 /* DestinationViewController.m in Sources */,
 				C28FAF101BF5A89B00721C1C /* NSString+File.m in Sources */,
 				C27713CF1BF1CD4F00953289 /* SCNavTabBarController.m in Sources */,
 				C27713D21BF1CD4F00953289 /* User.m in Sources */,
+				C27B44001BF6E45400BFDD66 /* SJPublicObject.m in Sources */,
 				C28FAF211BF5A89B00721C1C /* UITableViewCell+Extend.m in Sources */,
-				C2EB19201BF1C83A005D29C9 /* DestinationCountryModel.m in Sources */,
 				C28FAF221BF5A89B00721C1C /* UIView+Extend.m in Sources */,
 				C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */,
 				C26ADC291BF42A7100010217 /* HomeCell.m in Sources */,
 				57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */,
 				C2D9F2E91BF5FF8B002CA9E0 /* MyViewController.m in Sources */,
-				C2EB19781BF1E8F1005D29C9 /* SJPbulicTableViewCell.m in Sources */,
 				C28FAF111BF5A89B00721C1C /* CoreArchive.m in Sources */,
 				C27CAE431BF6C58F004FCC38 /* WJYCityViewController.m in Sources */,
 				C28FAF431BF5A90100721C1C /* ShowPhotoViewController.m in Sources */,
+				C27B44051BF6E45400BFDD66 /* CityCell.m in Sources */,
+				C27B43F41BF6E45400BFDD66 /* RegionViewController.m in Sources */,
 				C26ADC771BF4D34F00010217 /* pinLunTableViewCell.m in Sources */,
 				C28FAF4D1BF5C68E00721C1C /* MONActivityIndicatorView.m in Sources */,
 				C28FAF1D1BF5A89B00721C1C /* UIImage+Cut.m in Sources */,
@@ -1428,7 +1558,6 @@
 				C28FAF1B1BF5A89B00721C1C /* UIFont+Extend.m in Sources */,
 				57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */,
 				C28FAF3D1BF5A89B00721C1C /* LFRoundProgressView.m in Sources */,
-				C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */,
 				C26ADC201BF4298000010217 /* HotContentViewController.m in Sources */,
 				C27CAE681BF6D69D004FCC38 /* WJYHeadView.m in Sources */,
 				C28FAF1C1BF5A89B00721C1C /* UIImage+Color.m in Sources */,
@@ -1436,15 +1565,13 @@
 				C28FAE951BF5A88900721C1C /* PBScrollView.m in Sources */,
 				C26ADC2E1BF42AD500010217 /* HotContentCell.m in Sources */,
 				57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */,
-				C2EB191E1BF1C83A005D29C9 /* DestinationViewController.m in Sources */,
 				C28FAE8D1BF5A88900721C1C /* UIView+PBExtend.m in Sources */,
-				C2EB19231BF1C83A005D29C9 /* SJPublicViewController.m in Sources */,
 				C28FAF171BF5A89B00721C1C /* NSString+Extend.m in Sources */,
 				C28FAF3A1BF5A89B00721C1C /* SVIndefiniteAnimatedView.m in Sources */,
 				C28FAF141BF5A89B00721C1C /* NSArray+Extend.m in Sources */,
+				C27B43FE1BF6E45400BFDD66 /* SJPbulicTableViewCell.m in Sources */,
 				C28D0F501BF345C500D265A9 /* CollectionFooterReusableView.m in Sources */,
 				C26ADC6A1BF4C0A000010217 /* PinLunTableViewController.m in Sources */,
-				C2EB19821BF1EEE0005D29C9 /* DestinationCell.m in Sources */,
 				C28FAE921BF5A88900721C1C /* PBBlurImageView.m in Sources */,
 				C28FAF191BF5A89B00721C1C /* UIColor+Extend.m in Sources */,
 				C27713CB1BF1CD4F00953289 /* FZQRecommandTableViewController.m in Sources */,
@@ -1452,11 +1579,12 @@
 				C28FAF361BF5A89B00721C1C /* UIButton+SD.m in Sources */,
 				C26ADC731BF4CDF500010217 /* pinLun.m in Sources */,
 				C26ADC231BF4298E00010217 /* Hot.m in Sources */,
-				C2EB191F1BF1C83A005D29C9 /* DestinationContinentsModel.m in Sources */,
+				C27B44071BF6E45400BFDD66 /* CityPriceCell.m in Sources */,
 				C28FAF231BF5A89B00721C1C /* UIWindow+Launch.m in Sources */,
 				C26ADC321BF42B0800010217 /* HotContent.m in Sources */,
 				C28D0F461BF32F8400D265A9 /* ShowInforCollectionViewCell.m in Sources */,
 				C28FAF131BF5A89B00721C1C /* CALayer+Transition.m in Sources */,
+				C27B43F91BF6E45400BFDD66 /* CityModel.m in Sources */,
 				C28FAF3C1BF5A89B00721C1C /* SVProgressHUD.m in Sources */,
 				C28FAF121BF5A89B00721C1C /* CALayer+Anim.m in Sources */,
 				C277141E1BF2387900953289 /* Loglist.m in Sources */,

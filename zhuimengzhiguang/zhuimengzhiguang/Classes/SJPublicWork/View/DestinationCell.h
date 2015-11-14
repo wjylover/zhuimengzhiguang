@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DestinationCountryModel.h"
 
 @interface DestinationCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *picView;
 
-@property (weak, nonatomic) IBOutlet UILabel *cnnameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *ennameLabel;
-
+@property (nonatomic, strong) DestinationCountryModel *model;
 
 @end
