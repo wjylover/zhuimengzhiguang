@@ -8,9 +8,12 @@
 
 #import "DestinationViewController.h"
 #import "DestinationContinentsModel.h"
+#import "RegionViewController.h"
 #import "DestinationCountryModel.h"
 #import "DestinationCell.h"
 #import <UIImageView+WebCache.h>
+#import "CityRequestHandle.h"
+#import "DestinationRequestHandle.h"
 #import "URL.h"
 @interface DestinationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -18,28 +21,22 @@
 @property (weak, nonatomic) IBOutlet UIView *detailView;
 
 //目的地列表对象数组
-@property (nonatomic,strong) NSMutableArray *destinationArray;
-//国家对象数组
-@property (nonatomic,strong) NSMutableArray *countryArray;
+@property (nonatomic,strong) NSArray *destinationArray;
 //collectionView
 @property (nonatomic, strong) UICollectionView *collectionView;
+//传递点击的洲的所在cell的坐标 indexPath.row
 @property (nonatomic,assign)NSInteger index;
-@property (nonatomic,assign)NSInteger countIndex;
+
+//弃用
+//国家对象数组
+//@property (nonatomic,strong) NSMutableArray *countryArray;
+//@property (nonatomic,assign)NSInteger countIndex;
 
 @end
 
 @implementation DestinationViewController
 
 static NSString *const cellIdentifier = @"destinationCell";
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    //当页面将要出现的时候 进行一次刷新
-    [self.tableView reloadData];
-    [self.collectionView reloadData];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,13 +61,14 @@ static NSString *const cellIdentifier = @"destinationCell";
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     
     //设置item的大小
-    flowLayout.itemSize = CGSizeMake(110, 150);
+    flowLayout.itemSize = CGSizeMake(120, 160);
     
     //距离上下左右
-    flowLayout.sectionInset = UIEdgeInsetsMake(20, 30, 10, 10);
+    flowLayout.sectionInset = UIEdgeInsetsMake(10, 20, 20, 20);
     
     self.collectionView = [[UICollectionView alloc]initWithFrame:self.detailView.bounds collectionViewLayout:flowLayout];
-    
+    //隐藏滚动条
+    _collectionView.showsVerticalScrollIndicator = NO;
     //设置代理
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
@@ -84,11 +82,15 @@ static NSString *const cellIdentifier = @"destinationCell";
     //给collectionView一个背景颜色
     _collectionView.backgroundColor = [UIColor whiteColor];
     
+    //刷新
+    [_collectionView reloadData];
+    
 }
 
 //网络请求
 -(void)getvalues
 {
+    /*
     [self.destinationArray removeAllObjects];
     
     NSURLSession *urlSession = [NSURLSession sharedSession];
@@ -116,6 +118,17 @@ static NSString *const cellIdentifier = @"destinationCell";
     }];
     
     [dataTask resume];
+     */
+    //网络请求
+    [[DestinationRequestHandle shareDDestinationRequestHandle]destinationRequestHandle];
+    [DestinationRequestHandle shareDDestinationRequestHandle].result = ^(){
+        //用数组去接收 返回的数组值
+        self.destinationArray = [NSMutableArray arrayWithArray:[DestinationRequestHandle shareDDestinationRequestHandle].destinationArray];
+        
+        //刷新
+        [self.collectionView reloadData];
+        [self.tableView reloadData];
+    };
 }
 
 //设置tableView的代理
@@ -145,8 +158,11 @@ static NSString *const cellIdentifier = @"destinationCell";
     //判断cell
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
+        //样式
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        //字体大小
         cell.textLabel.font = [UIFont systemFontOfSize:15];
+        //背景
         cell.selectedBackgroundView = ({
             UIView *view = [UIView new];
             view.backgroundColor = [UIColor lightGrayColor];
@@ -172,10 +188,8 @@ static NSString *const cellIdentifier = @"destinationCell";
     DestinationContinentsModel *model = [DestinationContinentsModel new];
     model = self.destinationArray[_index];
     
-    //将普通国家的个数和热门国家的个数加在一起   就是洲中的国家个数
-    self.countIndex = model.countries.count + model.hot_countries.count;
     //刷新
-    //如果不刷新数据, _countIndex 的值不会变, 就会一直出现item的数据个数不对称问题
+    //如果不刷新数据, model.array.count 的值不会变, 就会一直出现item的数据个数不对称问题
     [self.collectionView reloadData];
     
 }
@@ -190,16 +204,14 @@ static NSString *const cellIdentifier = @"destinationCell";
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    //当第一次运行,还没有手动点击七大洲的时候,给它一个默认数据
+    //当第一次运行,还没有手动点击七大洲的时候,给它一个默认数据 0
     DestinationContinentsModel *model = [DestinationContinentsModel new];
     model = self.destinationArray[_index];
     
-    //将普通国家的个数和热门国家的个数加在一起   就是洲中的国家个数
-    self.countIndex = model.countries.count + model.hot_countries.count;
-
-    return self.countIndex;
+    return model.array.count;
 }
 
+//设置cell
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DestinationCell *collectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -211,7 +223,11 @@ static NSString *const cellIdentifier = @"destinationCell";
     
     DestinationCountryModel *countryModel = [DestinationCountryModel new];
     
-    
+    countryModel = model.array[indexPath.item];
+    //传递数据模型信息
+    collectionCell.model = countryModel;
+    return collectionCell;
+    /*
     //如果itme的个数和count的个数相等或者小于count 就显示 热门 中的国家
     if (model.hot_countries.count - 1 >= indexPath.item) {
         
@@ -226,8 +242,7 @@ static NSString *const cellIdentifier = @"destinationCell";
         
         
     }else{
-        //否则 显示普通的国家
-        
+        //否则 显示普通的国家(从 hot_countries.count 往后展示)
         countryModel = model.countries[indexPath.item - model.hot_countries.count];
         
         //赋值cell
@@ -237,8 +252,41 @@ static NSString *const cellIdentifier = @"destinationCell";
         
         return collectionCell;
     }
+     */
     
 }
+//点击item
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+   //从数据模型依次取值
+    DestinationContinentsModel *model = [DestinationContinentsModel new];
+    model = self.destinationArray[_index];
+    DestinationCountryModel *countryModel = [DestinationCountryModel new];
+    
+    //赋值给国家的数据模型
+    countryModel = model.array[indexPath.item];
+    //传递用来拼接的id
+    [CityRequestHandle shareCityReqeustHandle].ID = countryModel.ID;
+    
+    /*
+    NSLog(@"=========%ld===========",indexPath.item);
+    //判断点击的item
+    if (model.hot_countries.count - 1 >= indexPath.item) {
+        countryModel = model.hot_countries[indexPath.item];
+        [CityRequestHandle shareCityReqeustHandle].ID = countryModel.ID;
+    }else{
+        countryModel = model.countries[indexPath.item];
+        [CityRequestHandle shareCityReqeustHandle].ID = countryModel.ID;
+    }
+     */
+    
+    //push到第二界面
+     RegionViewController *regionVC = [[RegionViewController alloc]init];
+    regionVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"region"];
+    [self.navigationController pushViewController:regionVC animated:YES];
+}
+
+
 
 //设置item的大小
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
