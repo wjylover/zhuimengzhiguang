@@ -54,6 +54,10 @@
 		C27CAE691BF6D69D004FCC38 /* WjyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE671BF6D69D004FCC38 /* WjyHeadView.xib */; settings = {ASSET_TAGS = (); }; };
 		C27CAE6D1BF6D6A9004FCC38 /* ScenicSpotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27CAE6B1BF6D6A9004FCC38 /* ScenicSpotCell.m */; settings = {ASSET_TAGS = (); }; };
 		C27CAE6E1BF6D6A9004FCC38 /* ScenicSpotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE6C1BF6D6A9004FCC38 /* ScenicSpotCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C27CAE721BF6DA21004FCC38 /* clean.png in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE711BF6DA21004FCC38 /* clean.png */; settings = {ASSET_TAGS = (); }; };
+		C27CAE741BF6DC6A004FCC38 /* night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE731BF6DC6A004FCC38 /* night.jpg */; settings = {ASSET_TAGS = (); }; };
+		C27CAE781BF6DD17004FCC38 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE771BF6DD17004FCC38 /* save.png */; settings = {ASSET_TAGS = (); }; };
+		C27CAE7A1BF6DE97004FCC38 /* ideas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE791BF6DE97004FCC38 /* ideas.jpg */; settings = {ASSET_TAGS = (); }; };
 		C28D0F421BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F411BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png */; settings = {ASSET_TAGS = (); }; };
 		C28D0F461BF32F8400D265A9 /* ShowInforCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28D0F441BF32F8400D265A9 /* ShowInforCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		C28D0F471BF32F8400D265A9 /* ShowInforCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F451BF32F8400D265A9 /* ShowInforCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -223,6 +227,10 @@
 		C27CAE6A1BF6D6A9004FCC38 /* ScenicSpotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenicSpotCell.h; sourceTree = "<group>"; };
 		C27CAE6B1BF6D6A9004FCC38 /* ScenicSpotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScenicSpotCell.m; sourceTree = "<group>"; };
 		C27CAE6C1BF6D6A9004FCC38 /* ScenicSpotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScenicSpotCell.xib; sourceTree = "<group>"; };
+		C27CAE711BF6DA21004FCC38 /* clean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clean.png; sourceTree = "<group>"; };
+		C27CAE731BF6DC6A004FCC38 /* night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = night.jpg; sourceTree = "<group>"; };
+		C27CAE771BF6DD17004FCC38 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		C27CAE791BF6DE97004FCC38 /* ideas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ideas.jpg; sourceTree = "<group>"; };
 		C28D0F411BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com_taobao_tae_sdk_web_view_title_bar_back.9.png; sourceTree = "<group>"; };
 		C28D0F431BF32F8400D265A9 /* ShowInforCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowInforCollectionViewCell.h; sourceTree = "<group>"; };
 		C28D0F441BF32F8400D265A9 /* ShowInforCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInforCollectionViewCell.m; sourceTree = "<group>"; };
@@ -729,6 +737,10 @@
 		C27714131BF20A4400953289 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C27CAE791BF6DE97004FCC38 /* ideas.jpg */,
+				C27CAE771BF6DD17004FCC38 /* save.png */,
+				C27CAE731BF6DC6A004FCC38 /* night.jpg */,
+				C27CAE711BF6DA21004FCC38 /* clean.png */,
 				C2D9F3751BF6212E002CA9E0 /* tab_bar_button_compose_unselected@2x.png */,
 				C2D9F3731BF61F40002CA9E0 /* fff.jpg */,
 				C2D9F3681BF61ED6002CA9E0 /* 36H8K@1II%`9WGOW4669%N7.jpg */,
@@ -1282,9 +1294,11 @@
 				C2EB19831BF1EEE0005D29C9 /* DestinationCell.xib in Resources */,
 				C28FAE911BF5A88900721C1C /* PB.bundle in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
+				C27CAE781BF6DD17004FCC38 /* save.png in Resources */,
 				C28D0F651BF365A700D265A9 /* iconfont-pinglun.png in Resources */,
 				C28FAF471BF5C16A00721C1C /* weibosdk_navigationbar_back.png in Resources */,
 				C28D0F511BF345C500D265A9 /* CollectionFooterReusableView.xib in Resources */,
+				C27CAE7A1BF6DE97004FCC38 /* ideas.jpg in Resources */,
 				C26ADC2A1BF42A7100010217 /* HomeCell.xib in Resources */,
 				C2D9F2E21BF5FC87002CA9E0 /* placeImage6.jpg in Resources */,
 				C2D9F2E01BF5E9A0002CA9E0 /* placeImage.jpg in Resources */,
@@ -1296,6 +1310,8 @@
 				C27713CA1BF1CD4F00953289 /* FZQRecommandTableViewCell.xib in Resources */,
 				C28FAE9A1BF5A88900721C1C /* PhotoBroswerVC.xib in Resources */,
 				C2D9F36C1BF61ED6002CA9E0 /* 36H8K@1II%`9WGOW4669%N7.jpg in Resources */,
+				C27CAE741BF6DC6A004FCC38 /* night.jpg in Resources */,
+				C27CAE721BF6DA21004FCC38 /* clean.png in Resources */,
 				C28D0F421BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png in Resources */,
 				C2D9F3761BF6212E002CA9E0 /* tab_bar_button_compose_unselected@2x.png in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,

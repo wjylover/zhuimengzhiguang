@@ -80,15 +80,17 @@
 //显示数据
 -(void)viewDidAppear:(BOOL)animated{
     
-    //展示数据
-    [self contentViewDataPrepare];
+   //展示数据
+        [self contentViewDataPrepare];
+   //事件
+        [self event];
+   //移除提示信息视图
+        [_indicatorView removeFromSuperview];
+        [_indicatorView stopAnimating];
+      
+
+   
     
-    //事件
-    [self event];
-    
-    //移除提示信息视图
-    [_indicatorView removeFromSuperview];
-    [_indicatorView stopAnimating];
     
 
 }
