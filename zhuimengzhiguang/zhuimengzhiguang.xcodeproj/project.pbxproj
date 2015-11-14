@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		55CADAD705F767FF2C794497 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67271C243F2A3DDE50873EC3 /* libPods.a */; };
-		57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D711BF08CD1006530C1 /* WJYDataManager.m */; settings = {ASSET_TAGS = (); }; };
-		57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D761BF09059006530C1 /* WJYHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D7A1BF0BDC0006530C1 /* HotCity.m */; settings = {ASSET_TAGS = (); }; };
-		57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BB40FB1BF041AA00EB915E /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D711BF08CD1006530C1 /* WJYDataManager.m */; };
+		57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D761BF09059006530C1 /* WJYHomeViewController.m */; };
+		57086D7B1BF0BDC0006530C1 /* HotCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 57086D7A1BF0BDC0006530C1 /* HotCity.m */; };
+		57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BB40FB1BF041AA00EB915E /* AppDelegate.m */; };
 		57DEF4F31BF040A200E0134A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEF4F21BF040A200E0134A /* main.m */; };
 		57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DEF4FA1BF040A200E0134A /* Main.storyboard */; };
 		57DEF4FF1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57DEF4FD1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld */; };
@@ -50,6 +50,10 @@
 		C27CAE3D1BF6C561004FCC38 /* ScenerySpotContent.m in Sources */ = {isa = PBXBuildFile; fileRef = C27CAE3C1BF6C561004FCC38 /* ScenerySpotContent.m */; settings = {ASSET_TAGS = (); }; };
 		C27CAE401BF6C57A004FCC38 /* ScenerySpot.m in Sources */ = {isa = PBXBuildFile; fileRef = C27CAE3F1BF6C57A004FCC38 /* ScenerySpot.m */; settings = {ASSET_TAGS = (); }; };
 		C27CAE431BF6C58F004FCC38 /* WJYCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27CAE421BF6C58F004FCC38 /* WJYCityViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C27CAE681BF6D69D004FCC38 /* WJYHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C27CAE661BF6D69D004FCC38 /* WJYHeadView.m */; settings = {ASSET_TAGS = (); }; };
+		C27CAE691BF6D69D004FCC38 /* WjyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE671BF6D69D004FCC38 /* WjyHeadView.xib */; settings = {ASSET_TAGS = (); }; };
+		C27CAE6D1BF6D6A9004FCC38 /* ScenicSpotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C27CAE6B1BF6D6A9004FCC38 /* ScenicSpotCell.m */; settings = {ASSET_TAGS = (); }; };
+		C27CAE6E1BF6D6A9004FCC38 /* ScenicSpotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE6C1BF6D6A9004FCC38 /* ScenicSpotCell.xib */; settings = {ASSET_TAGS = (); }; };
 		C28D0F421BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F411BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png */; settings = {ASSET_TAGS = (); }; };
 		C28D0F461BF32F8400D265A9 /* ShowInforCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28D0F441BF32F8400D265A9 /* ShowInforCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		C28D0F471BF32F8400D265A9 /* ShowInforCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F451BF32F8400D265A9 /* ShowInforCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -213,6 +217,12 @@
 		C27CAE3F1BF6C57A004FCC38 /* ScenerySpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScenerySpot.m; sourceTree = "<group>"; };
 		C27CAE411BF6C58F004FCC38 /* WJYCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYCityViewController.h; sourceTree = "<group>"; };
 		C27CAE421BF6C58F004FCC38 /* WJYCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYCityViewController.m; sourceTree = "<group>"; };
+		C27CAE651BF6D69D004FCC38 /* WJYHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJYHeadView.h; sourceTree = "<group>"; };
+		C27CAE661BF6D69D004FCC38 /* WJYHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJYHeadView.m; sourceTree = "<group>"; };
+		C27CAE671BF6D69D004FCC38 /* WjyHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WjyHeadView.xib; sourceTree = "<group>"; };
+		C27CAE6A1BF6D6A9004FCC38 /* ScenicSpotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenicSpotCell.h; sourceTree = "<group>"; };
+		C27CAE6B1BF6D6A9004FCC38 /* ScenicSpotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScenicSpotCell.m; sourceTree = "<group>"; };
+		C27CAE6C1BF6D6A9004FCC38 /* ScenicSpotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScenicSpotCell.xib; sourceTree = "<group>"; };
 		C28D0F411BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com_taobao_tae_sdk_web_view_title_bar_back.9.png; sourceTree = "<group>"; };
 		C28D0F431BF32F8400D265A9 /* ShowInforCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowInforCollectionViewCell.h; sourceTree = "<group>"; };
 		C28D0F441BF32F8400D265A9 /* ShowInforCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInforCollectionViewCell.m; sourceTree = "<group>"; };
@@ -511,6 +521,12 @@
 				C26ADC2B1BF42AD500010217 /* HotContentCell.h */,
 				C26ADC2C1BF42AD500010217 /* HotContentCell.m */,
 				C26ADC2D1BF42AD500010217 /* HotContentCell.xib */,
+				C27CAE6A1BF6D6A9004FCC38 /* ScenicSpotCell.h */,
+				C27CAE6B1BF6D6A9004FCC38 /* ScenicSpotCell.m */,
+				C27CAE6C1BF6D6A9004FCC38 /* ScenicSpotCell.xib */,
+				C27CAE651BF6D69D004FCC38 /* WJYHeadView.h */,
+				C27CAE661BF6D69D004FCC38 /* WJYHeadView.m */,
+				C27CAE671BF6D69D004FCC38 /* WjyHeadView.xib */,
 				C26ADC261BF42A7100010217 /* HomeCell.h */,
 				C26ADC271BF42A7100010217 /* HomeCell.m */,
 				C26ADC281BF42A7100010217 /* HomeCell.xib */,
@@ -1233,6 +1249,7 @@
 				TargetAttributes = {
 					57DEF4ED1BF040A200E0134A = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = EPF635AX3J;
 					};
 				};
 			};
@@ -1293,9 +1310,11 @@
 				C28FACF81BF5773A00721C1C /* icon_bubble3.png in Resources */,
 				C28FACF61BF573B000721C1C /* placeimage2.jpg in Resources */,
 				C26ADC341BF42B3100010217 /* 1.jpg in Resources */,
+				C27CAE691BF6D69D004FCC38 /* WjyHeadView.xib in Resources */,
 				57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */,
 				57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */,
 				C2D9F2E61BF5FEB0002CA9E0 /* placeImage8.jpg in Resources */,
+				C27CAE6E1BF6D6A9004FCC38 /* ScenicSpotCell.xib in Resources */,
 				C28FAE981BF5A88900721C1C /* PhotoItemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1363,6 +1382,7 @@
 				C27714211BF23AA900953289 /* ShowInformationDataManager.m in Sources */,
 				C27713D01BF1CD4F00953289 /* SCNavTabBar.m in Sources */,
 				C28FAF151BF5A89B00721C1C /* NSDate+Extend.m in Sources */,
+				C27CAE6D1BF6D6A9004FCC38 /* ScenicSpotCell.m in Sources */,
 				C28FAE8E1BF5A88900721C1C /* PBConst.m in Sources */,
 				57DEF4FF1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld in Sources */,
 				C27CAE3A1BF6C541004FCC38 /* WJYScenerySpotViewController.m in Sources */,
@@ -1410,6 +1430,7 @@
 				C28FAF3D1BF5A89B00721C1C /* LFRoundProgressView.m in Sources */,
 				C2EB19221BF1C83A005D29C9 /* SJPublicObject.m in Sources */,
 				C26ADC201BF4298000010217 /* HotContentViewController.m in Sources */,
+				C27CAE681BF6D69D004FCC38 /* WJYHeadView.m in Sources */,
 				C28FAF1C1BF5A89B00721C1C /* UIImage+Color.m in Sources */,
 				C28FAE8F1BF5A88900721C1C /* PhotoBroswerLayout.m in Sources */,
 				C28FAE951BF5A88900721C1C /* PBScrollView.m in Sources */,
@@ -1552,9 +1573,10 @@
 			baseConfigurationReference = 7CE2060FD7B92530083339EA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/FZQPrefixHeader.pch;
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1566,9 +1588,10 @@
 			baseConfigurationReference = 8A5483E820C11A481B12ADA9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = zhuimengzhiguang/Classes/FZQRecommand/FZQPrefixHeader.pch;
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
