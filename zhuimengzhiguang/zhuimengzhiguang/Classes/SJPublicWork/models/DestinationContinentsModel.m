@@ -31,7 +31,7 @@
             //添加到对象数组中
             [self.countries addObject:model];
         }
-        NSLog(@"country: %ld",_countries.count);
+        
     }
     if ([key isEqualToString:@"hot_country"]) {
         self.hot_countries = [NSMutableArray array];
@@ -40,10 +40,32 @@
             [model setValuesForKeysWithDictionary:dic];
             [self.hot_countries addObject:model];
         }
-        NSLog(@"hot_country: %ld",_hot_countries.count);
+        
     }
     
 }
+
+-(NSMutableArray *)array
+{
+    if (!_array) {
+        self.array = [NSMutableArray array];
+        [self addStringForArray];
+    }
+    return _array;
+}
+
+-(void)addStringForArray
+{
+    for (int i = 0; i < self.hot_countries.count; i++) {
+        NSString *str = _hot_countries[i];
+        [self.array addObject:str];
+    }
+    for (int i = 0 ; i < self.countries.count; i ++) {
+        NSString *str = _countries[i];
+        [self.array addObject:str];
+    }
+}
+
 
 //重写description方法
 -(NSString *)description

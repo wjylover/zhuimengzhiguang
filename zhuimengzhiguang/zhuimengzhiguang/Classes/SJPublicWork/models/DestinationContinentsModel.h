@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSMutableArray *countries;
 @property (nonatomic, strong) NSMutableArray *hot_countries;
 @property (nonatomic, strong) NSMutableArray *allCountry;
+@property (nonatomic, strong) NSMutableArray *array;//每个洲总的国家
 
 @end
