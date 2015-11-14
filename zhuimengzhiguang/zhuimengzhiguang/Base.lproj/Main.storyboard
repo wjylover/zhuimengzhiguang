@@ -94,7 +94,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fik-Vl-lYb">
-                                <rect key="frame" x="275" y="300" width="50" height="50"/>
+                                <rect key="frame" x="275" y="350" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="6LF-c8-VgZ"/>
                                     <constraint firstAttribute="height" constant="50" id="MYq-Ij-Chf"/>
@@ -114,7 +114,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Fik-Vl-lYb" firstAttribute="top" secondItem="kID-9W-sOo" secondAttribute="bottom" constant="50" id="B3W-8Z-HQJ"/>
+                            <constraint firstItem="Fik-Vl-lYb" firstAttribute="top" secondItem="kID-9W-sOo" secondAttribute="bottom" constant="100" id="B3W-8Z-HQJ"/>
                             <constraint firstItem="kID-9W-sOo" firstAttribute="top" secondItem="RgZ-Jj-gX8" secondAttribute="top" id="dWp-Gf-Beb"/>
                             <constraint firstAttribute="trailing" secondItem="kID-9W-sOo" secondAttribute="trailing" id="n8c-J3-GVZ"/>
                             <constraint firstItem="Fik-Vl-lYb" firstAttribute="centerX" secondItem="RgZ-Jj-gX8" secondAttribute="centerX" id="v5X-hY-kNX"/>
@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrW-h2-9Tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="-647"/>
+            <point key="canvasLocation" x="1705" y="-632"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ryY-LE-eQI">

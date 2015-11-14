@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @class Hot;
 @interface HotContentViewController : UIViewController
+@property (nonatomic, strong) UIImageView *headImageView;
 
 @property (nonatomic, strong) Hot *hot;
 
