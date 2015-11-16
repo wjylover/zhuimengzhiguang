@@ -151,6 +151,7 @@
 		C29F52E01BF77B1C0049B26B /* DesCityPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C29F52DE1BF77B1C0049B26B /* DesCityPriceCell.m */; settings = {ASSET_TAGS = (); }; };
 		C29F52E11BF77B1C0049B26B /* DesCityPriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29F52DF1BF77B1C0049B26B /* DesCityPriceCell.xib */; settings = {ASSET_TAGS = (); }; };
 		C2A101E31BF97FA6005B0396 /* clean.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2A101E21BF97FA6005B0396 /* clean.jpg */; settings = {ASSET_TAGS = (); }; };
+		C2A101E61BF9CAF7005B0396 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A101E51BF9CAF7005B0396 /* Weather.m */; settings = {ASSET_TAGS = (); }; };
 		C2D9F2E01BF5E9A0002CA9E0 /* placeImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D9F2DF1BF5E9A0002CA9E0 /* placeImage.jpg */; settings = {ASSET_TAGS = (); }; };
 		C2D9F2E21BF5FC87002CA9E0 /* placeImage6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D9F2E11BF5FC87002CA9E0 /* placeImage6.jpg */; settings = {ASSET_TAGS = (); }; };
 		C2D9F2E41BF5FDA1002CA9E0 /* placeImage7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D9F2E31BF5FDA1002CA9E0 /* placeImage7.jpg */; settings = {ASSET_TAGS = (); }; };
@@ -423,6 +424,8 @@
 		C29F52DE1BF77B1C0049B26B /* DesCityPriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesCityPriceCell.m; sourceTree = "<group>"; };
 		C29F52DF1BF77B1C0049B26B /* DesCityPriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesCityPriceCell.xib; sourceTree = "<group>"; };
 		C2A101E21BF97FA6005B0396 /* clean.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clean.jpg; sourceTree = "<group>"; };
+		C2A101E41BF9CAF7005B0396 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		C2A101E51BF9CAF7005B0396 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		C2D9F2DF1BF5E9A0002CA9E0 /* placeImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeImage.jpg; sourceTree = "<group>"; };
 		C2D9F2E11BF5FC87002CA9E0 /* placeImage6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeImage6.jpg; sourceTree = "<group>"; };
 		C2D9F2E31BF5FDA1002CA9E0 /* placeImage7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeImage7.jpg; sourceTree = "<group>"; };
@@ -671,6 +674,8 @@
 				C277141D1BF2387900953289 /* Loglist.m */,
 				C26ADC711BF4CDF500010217 /* pinLun.h */,
 				C26ADC721BF4CDF500010217 /* pinLun.m */,
+				C2A101E41BF9CAF7005B0396 /* Weather.h */,
+				C2A101E51BF9CAF7005B0396 /* Weather.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1644,6 +1649,7 @@
 				C28FAF211BF5A89B00721C1C /* UITableViewCell+Extend.m in Sources */,
 				C28FAF221BF5A89B00721C1C /* UIView+Extend.m in Sources */,
 				C27713C81BF1CD4F00953289 /* FZQFindViewController.m in Sources */,
+				C2A101E61BF9CAF7005B0396 /* Weather.m in Sources */,
 				C26ADC291BF42A7100010217 /* HomeCell.m in Sources */,
 				57086D721BF08CD1006530C1 /* WJYDataManager.m in Sources */,
 				C2D9F2E91BF5FF8B002CA9E0 /* MyViewController.m in Sources */,
