@@ -7,7 +7,13 @@
 //
 
 #import "WJYScenerySpotViewController.h"
+#import "WJYCoreDataManager.h"
+#import "Collect.h"
+#import <MapKit/MapKit.h>
+#import "KCAnnotation.h"
+#import <CoreLocation/CoreLocation.h>
 #import "ScenerySpotContent.h"
+#import "WJYMapHeadView.h"
 #import "WJYDataManager.h"
 #import "ScenicSpotCell.h"
 
@@ -17,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *scenerySpotTableView;
 @property (nonatomic, strong) UIVisualEffectView *visualView;
 @property (weak, nonatomic) IBOutlet UIView *backView;
+@property (nonatomic, strong) KCAnnotation *annotation;
+@property (nonatomic, strong) MKMapView *mapView;
 @end
 
 @implementation WJYScenerySpotViewController
@@ -45,7 +53,7 @@
     
     _scenerySpotTableView.contentInset = UIEdgeInsetsMake(kImageHight , 0, 0, 0);
     [_scenerySpotTableView addSubview:_headImageView];
-    
+
     // 设置图片拉伸方式为等比例
     _headImageView.contentMode = UIViewContentModeScaleAspectFill;
     
@@ -66,7 +74,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat y = scrollView.contentOffset.y ;
-    NSLog(@"%f",y);
     if (y <= - kImageHight) {
         _visualView.alpha = 0;
         
@@ -87,26 +94,80 @@
         _visualView.alpha = (kImageHight + y) / 166 +0.05;
     }
 }
-- (void)viewWillAppear:(BOOL)animated
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"WJYMapHeadView" owner:self options:nil];
+    
+    WJYMapHeadView *header = (WJYMapHeadView *)[nib objectAtIndex:0];
+    _mapView=[[MKMapView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
+    [header.mapBackView addSubview:_mapView];
+    _mapView.mapType = MKMapTypeStandard;
+    CGFloat longitude = [self.scenery.longitude floatValue];
+    CGFloat latitude = [self.scenery.lat floatValue];
+    CLLocationCoordinate2D location=CLLocationCoordinate2DMake(latitude, longitude);
+    _annotation=[[KCAnnotation alloc]init];
+    _annotation.title = self.scenery.address;
+    _annotation.coordinate=location;
+    [_mapView addAnnotation:_annotation];
+    //创建一个以center为中心，上下各1000米，左右各1000米得区域，但其是一个矩形，不符合MapView的横纵比例
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(location,3000, 3000);
+    //以上代码创建出来一个符合MapView横纵比例的区域
+    MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
+    [_mapView setRegion:adjustedRegion animated:YES];
 
     
+    UIButton *mapButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    mapButton.frame = CGRectMake(0, 0, self.view.frame.size.width, 150);
+    [_mapView addSubview:mapButton];
+    
+    header.scoreLabel.text = [NSString stringWithFormat:@"评分: %.1f",self.scenery.allstar / 10.0];
+    header.enjoyLabel.text = [NSString stringWithFormat:@"%ld人喜欢",self.scenery.grade_people];
+    header.addressLabel.text = self.scenery.address;
+    return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 240;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ScenicSpotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScenicSpotCellContent" forIndexPath:indexPath];
+    cell.addressLabel.text = [NSString stringWithFormat:@"地址: %@",self.scenery.address];
+
+    cell.pice.text = [NSString stringWithFormat:@"门票: %@",self.scenery.ticket];
+    cell.phoneTabel.text = [NSString stringWithFormat:@"电话: %@",self.scenery.phone];
+    cell.desLabel.text = [NSString stringWithFormat:@"简介: %@",self.scenery.content];
     return cell;
+}
+- (IBAction)controllerButtonAction:(UIButton *)sender {
+    Collect *collect = [[WJYCoreDataManager sharedManager] getCollectWithTypeID:self.typeID];
+    if ([collect.typeID isEqualToString:self.typeID]) {
+        
+    }else{
+        [[WJYCoreDataManager sharedManager] addCollect:self.typeID];
+    }
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"收藏成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:^{
+        
+    }];
+
 }
 
 

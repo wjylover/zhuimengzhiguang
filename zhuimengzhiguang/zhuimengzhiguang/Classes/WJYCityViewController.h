@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^ReloadBlock) (NSInteger);
+typedef void (^ReloadBlock) (NSInteger,NSString*);
 @interface WJYCityViewController : UIViewController
 
 @property (nonatomic, strong) NSMutableArray *cityArray;

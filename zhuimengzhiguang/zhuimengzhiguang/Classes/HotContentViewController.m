@@ -15,7 +15,7 @@
 #import "Hot.h"
 
 #define kImageHight [UIScreen mainScreen].bounds.size.width / (490 / 285.0)
-@interface HotContentViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface HotContentViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *hotContentTableView;
 @property (nonatomic, strong) NSMutableArray *hotContentArray;
@@ -24,6 +24,24 @@
 @end
 
 @implementation HotContentViewController
+
+//- (void) navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    // 如果进入的是当前视图控制器
+//    if (viewController == self) {
+//        // 背景设置为黑色
+//        self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:1.000 green:1.000 blue:1.000 alpha:1.000];
+//         //透明度设置为0.3
+//        self.navigationController.navigationBar.alpha = 0;
+//         //设置为半透明
+//        self.navigationController.navigationBar.translucent = YES;
+//    } else {
+//        // 进入其他视图控制器
+//        //self.navigationController.navigationBar.alpha = 1;
+//        // 背景颜色设置为系统默认颜色
+//        //self.navigationController.navigationBar.tintColor = nil;
+//        //self.navigationController.navigationBar.translucent = NO;
+//    }
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +52,8 @@
     // 初始化cell
     [_hotContentTableView registerNib:[UINib nibWithNibName:@"HotContentCell" bundle:nil] forCellReuseIdentifier:@"HotContent"];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    self.navigationController.delegate =self;
+
     _hotContentTableView.estimatedSectionHeaderHeight = 100;
     _hotContentTableView.sectionHeaderHeight = UITableViewAutomaticDimension;
 
