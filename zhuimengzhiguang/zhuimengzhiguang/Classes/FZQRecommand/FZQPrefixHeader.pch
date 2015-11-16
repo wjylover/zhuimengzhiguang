@@ -86,7 +86,7 @@
 //动画按钮
 #import "CHTumblrMenuView.h"
 
-//发送短信的系统库
+//发送短信或邮件的系统库
 #import <MessageUI/MessageUI.h>
 
 #endif /* FZQPrefixHeader_pch */
