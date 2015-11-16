@@ -14,7 +14,7 @@
 #import "City.h"
 #import "HotCity.h"
 // 轮播图链接
-#define kCarouselImageURL @"http://open.qyer.com/qyer/footprint/country_detail?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&track_deviceid=865881026677945&track_app_version=6.8.2&country_id=11"
+//#define kCarouselImageURL @"http://open.qyer.com/qyer/footprint/country_detail?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&track_deviceid=865881026677945&track_app_version=6.8.2&country_id=11"
 // 热门城市链接
 #define kHomeHotDataURL @"http://app.xialv.com/index2.php?a=sList2&page=%ld&city_id=%ld&type=2"
 // 城市列表链接
@@ -41,26 +41,26 @@
     return manager;
 }
 // 获取轮播图数据
-- (void)getCarouselImageData
-{
-    self.carouselImageArray = [NSMutableArray arrayWithCapacity:20];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kCarouselImageURL]];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        if (!data) {
-            NSLog(@"无网络访问");
-            return ;
-        }
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        NSDictionary *carouselDic = dict[@"data"];
-        NSArray *dataArray = carouselDic[@"hot_city"];
-        for (NSDictionary *dic in dataArray) {
-            HotCity *hotCity = [HotCity new];
-            [hotCity setValuesForKeysWithDictionary:dic];
-            [self.carouselImageArray addObject:hotCity];
-        }
-        self.carouselBlock();
-    }];
-}
+//- (void)getCarouselImageData
+//{
+//    self.carouselImageArray = [NSMutableArray arrayWithCapacity:20];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kCarouselImageURL]];
+//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+//        if (!data) {
+//            NSLog(@"无网络访问");
+//            return ;
+//        }
+//        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+//        NSDictionary *carouselDic = dict[@"data"];
+//        NSArray *dataArray = carouselDic[@"hot_city"];
+//        for (NSDictionary *dic in dataArray) {
+//            HotCity *hotCity = [HotCity new];
+//            [hotCity setValuesForKeysWithDictionary:dic];
+//            [self.carouselImageArray addObject:hotCity];
+//        }
+//        self.carouselBlock();
+//    }];
+//}
 
 // 获取当地热门数据
 - (void)getHomeHotDataArrayWithCityID:(NSInteger)cityID Page:(NSInteger)page;

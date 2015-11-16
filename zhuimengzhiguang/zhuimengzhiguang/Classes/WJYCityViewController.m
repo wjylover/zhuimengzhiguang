@@ -82,7 +82,7 @@
     NSArray *cityArray = self.cityAllArray[indexPath.section][@"cells"];
     City *city = cityArray[indexPath.row];
     [self.navigationController popViewControllerAnimated:YES];
-    self.reloadBlock([[city valueForKey:@"city_id"] integerValue]);
+    self.reloadBlock([[city valueForKey:@"city_id"] integerValue],[city valueForKey:@"city_name"]);
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
 }

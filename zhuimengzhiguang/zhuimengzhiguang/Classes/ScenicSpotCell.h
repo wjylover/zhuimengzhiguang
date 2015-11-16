@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ScenicSpotCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pice;
+@property (weak, nonatomic) IBOutlet UILabel *phoneTabel;
+@property (weak, nonatomic) IBOutlet UILabel *desLabel;
 
 @end
