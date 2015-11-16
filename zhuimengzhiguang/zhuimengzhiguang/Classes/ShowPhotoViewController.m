@@ -8,19 +8,23 @@
 
 #import "ShowPhotoViewController.h"
 
+
+
 @interface ShowPhotoViewController ()<MONActivityIndicatorViewDelegate>
 
 //创建一个图片内容视图
 @property(nonatomic,strong)PhotoCotentView *contentView;
 
-//创建一个存储图片的数组
-@property(nonatomic,strong)NSArray *images;
+
 
 //创建一个存储图片链接的数组
 @property(nonatomic,strong)NSArray *netImagesUrl;
 
 //创建一个提示信息视图
 @property(nonatomic,strong)MONActivityIndicatorView *indicatorView;
+
+
+
 @end
 
 @implementation ShowPhotoViewController
@@ -39,7 +43,24 @@
     //添加一个返回按钮
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"weibosdk_navigationbar_back.png"] style:UIBarButtonItemStylePlain target:self action:@selector(returnAction:)];
     
- 
+ //注册通知
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getImages:) name:@"images" object:nil];
+    
+}
+
+//接收到通知后执行的事件,显示数据
+-(void)getImages:(NSNotification *)sender{
+    
+    self.images = sender.userInfo[@"imgs"];
+    
+    
+       //展示数据
+            [self contentViewDataPrepare];
+       //事件
+            [self event];
+       //移除提示信息视图
+            [_indicatorView removeFromSuperview];
+            [_indicatorView stopAnimating];
     
 }
 
@@ -77,25 +98,12 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
-//显示数据
--(void)viewDidAppear:(BOOL)animated{
-    
-    //展示数据
-    [self contentViewDataPrepare];
-    
-    //事件
-    [self event];
-    
-    //移除提示信息视图
-    [_indicatorView removeFromSuperview];
-    [_indicatorView stopAnimating];
-    
 
-}
 
 /** 展示数据 */
 -(void)contentViewDataPrepare{
     
+   
     _contentView.images =self.images;
 }
 
@@ -144,27 +152,6 @@
 }
 
 
--(NSArray *)images{
-    if (!_images ) {
-        
-            NSMutableArray *arrayM = [NSMutableArray array];
-            for (NSString *urlString in _netImagesUrl) {
-                //获得网络图片
-                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
-                UIImage *image = [UIImage imageWithData:data];
-               
-                [arrayM addObject:image];
-                
-            }
-    
-        _images = arrayM;
-                
-        
-      
-    }
-    return _images;
-    
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

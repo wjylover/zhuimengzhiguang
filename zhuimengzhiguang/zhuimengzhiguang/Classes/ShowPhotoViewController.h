@@ -13,4 +13,7 @@
 //接收上个页面传过来的日志对象
 @property(nonatomic,strong)Loglist *log;
 
+//创建一个存储图片的数组
+@property(nonatomic,strong)NSArray *images;
+
 @end

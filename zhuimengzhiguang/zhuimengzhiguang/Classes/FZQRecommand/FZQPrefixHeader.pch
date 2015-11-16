@@ -26,6 +26,11 @@
 //图片展示页面
 #import "ShowPhotoViewController.h"
 
+//意见箱页面
+#import "IdeaViewController.h"
+
+
+
 //自定义cell
 //发现cell
 #import "FZQRecommandTableViewCell.h"
@@ -49,6 +54,8 @@
 #import "Mileage.h"
 #import "Loglist.h"
 #import "pinLun.h"
+
+
 
 //帮助类
 #import "RecommandDataManager.h"
@@ -78,5 +85,8 @@
 
 //动画按钮
 #import "CHTumblrMenuView.h"
+
+//发送短信的系统库
+#import <MessageUI/MessageUI.h>
 
 #endif /* FZQPrefixHeader_pch */
