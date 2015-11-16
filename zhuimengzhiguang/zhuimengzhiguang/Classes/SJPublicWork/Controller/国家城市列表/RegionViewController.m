@@ -15,6 +15,7 @@
 #import "CityPriceModel.h"
 #import "DesCityPriceTableViewController.h"
 #import "DesCityCollectionViewController.h"
+#import "DesCityRequestHandle.h"
 
 @interface RegionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate>
 //轮播图
@@ -161,9 +162,7 @@
 //设置item的点击事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    DesCityCollectionViewController *desCity = [[DesCityCollectionViewController alloc]init];
-    desCity = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"desCity"];
-    [self.navigationController pushViewController:desCity animated:YES];
+    
 }
 
 
@@ -197,10 +196,27 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+}
+
+//更多热门城市
+- (IBAction)moreCity:(UIButton *)sender {
+    
+//    [DesCityRequestHandle shareDesCityRequestHandle].ID = [CityRequestHandle shareCityReqeustHandle].ID;
+    
+    DesCityCollectionViewController *desCity = [[DesCityCollectionViewController alloc]init];
+    desCity = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"desCity"];
+    [self.navigationController pushViewController:desCity animated:YES];
+    
+}
+//超值自由行
+- (IBAction)valueFreeLineAction:(UIButton *)sender {
+    
     DesCityPriceTableViewController *desCityPrice = [[DesCityPriceTableViewController alloc]init];
     desCityPrice = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"desCityPrice"];
     [self.navigationController pushViewController:desCityPrice animated:YES];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
