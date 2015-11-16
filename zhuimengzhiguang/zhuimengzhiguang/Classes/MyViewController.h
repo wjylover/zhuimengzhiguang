@@ -10,7 +10,7 @@
 
 @interface MyViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *clickBtn;
+
 
 
 

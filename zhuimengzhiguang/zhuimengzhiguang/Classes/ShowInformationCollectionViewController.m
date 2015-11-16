@@ -8,6 +8,8 @@
 
 #import "ShowInformationCollectionViewController.h"
 
+
+
 @interface ShowInformationCollectionViewController ()<UICollectionViewDelegateFlowLayout>
 
 //变焦图片作为底层
@@ -20,6 +22,10 @@
 @property(nonatomic,strong)UILabel *dataLabel;
 //距离
 @property(nonatomic,strong)UILabel *distanceLabel;
+//创建图片存储数组
+@property(nonatomic,strong)NSMutableArray *imgsArray;
+
+
 
 @end
 
@@ -103,7 +109,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     
     self.collectionView.alwaysBounceVertical = YES;
     
-    //self.collectionView.alwaysBounceHorizontal = NO;
+  
     _spaceImgView = [[UIImageView alloc] init];
     
     //打开图片视图的交互
@@ -300,13 +306,46 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 
 //点击每个item,跳转到图片展示界面
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+   
+    //清空图片数组
+    [self.imgsArray removeAllObjects];
+    
+    //关闭正在进行的子线程
+    dispatch_suspend(dispatch_get_global_queue(0, 0));
     
     //根据section获得每个日志对象
     Loglist *logList = [ShowInformationDataManager sharedShowInformationDataManager].allLogs[indexPath.section];
     
     //创建图片显示控制器
     ShowPhotoViewController *photoVC = [[ShowPhotoViewController alloc]init];
-//    
+
+    
+    //解析网上图片,存入本地,给图片显示页面用
+    
+    //进入子线程解析图片
+   dispatch_async(dispatch_get_global_queue(0, 0), ^{
+       
+       for (NSString *urlString in logList.bigImageUrls) {
+           //获得网络图片
+           NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+           UIImage *image = [UIImage imageWithData:data];
+           
+           [self.imgsArray addObject:image];
+           
+       }
+     
+       //回到主线程,将解析好的图片数组传给图片视图对象
+       dispatch_async(dispatch_get_main_queue(), ^{
+           
+           //通过通知传送图片数组
+           NSDictionary *dic = @{@"imgs":self.imgsArray};
+           //发送通知
+           [[NSNotificationCenter defaultCenter]postNotificationName:@"images" object:nil userInfo:dic];
+       });
+       
+   });
+    
+  //
     UINavigationController *photoNC = [[UINavigationController alloc] initWithRootViewController:photoVC];
     
     photoNC.navigationBar.backgroundColor = [UIColor lightGrayColor];
@@ -324,7 +363,6 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 
 //点击评论按钮事件,跳转到评论详情页面
 -(void)pinLunBtnAction:(UIButton *)sender{
-    //NSLog(@"%@",sender.titleLabel.text);
     
     //跳转到评论视图控制器中
     PinLunTableViewController *pinLnTVC = [[PinLunTableViewController alloc] init];
@@ -344,6 +382,14 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     //跳转
     [self showViewController:pinLunNC sender:nil];
     
+}
+
+//懒加载
+-(NSMutableArray *)imgsArray{
+    if (!_imgsArray) {
+        _imgsArray = [NSMutableArray array];
+    }
+    return _imgsArray;
 }
 
 @end
