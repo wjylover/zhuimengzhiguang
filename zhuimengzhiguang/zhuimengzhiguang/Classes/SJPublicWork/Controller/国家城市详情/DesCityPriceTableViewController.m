@@ -7,8 +7,13 @@
 //
 
 #import "DesCityPriceTableViewController.h"
+#import "DesCityPriceHandle.h"
+#import "DesCityPriceModel.h"
+#import "DesCityPriceCell.h"
 
 @interface DesCityPriceTableViewController ()
+
+@property (nonatomic,strong) NSArray *array;
 
 @end
 
@@ -17,11 +22,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+   //网络请求
+    [self getValuesReuqestHandle];
+    //上拉刷新
+    [self mjRefreshWithReLoad];
+}
+-(void)mjRefreshWithReLoad
+{
+    MJRefreshBackGifFooter *footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshAction:)];
+    /** 普通闲置状态 */
+    [footer setImages:nil forState:MJRefreshStateIdle];
+    /** 松开就可以进行刷新的状态 */
+    [footer setImages:nil forState:MJRefreshStatePulling];
+    /** 正在刷新中的状态 */
+    [footer setImages:nil forState:MJRefreshStateRefreshing];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //设置尾部的显示
+    self.tableView.mj_footer = footer;
+}
+
+//刷新数据的方法
+-(void)refreshAction:(MJRefreshFooter*)foot
+{
+    //重新请求数据
+    [[DesCityPriceHandle shareDesCityPriceHandle]requestDesCityPriceHandle];
+    //回调block
+    [DesCityPriceHandle shareDesCityPriceHandle].result = ^(){
+        //数据赋值
+        self.array = [DesCityPriceHandle shareDesCityPriceHandle].dataArray;
+        //刷新
+        [self.tableView reloadData];
+    };
+    //结束刷新
+    [foot endRefreshing];
+}
+
+
+//网络请求
+-(void)getValuesReuqestHandle
+{
+    [[DesCityPriceHandle shareDesCityPriceHandle]requestDesCityPriceHandle];
+    [DesCityPriceHandle shareDesCityPriceHandle].result = ^(){
+        self.array =  [NSArray arrayWithArray:[DesCityPriceHandle shareDesCityPriceHandle].dataArray];
+        [self.tableView reloadData];
+    };
+    
+    //注册
+    [self.tableView registerNib:[UINib nibWithNibName:@"DesCityPriceCell" bundle:nil] forCellReuseIdentifier:@"desCityPriceCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,24 +79,27 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return self.array.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    DesCityPriceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"desCityPriceCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    DesCityPriceModel *model = [[DesCityPriceModel alloc]init];
+    model = self.array[indexPath.item];
+    
+    cell.model = model;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
