@@ -14,6 +14,9 @@
 #import <UIImageView+WebCache.h>
 #import "CityRequestHandle.h"
 #import "DestinationRequestHandle.h"
+
+#import "DesCityRequestHandle.h"
+#import "DesCityPriceHandle.h"
 #import "URL.h"
 @interface DestinationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 
@@ -282,6 +285,13 @@ static NSString *const cellIdentifier = @"destinationCell";
     
     //push到第二界面
      RegionViewController *regionVC = [[RegionViewController alloc]init];
+    regionVC.ID = countryModel.ID;
+    //传值到 国家城市详情中的网络请求中
+    [DesCityRequestHandle shareDesCityRequestHandle].ID = [CityRequestHandle shareCityReqeustHandle].ID;
+    [DesCityPriceHandle shareDesCityPriceHandle].ID = [CityRequestHandle shareCityReqeustHandle].ID;
+    //传值 这个国家城市的个数
+    [DesCityPriceHandle shareDesCityPriceHandle].count = countryModel.count;
+    
     regionVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"region"];
     [self.navigationController pushViewController:regionVC animated:YES];
 }

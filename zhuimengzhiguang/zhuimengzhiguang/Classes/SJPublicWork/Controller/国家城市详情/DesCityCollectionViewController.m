@@ -7,8 +7,13 @@
 //
 
 #import "DesCityCollectionViewController.h"
+#import "DesCityRequestHandle.h"
+#import "DesCityCell.h"
+
 
 @interface DesCityCollectionViewController ()
+
+@property (nonatomic,strong) NSArray *array;
 
 @end
 
@@ -18,51 +23,77 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //注意  注意  注意: 重要的事情要说三遍  --->>> 设置的是collectionView的背景,不是self.view   要不然   界面会一直是黑色的
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     
-    // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    //布局
+    [self layoutCollectionView];
+    //网络请求
+    [self getValuesWithRequest];
+}
+
+//布局
+-(void)layoutCollectionView
+{
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    //设置item大小
+    flowLayout.itemSize = CGSizeMake(self.collectionView.bounds.size.width/2 - 50, 130);
+    //设置间距
+    flowLayout.sectionInset = UIEdgeInsetsMake(30, 50, 10, 30);
+    self.collectionView.collectionViewLayout = flowLayout;
+    //设置滚动条是否显示
+    self.collectionView.showsVerticalScrollIndicator = NO;
     
-    // Do any additional setup after loading the view.
+    //注册cell
+    [self.collectionView registerNib:[UINib nibWithNibName:@"DesCityCell" bundle:nil] forCellWithReuseIdentifier:@"desCityCell"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//网络请求
+-(void)getValuesWithRequest
+{
+    [[DesCityRequestHandle shareDesCityRequestHandle]requestHandleDesCityRequestHandle];
+    [DesCityRequestHandle shareDesCityRequestHandle].result = ^(){
+        //将对象数组中的数据给array
+        self.array = [NSArray arrayWithArray:[DesCityRequestHandle shareDesCityRequestHandle].dataArray];
+        //刷新
+        [self.collectionView reloadData];
+    };
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+
+    return self.array.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+
+    DesCityCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"desCityCell" forIndexPath:indexPath];
     
-    // Configure the cell
+    DesCityModel *model = [DesCityModel new];
+    model = self.array[indexPath.item];
+    cell.model = model;
+    
     
     return cell;
 }
+
+//设置item的大小
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(self.collectionView.bounds.size.width/2 - 60, 180);
+}
+
 
 #pragma mark <UICollectionViewDelegate>
 
