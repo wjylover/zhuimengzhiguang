@@ -14,12 +14,13 @@
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key{
     if ([key isEqualToString:@"id"]) {
         NSLog(@"%@",key);
+       
     }
 }
 
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"data=%@", _data];
+    return [NSString stringWithFormat:@"date=%@", _date];
 }
 @end

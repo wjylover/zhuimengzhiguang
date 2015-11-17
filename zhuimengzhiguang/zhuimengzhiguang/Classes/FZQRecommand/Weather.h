@@ -11,7 +11,7 @@
 @interface Weather : NSObject
 
 //日期
-@property(nonatomic,copy)NSString *data;
+@property(nonatomic,copy)NSString *date;
 //风力
 @property(nonatomic,copy)NSString *fengli;
 //风向
