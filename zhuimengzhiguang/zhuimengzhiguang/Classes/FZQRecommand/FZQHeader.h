@@ -37,4 +37,9 @@
 
 //留言板
 #define kMessageURL @"http://api.xingzhe01.com/xingzhe/message/list2?&action=%2Fmessage%2Flist2&lastMessageId=0"
+
+//天气
+//参数:根据传过来的城市名获取一周的天气情况
+#define kWeatherURL @"http://wthrcdn.etouch.cn/weather_mini?city="
+
 #endif /* FZQHeader_h */

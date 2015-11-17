@@ -45,13 +45,21 @@
 // 当前当前位置的城市ID
 @property (nonatomic, assign) NSInteger cityID;
 
+
+//存储当前城市的这一周的天气对象
+@property(nonatomic,strong)NSMutableArray *weatherArray;
+
 @end
 
 @implementation WJYHomeViewController
 
+static NSString *const weatherCellIdentify = @"weatherCellID";
 
 - (void)viewWillAppear:(BOOL)animated
 {
+  
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:176/255.0 green:222/255.0 blue:246/255.0 alpha:0.1];
+
     // 获取城市列表的回调(调用在定位当前位置方法中)
     [WJYDataManager sharedManager].cityBlock = ^(){
         self.cityListArray = [WJYDataManager sharedManager].cityListArray;
@@ -102,12 +110,25 @@
     [[WJYDataManager sharedManager] getCityList];
 
     self.navigationController.navigationBar.translucent = NO;
+    
+    //注册天气的cell
+    [self.homeTableview registerNib:[UINib nibWithNibName:@"WeatherTableViewCell" bundle:nil] forCellReuseIdentifier:weatherCellIdentify];
+    
+    //根据城市名获得天气状况
+    [self analysisWeatherByCityName:_city];
+    
+    //自动设置cell的高度
+    self.homeTableview.rowHeight = UITableViewAutomaticDimension;
+    self.homeTableview.estimatedRowHeight = 50;
 
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(indexPath.section == 0){
+        return;
+    }
     [[WJYDataManager sharedManager] getScenicSpotContentArrayWithTypeID:[_scenicSpotArray[indexPath.row] typeID]];
     
     self.hidesBottomBarWhenPushed = YES;
@@ -123,21 +144,37 @@
 // 分组数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 // cell数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == 0) {
+        return self.weatherArray.count-3;
+    }
     return _scenicSpotArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0) {
+        return 50;
+    }
     return 200;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+       if (indexPath.section == 0) {
+        
+        WeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:weatherCellIdentify forIndexPath:indexPath];
+        if(self.weatherArray.count == 0)
+        {
+            return cell;
+        }
+        cell.weather = self.weatherArray[indexPath.row];
+        return cell;
+    }
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     ScenerySpot *scenerySpot = _scenicSpotArray[indexPath.row];
@@ -146,6 +183,8 @@
     cell.homeLabel.text = scenerySpot.name;
     return cell;
 }
+
+
 // 轮播图点击事件
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
@@ -173,10 +212,98 @@
         [self.scenicSpotArray removeAllObjects];
         [self.homeTableview reloadData];
         [[WJYDataManager sharedManager] getScenicSpotDataArrayWithCityID:cityid];
+        
+        //调用天气解析数据
+        [self analysisWeatherByCityName:cityName];
     };
 
 
 }
 
+
+//设置tableView的区头的高度
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(section == 0){
+    return 50;
+    }
+    return 1;
+}
+
+//设置tableView的区尾的高度
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+
+    return 1;
+}
+
+//在tableView的区头视图
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+   
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kUIScreenWidth, 30)];
+   view.backgroundColor = [UIColor lightGrayColor];
+   
+    if(section == 0){
+        UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"duoyun.png"]];
+        imgView.frame = CGRectMake(10, 5, 50, 40);
+        [view addSubview:imgView];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(70, 5, 100, 40)];
+        label.text = @"天气状况";
+        [view addSubview:label];
+        view.alpha = 0.6;
+         return view;
+    }
+    view.alpha = 0.2;
+    return view;
+   
+    
+}
+
+
+//根据获得的城市名解析天气的数据
+-(void)analysisWeatherByCityName:(NSString *)cityName{
+     //清空天气数组
+    [self.weatherArray removeAllObjects];
+    
+     // 将中文转为UTF8编码
+    NSString *typeString = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge CFStringRef)cityName,NULL,(CFStringRef)@"!*'();:@&=+$,/?%#[]",kCFStringEncodingUTF8);
+    
+    NSString *urlString = [kWeatherURL stringByAppendingString:typeString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        if (data == nil) {
+            return ;
+        }
+    
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        NSDictionary *dataDic = dict[@"data"];
+        
+        NSArray *forecast = dataDic[@"forecast"];
+        
+        for (NSDictionary *dic in forecast) {
+            //循环数组,创建天气对象
+            Weather *weather = [Weather new];
+            [weather setValuesForKeysWithDictionary:dic];
+            
+            [self.weatherArray addObject:weather];
+            
+        }
+        
+    
+        //刷新表视图
+        [self.homeTableview reloadData];
+    }];
+    
+}
+
+
+-(NSMutableArray *)weatherArray{
+    if (!_weatherArray) {
+        _weatherArray = [NSMutableArray array];
+    }
+    return _weatherArray;
+}
 
 @end

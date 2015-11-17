@@ -19,7 +19,7 @@
 
 -(void)setMilage:(Mileage *)milage{
     NSString *urlString = milage.imageUrls.firstObject;
-    [_imgView sd_setImageWithURL:[NSURL URLWithString:urlString]];
+    [_imgView sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"placeimage2.jpg"]];
     
     _dataLabel.text = [NSString stringWithFormat:@"%@/%@天",milage.packDate,milage.days];
     

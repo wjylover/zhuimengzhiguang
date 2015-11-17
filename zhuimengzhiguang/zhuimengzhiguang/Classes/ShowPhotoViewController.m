@@ -15,11 +15,6 @@
 //创建一个图片内容视图
 @property(nonatomic,strong)PhotoCotentView *contentView;
 
-
-
-//创建一个存储图片链接的数组
-@property(nonatomic,strong)NSArray *netImagesUrl;
-
 //创建一个提示信息视图
 @property(nonatomic,strong)MONActivityIndicatorView *indicatorView;
 
@@ -38,31 +33,31 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_contentView];
 
-    _netImagesUrl = self.log.bigImageUrls;
+    //_netImagesUrl = self.log.bigImageUrls;
     
     //添加一个返回按钮
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"weibosdk_navigationbar_back.png"] style:UIBarButtonItemStylePlain target:self action:@selector(returnAction:)];
     
  //注册通知
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getImages:) name:@"images" object:nil];
+   // [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getImages:) name:@"images" object:nil];
     
 }
 
 //接收到通知后执行的事件,显示数据
--(void)getImages:(NSNotification *)sender{
-    
-    self.images = sender.userInfo[@"imgs"];
-    
-    
-       //展示数据
-            [self contentViewDataPrepare];
-       //事件
-            [self event];
-       //移除提示信息视图
-            [_indicatorView removeFromSuperview];
-            [_indicatorView stopAnimating];
-    
-}
+//-(void)getImages:(NSNotification *)sender{
+//    
+//    self.images = sender.userInfo[@"imgs"];
+//    
+//    
+//       //展示数据
+//            [self contentViewDataPrepare];
+//       //事件
+//            [self event];
+//       //移除提示信息视图
+//            [_indicatorView removeFromSuperview];
+//            [_indicatorView stopAnimating];
+//    
+//}
 
 
 //返回上一个页面
@@ -85,6 +80,21 @@
         [self.view addSubview:_indicatorView];
     
     
+    
+}
+
+
+-(void)viewDidAppear:(BOOL)animated{
+           //展示数据
+                [self contentViewDataPrepare];
+           //事件
+                [self event];
+           //移除提示信息视图
+                [_indicatorView removeFromSuperview];
+                [_indicatorView stopAnimating];
+
+    
+
 }
 
 #pragma mark - MONActivityIndicatorViewDelegate Methods
@@ -103,8 +113,8 @@
 /** 展示数据 */
 -(void)contentViewDataPrepare{
     
-   
-    _contentView.images =self.images;
+    
+   _contentView.images =self.images;
 }
 
 
@@ -128,7 +138,13 @@
     
     __weak typeof(self) weakSelf=self;
     
+    if (self.images.count == 0) {
+        return;
+    }
+    
     [PhotoBroswerVC show:self type:PhotoBroswerVCTypeZoom index:index photoModelBlock:^NSArray *{
+        
+       
         
         NSArray *localImages = weakSelf.images;
         
@@ -139,6 +155,7 @@
             pbModel.mid = i + 1;
             pbModel.desc = self.log.logcontent;
             pbModel.image = localImages[i];
+            
             
             //源frame
             UIImageView *imageV =(UIImageView *) weakSelf.contentView.subviews[i];

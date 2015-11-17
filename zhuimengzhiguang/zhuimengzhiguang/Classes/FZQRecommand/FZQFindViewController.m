@@ -40,7 +40,7 @@
     label.textAlignment = NSTextAlignmentCenter;
     [view addSubview:label];
     label.center = view.center;
-    view.backgroundColor = [UIColor colorWithRed:104/255.0 green:185/255.0 blue:231/255.0 alpha:1];
+    view.backgroundColor =  [UIColor colorWithRed:176/255.0 green:222/255.0 blue:246/255.0 alpha:1];
    
  
     [scNTC.view addSubview:view];

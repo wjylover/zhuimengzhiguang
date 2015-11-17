@@ -22,8 +22,10 @@
 @property(nonatomic,strong)UILabel *dataLabel;
 //距离
 @property(nonatomic,strong)UILabel *distanceLabel;
-//创建图片存储数组
+
+//创建存储所有日志对象大图片的所有小数组
 @property(nonatomic,strong)NSMutableArray *imgsArray;
+
 
 
 
@@ -42,6 +44,9 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+   
+
     //注册item
     [self.collectionView registerNib:[UINib nibWithNibName:@"ShowInforCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
     
@@ -58,7 +63,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     //设置contentInset属性(上左下右的值),重点
     self.collectionView.contentInset = UIEdgeInsetsMake(imageHeight, 0, 0, 0);
     
-    //自定义cell的高度
+   
   
 
     //调用block
@@ -145,8 +150,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     
     //创建距离文本框
     _distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, imageHeight-20, kUIScreenWidth-20, 20)];
-    //自动布局,自适应顶部
-    //_distanceLabel .autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+
     [_spaceImgView addSubview:_distanceLabel];
     _distanceLabel.textColor = [UIColor whiteColor];
     
@@ -201,8 +205,11 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 
 //设置总的分区数
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-   // NSLog(@"%ld",[ShowInformationDataManager sharedShowInformationDataManager].allLogs.count);
-//根据日志数组的个数分区
+
+    //清除存储所有日志对象的大图片的数组
+    [self.imgsArray removeAllObjects];
+    
+    //根据日志数组的个数分区
     return [ShowInformationDataManager sharedShowInformationDataManager].allLogs.count;
     
 }
@@ -214,6 +221,41 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     Loglist *log = [ShowInformationDataManager sharedShowInformationDataManager].allLogs[section];
     //获得log日志对象的图片个数
     NSInteger count = log.imageUrls.count;
+    
+    //开辟一个子线程,解析数据
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        //根据分区数创建存储每个日志对象的所有大图片的数组
+        NSMutableArray *bigImgs = [NSMutableArray arrayWithCapacity:5];
+        
+        //缓存大图片
+        //获得此时的日志对象对应的大图片url
+        for (NSString * string in log.bigImageUrls) {
+            
+            SDWebImageManager *manager = [SDWebImageManager sharedManager];
+            
+            [manager downloadImageWithURL:[NSURL URLWithString:string] options: SDWebImageLowPriority  progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                
+                NSLog(@"正在下载图片");
+                
+            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                if (!image) {
+                    return ;
+                }
+                else if(image){
+                [bigImgs addObject:image];
+                }
+            }];
+            
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.imgsArray addObject:bigImgs];
+        });
+        
+        
+    });
+    
+
     return count;
 }
 
@@ -227,6 +269,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     NSString *urlString = log.imageUrls[indexPath.item];
     //设置图片
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:urlString]];
+    
     return cell;
 }
 
@@ -307,14 +350,21 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 //点击每个item,跳转到图片展示界面
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
    
-    //清空图片数组
-    [self.imgsArray removeAllObjects];
-    
-    //关闭正在进行的子线程
-    dispatch_suspend(dispatch_get_global_queue(0, 0));
+//    //清空图片数组
+//    [self.imgsArray removeAllObjects];
+//    
+//    //判断线程是否应该被取消
+//    if ([ShowInformationDataManager sharedShowInformationDataManager].allLogs.count == 0) {
+//        return;
+//    }
+//
+    if([ShowInformationDataManager sharedShowInformationDataManager].allLogs.count == 0){
+        return;
+    }
     
     //根据section获得每个日志对象
     Loglist *logList = [ShowInformationDataManager sharedShowInformationDataManager].allLogs[indexPath.section];
+    
     
     //创建图片显示控制器
     ShowPhotoViewController *photoVC = [[ShowPhotoViewController alloc]init];
@@ -323,35 +373,37 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     //解析网上图片,存入本地,给图片显示页面用
     
     //进入子线程解析图片
-   dispatch_async(dispatch_get_global_queue(0, 0), ^{
-       
-       for (NSString *urlString in logList.bigImageUrls) {
-           //获得网络图片
-           NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
-           UIImage *image = [UIImage imageWithData:data];
-           
-           [self.imgsArray addObject:image];
-           
-       }
-     
-       //回到主线程,将解析好的图片数组传给图片视图对象
-       dispatch_async(dispatch_get_main_queue(), ^{
-           
-           //通过通知传送图片数组
-           NSDictionary *dic = @{@"imgs":self.imgsArray};
-           //发送通知
-           [[NSNotificationCenter defaultCenter]postNotificationName:@"images" object:nil userInfo:dic];
-       });
-       
-   });
+//   dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//       
+//       for (NSString *urlString in logList.bigImageUrls) {
+//           //获得网络图片
+//           NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+//           UIImage *image = [UIImage imageWithData:data];
+//           
+//           [self.imgsArray addObject:image];
+//           
+//       }
+//     
+//       //回到主线程,将解析好的图片数组传给图片视图对象
+//       dispatch_async(dispatch_get_main_queue(), ^{
+//           
+//           //通过通知传送图片数组
+//           NSDictionary *dic = @{@"imgs":self.imgsArray};
+//           //发送通知
+//           [[NSNotificationCenter defaultCenter]postNotificationName:@"images" object:nil userInfo:dic];
+//       });
+//       
+//   });
     
-  //
-    UINavigationController *photoNC = [[UINavigationController alloc] initWithRootViewController:photoVC];
+  UINavigationController *photoNC = [[UINavigationController alloc] initWithRootViewController:photoVC];
     
     photoNC.navigationBar.backgroundColor = [UIColor lightGrayColor];
     
     //传值
     photoVC.log = logList;
+    
+    //根据section获得存储大图片数组的内容
+    photoVC.images = self.imgsArray[indexPath.section];
     
     //跳转页面
     [self showDetailViewController:photoNC sender:nil];
