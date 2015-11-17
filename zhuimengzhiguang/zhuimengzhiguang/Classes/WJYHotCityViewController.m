@@ -25,6 +25,7 @@ static NSInteger page = 1;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    page = 1;
     [_hotDataArray removeAllObjects];
     [_hotTanelView registerNib:[UINib nibWithNibName:@"HomeCell" bundle:nil] forCellReuseIdentifier:@"homeCell"];
     _hotDataArray = [NSMutableArray arrayWithCapacity:20];
@@ -46,7 +47,6 @@ static NSInteger page = 1;
         [self loadData];
     }];
     self.hotTanelView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
 }
 
 - (void)loadData
@@ -71,7 +71,6 @@ static NSInteger page = 1;
 {
     self.hidesBottomBarWhenPushed = YES;
     HotContentViewController *hotContentVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HotContent"];
-    NSLog(@"%@",self.hotDataArray[indexPath.row]);
     hotContentVC.hot = self.hotDataArray[indexPath.row];
     HomeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     hotContentVC.headImageView = [[UIImageView alloc] initWithImage:cell.homeImage.image];

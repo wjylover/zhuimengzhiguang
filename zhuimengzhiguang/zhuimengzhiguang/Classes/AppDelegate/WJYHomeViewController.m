@@ -112,7 +112,7 @@
     
     self.hidesBottomBarWhenPushed = YES;
     WJYScenerySpotViewController *scenerySpotVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ScenetySpot"];
-
+    scenerySpotVC.typeID = [_scenicSpotArray[indexPath.row] typeID];
     scenerySpotVC.headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -kImageHight, self.view.frame.size.width, kImageHight)];
     [self.navigationController pushViewController:scenerySpotVC animated:YES];
     self.hidesBottomBarWhenPushed = NO;
