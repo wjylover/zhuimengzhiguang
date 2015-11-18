@@ -40,7 +40,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oY-jj-kC6">
-                        <rect key="frame" x="301" y="152" width="34" height="21"/>
+                        <rect key="frame" x="296" y="152" width="34" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                     <constraint firstItem="Vdz-CO-atv" firstAttribute="top" secondItem="4oY-jj-kC6" secondAttribute="bottom" constant="10" id="Zpw-aG-KLs"/>
                     <constraint firstAttribute="trailing" secondItem="uhp-fs-uBQ" secondAttribute="trailing" constant="20" id="kKA-m0-J8h"/>
                     <constraint firstItem="Vdz-CO-atv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="nJB-lw-Z3p"/>
-                    <constraint firstAttribute="trailing" secondItem="4oY-jj-kC6" secondAttribute="trailing" constant="20" id="rvx-ti-1yo"/>
+                    <constraint firstAttribute="trailing" secondItem="4oY-jj-kC6" secondAttribute="trailing" constant="25" id="rvx-ti-1yo"/>
                     <constraint firstItem="ShB-7e-oDf" firstAttribute="top" secondItem="uhp-fs-uBQ" secondAttribute="bottom" constant="5" id="t19-Nr-Cs6"/>
                     <constraint firstAttribute="bottom" secondItem="Vdz-CO-atv" secondAttribute="bottom" constant="2" id="tPp-rv-2mi"/>
                     <constraint firstItem="uhp-fs-uBQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="vq2-xz-A9X"/>

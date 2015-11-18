@@ -145,14 +145,20 @@ static NSString *const cellIdentify = @"recommandCellID";
     //创建一个详情界面控制器
     ShowInformationCollectionViewController *showInformationCVC = [[ShowInformationCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
     
+    //创建一个导航控制器
+    UINavigationController *showInformationNC = [[UINavigationController alloc] initWithRootViewController:showInformationCVC];
+    
     //创建控制器的跳转形式
-    showInformationCVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    showInformationNC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     //传值
     showInformationCVC.mileage = [RecommandDataManager sharedRecommandDataManager].miles[indexPath.row];
     
     //跳转
-    [self showDetailViewController:showInformationCVC sender:nil];
+    [self showDetailViewController:showInformationNC sender:nil];
+    
+    
+    
     
 }
 
