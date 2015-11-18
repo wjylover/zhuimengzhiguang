@@ -114,6 +114,7 @@
             }else{
                 [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"夜间模式";
                  //移除在该应用程序的窗口上的视图
+                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"night.jpg"];
                 [temp.dayView removeFromSuperview];
                 //并将样式设为YES
                 [WJYDataManager sharedManager].isDay = NO;
@@ -124,6 +125,10 @@
         [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"日间模式";
         [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"sun"];
     }
+//    else{
+//        [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"夜间模式";
+//        [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"night.jpg"];
+//    }
 
     [_tumblrMenuView addMenuItemWithTitle:@"意见箱" andIcon:[UIImage imageNamed:@"ideas.jpg"]  andSelectedBlock:^{
         NSLog(@"意见箱");

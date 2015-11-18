@@ -43,6 +43,14 @@
     };
     [self.collectTableView registerNib:[UINib nibWithNibName:@"WJYCollectCell" bundle:nil] forCellReuseIdentifier:@"CollectCell"];
      self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_arrow"] style:UIBarButtonItemStyleDone target:self action:@selector(backAction:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+}
+
+- (void)backAction:(UIBarButtonItem *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

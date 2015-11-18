@@ -7,6 +7,8 @@
 //
 
 #import "WJYHomeViewController.h"
+#import "NSString+Characters.h"
+#import "WJYWeatherView.h"
 #import "HotContentViewController.h"
 #import "WJYHotCityViewController.h"
 #import "WJYScenerySpotViewController.h"
@@ -24,6 +26,7 @@
 
 #define kImageHight [UIScreen mainScreen].bounds.size.width / (490 / 285.0)
 
+#define kWeatherImageURL @"http://php.weather.sina.com.cn/images/yb3/180_180/%@_0.png"
 @interface WJYHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 // 轮播图控件
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
@@ -53,12 +56,11 @@
 
 @implementation WJYHomeViewController
 
-static NSString *const weatherCellIdentify = @"weatherCellID";
 
 - (void)viewWillAppear:(BOOL)animated
 {
   
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:176/255.0 green:222/255.0 blue:246/255.0 alpha:0.1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
 
     // 获取城市列表的回调(调用在定位当前位置方法中)
     [WJYDataManager sharedManager].cityBlock = ^(){
@@ -96,13 +98,14 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
     
     self.carouselTextArray = @[@"北京",@"广州",@"上海",@"深圳",@"厦门"];
     self.hotCityIDArray = @[@1001,@2959,@1801,@2984,@2];
-    _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:_cycleScrollView.bounds imagesGroup:_carouselImageArray];
+    _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -200, self.view.frame.size.width, 200) imagesGroup:_carouselImageArray];
     _cycleScrollView.titlesGroup = _carouselTextArray;
     // 采用网络图片实现
     _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     _cycleScrollView.delegate = self;
     _cycleScrollView.placeholderImage = [UIImage imageNamed:@"placeholder"];
-    [self.view addSubview:_cycleScrollView];
+    self.homeTableview.contentInset = UIEdgeInsetsMake(200 , 0, 0, 0);
+    [self.homeTableview addSubview:_cycleScrollView];
     // 注册cell
     [self.homeTableview registerNib:[UINib nibWithNibName:@"HomeCell" bundle:nil] forCellReuseIdentifier:@"homeCell"];
     
@@ -110,9 +113,6 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
     [[WJYDataManager sharedManager] getCityList];
 
     self.navigationController.navigationBar.translucent = NO;
-    
-    //注册天气的cell
-    [self.homeTableview registerNib:[UINib nibWithNibName:@"WeatherTableViewCell" bundle:nil] forCellReuseIdentifier:weatherCellIdentify];
     
     //根据城市名获得天气状况
     [self analysisWeatherByCityName:_city];
@@ -126,9 +126,6 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 0){
-        return;
-    }
     [[WJYDataManager sharedManager] getScenicSpotContentArrayWithTypeID:[_scenicSpotArray[indexPath.row] typeID]];
     
     self.hidesBottomBarWhenPushed = YES;
@@ -144,37 +141,23 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
 // 分组数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 // cell数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return self.weatherArray.count-3;
-    }
+    
     return _scenicSpotArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        return 50;
-    }
+    
     return 200;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-       if (indexPath.section == 0) {
-        
-        WeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:weatherCellIdentify forIndexPath:indexPath];
-        if(self.weatherArray.count == 0)
-        {
-            return cell;
-        }
-        cell.weather = self.weatherArray[indexPath.row];
-        return cell;
-    }
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     ScenerySpot *scenerySpot = _scenicSpotArray[indexPath.row];
@@ -206,8 +189,8 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
 
     WJYCityViewController *cityVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"City"];
     [self showViewController:cityVC sender:nil];
-    self.hidesBottomBarWhenPushed = NO;
     cityVC.reloadBlock = ^(NSInteger cityid,NSString *cityName){
+        self.city = cityName;
         [self.navigationItem.leftBarButtonItem setTitle:cityName];
         [self.scenicSpotArray removeAllObjects];
         [self.homeTableview reloadData];
@@ -216,6 +199,7 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
         //调用天气解析数据
         [self analysisWeatherByCityName:cityName];
     };
+    self.hidesBottomBarWhenPushed = NO;
 
 
 }
@@ -223,10 +207,8 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
 
 //设置tableView的区头的高度
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if(section == 0){
-    return 50;
-    }
-    return 1;
+    
+    return 150;
 }
 
 //设置tableView的区尾的高度
@@ -237,25 +219,34 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
 
 //在tableView的区头视图
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-   
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kUIScreenWidth, 30)];
-   view.backgroundColor = [UIColor lightGrayColor];
-   
-    if(section == 0){
-        UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"duoyun.png"]];
-        imgView.frame = CGRectMake(10, 5, 50, 40);
-        [view addSubview:imgView];
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(70, 5, 100, 40)];
-        label.text = @"天气状况";
-        [view addSubview:label];
-        view.alpha = 0.6;
-         return view;
+    if (_weatherArray.count == 0) {
+        return nil;
     }
-    view.alpha = 0.2;
-    return view;
-   
+    NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"WJYWeatherView" owner:self options:nil];
+    Weather *weather = _weatherArray[0];
+    WJYWeatherView *weatherView = [nib objectAtIndex:0];
+    weatherView.cityLabel.text = self.city;
+    weatherView.typeLabel.text = weather.type;
+    weatherView.windLabel.text = [weather.fengli substringToIndex:[weather.fengli length] - 1];
+    weatherView.weekLabel.text = [weather.date substringFromIndex:[weather.date length] - 3];
+    NSString *temp = [NSString stringWithFormat:@"%@~%@",[weather.low substringFromIndex:2],[weather.high substringFromIndex:2]];
+    weatherView.tempLabel.text = temp;
+    NSString *type = [weather.type pinyinOfString];
+    NSString *strUrl = [type stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [weatherView.typeImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:kWeatherImageURL,strUrl]]];
     
+    NSDate *currentDate = [NSDate date];//获取当前时间，日期
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd"];
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    weatherView.dayLabel.text = dateString;
+    
+    UIImageView *backImage= [[UIImageView alloc] initWithFrame:CGRectMake(0, 3, weatherView.frame.size.width, 146)];
+    backImage.image = [UIImage imageNamed:@"5.jpg"];
+    [weatherView addSubview:backImage];
+    [weatherView insertSubview:backImage atIndex:0];
+    weatherView.backgroundColor = [UIColor whiteColor];
+    return weatherView;
 }
 
 
@@ -271,7 +262,6 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
         if (data == nil) {
             return ;

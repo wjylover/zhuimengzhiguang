@@ -23,10 +23,21 @@
 @implementation WJYHotCityViewController
 static NSInteger page = 1;
 
+
+- (void)backAction:(UIBarButtonItem *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"热门城市";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_arrow"] style:UIBarButtonItemStyleDone target:self action:@selector(backAction:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+
     page = 1;
     [_hotDataArray removeAllObjects];
+    
     [_hotTanelView registerNib:[UINib nibWithNibName:@"HomeCell" bundle:nil] forCellReuseIdentifier:@"homeCell"];
     _hotDataArray = [NSMutableArray arrayWithCapacity:20];
     self.hotTanelView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{

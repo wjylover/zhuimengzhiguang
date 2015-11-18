@@ -24,14 +24,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
     self.title = @"选择城市";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_arrow"] style:UIBarButtonItemStyleDone target:self action:@selector(backAction:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+
     self.cityAllArray = [NSMutableArray arrayWithCapacity:30];
     self.allHeadArray = [NSMutableArray arrayWithCapacity:30];
     self.cityAllArray = [WJYDataManager sharedManager].cityAllArray;
