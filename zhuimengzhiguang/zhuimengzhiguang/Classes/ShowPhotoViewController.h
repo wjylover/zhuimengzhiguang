@@ -13,7 +13,7 @@
 //接收上个页面传过来的日志对象
 @property(nonatomic,strong)Loglist *log;
 
-//创建一个存储图片的数组
-@property(nonatomic,strong)NSArray *images;
+//接收上个页面传过来的大图片的网址
+@property(nonatomic,copy)NSString *bigUrlString;
 
 @end
