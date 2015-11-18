@@ -17,21 +17,22 @@
 
 @implementation WJYCityViewController
 
-- (IBAction)backButton:(UIButton *)sender {
+- (void)backAction:(UIBarButtonItem *)sender
+{
     [self.navigationController popViewControllerAnimated:YES];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
+    self.title = @"选择城市";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_arrow"] style:UIBarButtonItemStyleDone target:self action:@selector(backAction:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+
     self.cityAllArray = [NSMutableArray arrayWithCapacity:30];
     self.allHeadArray = [NSMutableArray arrayWithCapacity:30];
     self.cityAllArray = [WJYDataManager sharedManager].cityAllArray;
@@ -74,16 +75,15 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     NSArray *cityArray = self.cityAllArray[indexPath.section][@"cells"];
     City *city = cityArray[indexPath.row];
     [self.navigationController popViewControllerAnimated:YES];
     self.reloadBlock([[city valueForKey:@"city_id"] integerValue],[city valueForKey:@"city_name"]);
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
 
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

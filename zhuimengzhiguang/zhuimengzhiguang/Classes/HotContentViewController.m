@@ -83,17 +83,17 @@
         frame.origin.y = y;
         frame.size.height = -y;
         _headImageView.frame = frame;
-    }else if(y >= -44){
+    }else if(y >= -54){
         [_headImageView removeFromSuperview];
-        _headImageView.frame = CGRectMake(0, -kImageHight+44, self.view.frame.size.width, kImageHight);
+        _headImageView.frame = CGRectMake(0, -kImageHight+54, self.view.frame.size.width, kImageHight);
         [self.view addSubview:_headImageView];
         _visualView.alpha = 0.95;
         [self.view insertSubview:_backView aboveSubview:_visualView];
-    }else if(y < -44){
+    }else if(y < -54){
         [_headImageView removeFromSuperview];
         _headImageView.frame = CGRectMake(0, -kImageHight, self.view.frame.size.width, kImageHight);
         [_hotContentTableView addSubview:_headImageView];
-        _visualView.alpha = (kImageHight + y) / 166 +0.05;
+        _visualView.alpha = (kImageHight + y) / 156 +0.05;
     }
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -164,6 +164,7 @@
     }else{
         cell.lineLabel.text = [NSString stringWithFormat:@"路线: %@",hotContent.line];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 @end

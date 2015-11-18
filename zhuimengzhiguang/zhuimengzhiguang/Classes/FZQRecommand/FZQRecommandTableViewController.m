@@ -110,16 +110,16 @@ static NSString *const cellIdentify = @"recommandCellID";
 
 //设置表示图的头视图大小
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 30;
+    return 60;
 }
 
 //设置表视图的头视图
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kUIScreenWidth, 30)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kUIScreenWidth, 60)];
     
     //创建图片视图
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 5, 8, 25)];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 25, 8, 25)];
     imgView.image = [UIImage imageNamed:@"companion_bg_blue.png"];
     imgView.layer.cornerRadius = 4;
     imgView.layer.masksToBounds = YES;

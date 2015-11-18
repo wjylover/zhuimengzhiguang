@@ -25,6 +25,7 @@ typedef void (^BackBlock) (void);
 @property (nonatomic, copy) BackBlock scenerySpotBlock;
 @property (nonatomic, copy) BackBlock scenerySpotContentBlock;
 
+@property (nonatomic, assign) BOOL isDay;
 + (instancetype)sharedManager;
 - (void)getCarouselImageData;
 - (void)getHomeHotDataArrayWithCityID:(NSInteger)cityID Page:(NSInteger)page;

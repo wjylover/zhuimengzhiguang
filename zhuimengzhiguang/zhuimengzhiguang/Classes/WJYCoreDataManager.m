@@ -57,7 +57,6 @@
     collect.typeID = typeID;
     //保存操作
     [self.myObjectContext save:nil];
-
 }
 
 // 删除表

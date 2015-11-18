@@ -33,6 +33,14 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView removeFromSuperview];
+    self.mapView.delegate = nil;
+    self.mapView = nil;
+   
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -81,17 +89,17 @@
         frame.origin.y = y;
         frame.size.height = -y;
         _headImageView.frame = frame;
-    }else if(y >= -44){
+    }else if(y >= -54){
         [_headImageView removeFromSuperview];
-        _headImageView.frame = CGRectMake(0, -kImageHight+44, self.view.frame.size.width, kImageHight);
+        _headImageView.frame = CGRectMake(0, -kImageHight+54, self.view.frame.size.width, kImageHight);
         [self.view addSubview:_headImageView];
         _visualView.alpha = 0.95;
         [self.view insertSubview:_backView aboveSubview:_visualView];
-    }else if(y < -44){
+    }else if(y < -54){
         [_headImageView removeFromSuperview];
         _headImageView.frame = CGRectMake(0, -kImageHight, self.view.frame.size.width, kImageHight);
         [_scenerySpotTableView addSubview:_headImageView];
-        _visualView.alpha = (kImageHight + y) / 166 +0.05;
+        _visualView.alpha = (kImageHight + y) / 156 +0.05;
     }
 }
 
@@ -150,6 +158,7 @@
     cell.pice.text = [NSString stringWithFormat:@"门票: %@",self.scenery.ticket];
     cell.phoneTabel.text = [NSString stringWithFormat:@"电话: %@",self.scenery.phone];
     cell.desLabel.text = [NSString stringWithFormat:@"简介: %@",self.scenery.content];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (IBAction)controllerButtonAction:(UIButton *)sender {

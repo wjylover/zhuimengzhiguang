@@ -24,6 +24,7 @@
 //  THE SOFTWARE.
 
 #import "CHTumblrMenuView.h"
+#import "CHTumblrMenuItemButton.h"
 #define CHTumblrMenuViewTag 1999
 #define CHTumblrMenuViewImageHeight 90
 #define CHTumblrMenuViewTitleHeight 20
@@ -35,60 +36,25 @@
 #define CHTumblrMenuViewAnimationInterval (CHTumblrMenuViewAnimationTime / 5)
 
 
-@interface CHTumblrMenuItemButton : UIControl
-- (id)initWithTitle:(NSString*)title andIcon:(UIImage*)icon andSelectedBlock:(CHTumblrMenuViewSelectedBlock)block;
-@property(nonatomic,copy)CHTumblrMenuViewSelectedBlock selectedBlock;
-@end
-
-@implementation CHTumblrMenuItemButton
-{
-    UIImageView *iconView_;
-    UILabel *titleLabel_;
-}
-- (id)initWithTitle:(NSString*)title andIcon:(UIImage*)icon andSelectedBlock:(CHTumblrMenuViewSelectedBlock)block
-{
-    self = [super init];
-    if (self) {
-        iconView_ = [UIImageView new];
-        iconView_.image = icon;
-        titleLabel_ = [UILabel new];
-        titleLabel_.textAlignment = NSTextAlignmentCenter;
-        titleLabel_.backgroundColor = [UIColor clearColor];
-        titleLabel_.textColor = [UIColor whiteColor];
-        titleLabel_.text = title;
-        _selectedBlock = block;
-        [self addSubview:iconView_];
-        [self addSubview:titleLabel_];
-    }
-    return self;
-}
-
-- (void)setFrame:(CGRect)frame
-{
-    [super setFrame:frame];
-    iconView_.frame = CGRectMake(0, 0, CHTumblrMenuViewImageHeight, CHTumblrMenuViewImageHeight);
-    titleLabel_.frame = CGRectMake(0, CHTumblrMenuViewImageHeight, CHTumblrMenuViewImageHeight, CHTumblrMenuViewTitleHeight);
-}
 
 
-@end
 
 @implementation CHTumblrMenuView
+
+
+- (NSMutableArray *)getButtons
 {
-    UIImageView *backgroundView_;
-    NSMutableArray *buttons_;
+    return buttons_;
 }
-
-
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
-        ges.delegate = self;
-        [self addGestureRecognizer:ges];
+        //UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
+        //ges.delegate = self;
+        //[self addGestureRecognizer:ges];
         self.backgroundColor = [UIColor clearColor];
         backgroundView_ = [[UIImageView alloc] initWithFrame:self.bounds];
         backgroundView_.image = [[UIImage imageNamed:@"modal_background.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:6];
@@ -173,7 +139,7 @@
 
 - (void)buttonTapped:(CHTumblrMenuItemButton*)btn
 {
-    [self dismiss:nil];
+    //[self dismiss:nil];
     double delayInSeconds = CHTumblrMenuViewAnimationTime  + CHTumblrMenuViewAnimationInterval * (buttons_.count + 1);
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -181,6 +147,7 @@
 
     });
 }
+
 
 
 - (void)riseAnimation
@@ -298,7 +265,7 @@
     UIWindow *window;
     
     window = [UIApplication sharedApplication].keyWindow;
-   
+    
         
     appRootViewController = window.rootViewController;
     
@@ -314,7 +281,7 @@
         [[topViewController.view viewWithTag:CHTumblrMenuViewTag] removeFromSuperview];
     }
     
-    self.frame = topViewController.view.bounds;
+    self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 49);
     [topViewController.view addSubview:self];
     
     [self riseAnimation];

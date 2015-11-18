@@ -7,17 +7,17 @@
 //
 
 #import "MyViewController.h"
-
+#import "CHTumblrMenuItemButton.h"
+#import "WJYCollectViewController.h"
+#import "WJYDataManager.h"
 @interface MyViewController ()
 
 //创建一个放置所有按钮的视图
-@property(nonatomic,strong)CHTumblrMenuView *tumblrMenuView;
+@property(nonatomic,strong) CHTumblrMenuView *tumblrMenuView;
 
 //创建一个提示框控制器对象
-@property(nonatomic,strong)UIAlertController *alertController;
+@property(nonatomic,strong) UIAlertController *alertController;
 
-//创建一个BOOL值,判断此时的应用程序是否是夜间或日间模式 YES:日间模式 NO:夜间模式
-@property(nonatomic,assign)BOOL isDay;
 
 //创建一个加在窗口上的视图
 @property(nonatomic,strong)UIView *dayView;
@@ -28,38 +28,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    //默认判断值是YES
-    _isDay = YES;
-    
-    
-    
-    
-    
-    
+    self.title = @"设置";
+
 }
 
-
-
-
-//点击按钮,出现所有点击按钮
-- (IBAction)MenuAction:(UIButton *)sender {
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [_tumblrMenuView dismiss:self];
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    __weak typeof(self) temp = self;
+    _tumblrMenuView = [[CHTumblrMenuView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 49)];
     
-    _tumblrMenuView = [[CHTumblrMenuView alloc]init];
-    
-    _tumblrMenuView.backgroundColor = [UIColor colorWithRed:46/255.0 green:62/255.0 blue:82/255.0 alpha:0.3];
-
-    
+    _tumblrMenuView.backgroundColor = [UIColor colorWithRed:46/255.0 green:62/255.0 blue:82/255.0 alpha:1];
+    // 背景图片
+    UIImageView *backImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"placeImage8.jpg"]];
+    backImage.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 49);
+    // 头视图
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
+    view.backgroundColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
+    [_tumblrMenuView addSubview:view];
+    // titel
+    UILabel *titelLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 27, self.view.frame.size.width, 30)];
+    titelLabel.textAlignment = NSTextAlignmentCenter;
+    titelLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
+    titelLabel.text = @"设置";
+    [view addSubview:titelLabel];
+    [_tumblrMenuView addSubview:backImage];
     [_tumblrMenuView addMenuItemWithTitle:@"我的收藏" andIcon:[UIImage imageNamed:@"save.png"] andSelectedBlock:^{
-        NSLog(@"收藏按钮");
+        WJYCollectViewController *collectVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CollectVC"];
+        temp.hidesBottomBarWhenPushed = YES;
+
+        [temp showViewController:collectVC sender:nil];
+        temp.hidesBottomBarWhenPushed = NO;
+
     }];
     
-    __weak typeof(self) temp = self;
     [_tumblrMenuView addMenuItemWithTitle:@"清除缓存" andIcon:[UIImage imageNamed:@"clean.jpg"]  andSelectedBlock:^{
         NSLog(@"清除缓存");
         
         //获得该应用程序的缓存路径
-         NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         NSLog(@"%@",cachePath);
         
         //计算文件缓存的大小
@@ -79,7 +89,7 @@
         UIAlertAction *ac2 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             //清除缓存
-           [temp clearCache:cachePath];
+            [temp clearCache:cachePath];
             NSLog(@"清除缓存成功");
         }];
         
@@ -91,54 +101,39 @@
     }];
     
     //判断此时的模式
-    
-    //如果是日间模式,则显示夜间模式的样式
-    if (_isDay == YES) {
+        //如果是日间模式,则显示夜间模式的样式
         [_tumblrMenuView addMenuItemWithTitle:@"夜间模式" andIcon:[UIImage imageNamed:@"night.jpg"]  andSelectedBlock:^{
-            NSLog(@"夜间模式");
-            
+            if ([WJYDataManager sharedManager].isDay == NO) {
+            [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"日间模式";
+                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"sun"];
             //将视图加载该应用程序的窗口上
             [[UIApplication sharedApplication].keyWindow addSubview:temp.dayView];
-            
+              
             //并将样式设为NO
-            _isDay = NO;
+            [WJYDataManager sharedManager].isDay = YES;
+            }else{
+                [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"夜间模式";
+                 //移除在该应用程序的窗口上的视图
+                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"night.jpg"];
+                [temp.dayView removeFromSuperview];
+                //并将样式设为YES
+                [WJYDataManager sharedManager].isDay = NO;
+            }
         }];
+    // 修正图片文字
+    if ([WJYDataManager sharedManager].isDay == YES) {
+        [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"日间模式";
+        [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"sun"];
     }
-    //如果是夜间模式,则显示日间模式的样式
-    else{
-        [_tumblrMenuView addMenuItemWithTitle:@"日间模式" andIcon:[UIImage imageNamed:@"sun.png"]  andSelectedBlock:^{
-            NSLog(@"日间模式");
-            
-            //移除在该应用程序的窗口上的视图
-            [temp.dayView removeFromSuperview];
-            
-            //并将样式设为YES
-            _isDay = YES;
+//    else{
+//        [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"夜间模式";
+//        [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"night.jpg"];
+//    }
 
-        }];
-         
-    }
-    
-    
-    [_tumblrMenuView addMenuItemWithTitle:@"意见箱" andIcon:[UIImage imageNamed:@"ideas.jpg"]  andSelectedBlock:^{
-        NSLog(@"意见箱");
-        
-        //创建意见箱控制器对象
-        IdeaViewController *ideaVC = [[IdeaViewController alloc] initWithNibName:@"IdeaViewController" bundle:nil];
-        
-        //设置变换样式
-      ideaVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        
-        //跳转
-        [temp presentViewController:ideaVC animated:YES completion:nil];
-        
-        
-        
-        
-    }];
+
     
     [_tumblrMenuView show];
-    
+
 }
 
 
