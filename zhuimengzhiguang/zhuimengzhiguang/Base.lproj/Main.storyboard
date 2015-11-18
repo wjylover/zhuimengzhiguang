@@ -806,7 +806,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iconfont-shoucang.png" width="128" height="128"/>
+        <image name="iconfont-shoucang.png" width="43" height="43"/>
         <image name="loginback_icon.png" width="81" height="81"/>
         <image name="placeImage8.jpg" width="680" height="453"/>
     </resources>

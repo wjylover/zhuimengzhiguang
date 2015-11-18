@@ -24,44 +24,28 @@
     FZQRecommandTableViewController *recommandTVC = [[FZQRecommandTableViewController alloc] init];
     recommandTVC.title = @"";
     
-    
-    
     //创建导航栏视图控制器
     SCNavTabBarController *scNTC = [[SCNavTabBarController alloc] initWithSubViewControllers:@[recommandTVC]];
     scNTC.scrollAnimation = YES;
     scNTC.mainViewBounces = YES;
     [scNTC addParentController:self];
   
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kUIScreenWidth, 44)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kUIScreenWidth, 64)];
     view.backgroundColor = [UIColor whiteColor];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((kUIScreenWidth-20)/2, 10, (kUIScreenWidth-20)/2, 24)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, kUIScreenWidth, 24)];
     label.text = @"说走就走的旅行";
     label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
     [view addSubview:label];
-    label.center = view.center;
-    view.backgroundColor =  [UIColor colorWithRed:176/255.0 green:222/255.0 blue:246/255.0 alpha:1];
-   
- 
+    view.backgroundColor =  [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];   
     [scNTC.view addSubview:view];
     
     
 }
 
 
--(void)viewWillAppear:(BOOL)animated{
-    // 隐藏状态栏
-    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
-        [self prefersStatusBarHidden];
-        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
-    }
-}
 
-
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;//隐藏为YES，显示为NO
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
