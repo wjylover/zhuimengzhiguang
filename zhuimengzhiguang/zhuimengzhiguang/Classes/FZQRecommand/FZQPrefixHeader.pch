@@ -89,4 +89,9 @@
 //发送短信或邮件的系统库
 #import <MessageUI/MessageUI.h>
 
+//引导页
+#import "EAIntroPage.h"
+#import "EAIntroView.h"
+
+
 #endif /* FZQPrefixHeader_pch */

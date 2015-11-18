@@ -102,6 +102,11 @@
 		C27CAE7A1BF6DE97004FCC38 /* ideas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE791BF6DE97004FCC38 /* ideas.jpg */; settings = {ASSET_TAGS = (); }; };
 		C27CAE7C1BF70D24004FCC38 /* iconfont-iconfont22.png in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE7B1BF70D24004FCC38 /* iconfont-iconfont22.png */; settings = {ASSET_TAGS = (); }; };
 		C27CAE7E1BF72565004FCC38 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = C27CAE7D1BF72565004FCC38 /* sun.png */; settings = {ASSET_TAGS = (); }; };
+		C28CA9F21BFC28960077C668 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C28CA9EF1BFC28960077C668 /* EAIntroPage.m */; settings = {ASSET_TAGS = (); }; };
+		C28CA9F31BFC28960077C668 /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = C28CA9F11BFC28960077C668 /* EAIntroView.m */; settings = {ASSET_TAGS = (); }; };
+		C28CA9F61BFC394F0077C668 /* tutorial_background_00@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C28CA9F51BFC394F0077C668 /* tutorial_background_00@2x.jpg */; settings = {ASSET_TAGS = (); }; };
+		C28CA9F81BFC39560077C668 /* tutorial_background_01@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C28CA9F71BFC39560077C668 /* tutorial_background_01@2x.jpg */; settings = {ASSET_TAGS = (); }; };
+		C28CA9FA1BFC395D0077C668 /* tutorial_background_03@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C28CA9F91BFC395D0077C668 /* tutorial_background_03@2x.jpg */; settings = {ASSET_TAGS = (); }; };
 		C28D0F421BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F411BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png */; settings = {ASSET_TAGS = (); }; };
 		C28D0F461BF32F8400D265A9 /* ShowInforCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28D0F441BF32F8400D265A9 /* ShowInforCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		C28D0F471BF32F8400D265A9 /* ShowInforCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28D0F451BF32F8400D265A9 /* ShowInforCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -356,6 +361,13 @@
 		C27CAE791BF6DE97004FCC38 /* ideas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ideas.jpg; sourceTree = "<group>"; };
 		C27CAE7B1BF70D24004FCC38 /* iconfont-iconfont22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-iconfont22.png"; sourceTree = "<group>"; };
 		C27CAE7D1BF72565004FCC38 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
+		C28CA9EE1BFC28960077C668 /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroPage.h; sourceTree = "<group>"; };
+		C28CA9EF1BFC28960077C668 /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroPage.m; sourceTree = "<group>"; };
+		C28CA9F01BFC28960077C668 /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroView.h; sourceTree = "<group>"; };
+		C28CA9F11BFC28960077C668 /* EAIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroView.m; sourceTree = "<group>"; };
+		C28CA9F51BFC394F0077C668 /* tutorial_background_00@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tutorial_background_00@2x.jpg"; sourceTree = "<group>"; };
+		C28CA9F71BFC39560077C668 /* tutorial_background_01@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tutorial_background_01@2x.jpg"; sourceTree = "<group>"; };
+		C28CA9F91BFC395D0077C668 /* tutorial_background_03@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tutorial_background_03@2x.jpg"; sourceTree = "<group>"; };
 		C28D0F411BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com_taobao_tae_sdk_web_view_title_bar_back.9.png; sourceTree = "<group>"; };
 		C28D0F431BF32F8400D265A9 /* ShowInforCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowInforCollectionViewCell.h; sourceTree = "<group>"; };
 		C28D0F441BF32F8400D265A9 /* ShowInforCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInforCollectionViewCell.m; sourceTree = "<group>"; };
@@ -710,6 +722,7 @@
 		C27713AD1BF1CD4F00953289 /* FZQRecommand */ = {
 			isa = PBXGroup;
 			children = (
+				C28CA9F41BFC391D0077C668 /* IntroduceImage */,
 				C27714131BF20A4400953289 /* Resource */,
 				C27713E01BF1DBBC00953289 /* Helpers */,
 				C27713DD1BF1DBA300953289 /* Scences */,
@@ -831,6 +844,7 @@
 		C27713DC1BF1DB5900953289 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				C28CA9ED1BFC28960077C668 /* EAIntroView */,
 				C2D9F3631BF61C27002CA9E0 /* TumblrMenu */,
 				C28FAF481BF5C68E00721C1C /* MONActivityIndicatorView */,
 				C28FAE6A1BF5A88900721C1C /* CorePhotoBroswerVC */,
@@ -1100,6 +1114,27 @@
 			);
 			name = "国家城市列表";
 			path = "../国家城市列表";
+			sourceTree = "<group>";
+		};
+		C28CA9ED1BFC28960077C668 /* EAIntroView */ = {
+			isa = PBXGroup;
+			children = (
+				C28CA9EE1BFC28960077C668 /* EAIntroPage.h */,
+				C28CA9EF1BFC28960077C668 /* EAIntroPage.m */,
+				C28CA9F01BFC28960077C668 /* EAIntroView.h */,
+				C28CA9F11BFC28960077C668 /* EAIntroView.m */,
+			);
+			path = EAIntroView;
+			sourceTree = "<group>";
+		};
+		C28CA9F41BFC391D0077C668 /* IntroduceImage */ = {
+			isa = PBXGroup;
+			children = (
+				C28CA9F91BFC395D0077C668 /* tutorial_background_03@2x.jpg */,
+				C28CA9F71BFC39560077C668 /* tutorial_background_01@2x.jpg */,
+				C28CA9F51BFC394F0077C668 /* tutorial_background_00@2x.jpg */,
+			);
+			name = IntroduceImage;
 			sourceTree = "<group>";
 		};
 		C28FAE6A1BF5A88900721C1C /* CorePhotoBroswerVC */ = {
@@ -1586,10 +1621,12 @@
 				C28D0F4C1BF345B700D265A9 /* CollectionHeaderReusableView.xib in Resources */,
 				C2D9F3741BF61F40002CA9E0 /* fff.jpg in Resources */,
 				C28D0F631BF35EEF00D265A9 /* placeImage5.jpg in Resources */,
+				C28CA9FA1BFC395D0077C668 /* tutorial_background_03@2x.jpg in Resources */,
 				C28FAE911BF5A88900721C1C /* PB.bundle in Resources */,
 				575F8BB61BF973F900F695AB /* navigation_bar_background.png in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C27CAE781BF6DD17004FCC38 /* save.png in Resources */,
+				C28CA9F81BFC39560077C668 /* tutorial_background_01@2x.jpg in Resources */,
 				C2A102051BF9ECAA005B0396 /* iconfont-taiyang.png in Resources */,
 				C28D0F651BF365A700D265A9 /* iconfont-pinglun.png in Resources */,
 				575F8BAB1BF74BFA00F695AB /* beijing.jpg in Resources */,
@@ -1645,6 +1682,7 @@
 				57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */,
 				C2A1020E1BF9F27D005B0396 /* WeatherTableViewCell.xib in Resources */,
 				C2A102071BF9ECAA005B0396 /* iconfont-yin.png in Resources */,
+				C28CA9F61BFC394F0077C668 /* tutorial_background_00@2x.jpg in Resources */,
 				C27B43FF1BF6E45400BFDD66 /* SJPbulicTableViewCell.xib in Resources */,
 				57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */,
 				C2D9F2E61BF5FEB0002CA9E0 /* placeImage8.jpg in Resources */,
@@ -1746,6 +1784,7 @@
 				C28FAF391BF5A89B00721C1C /* CoreSVP.m in Sources */,
 				C28FAF401BF5A8C100721C1C /* PhotoCotentView.m in Sources */,
 				C28FAE961BF5A88900721C1C /* PhotoImageView.m in Sources */,
+				C28CA9F21BFC28960077C668 /* EAIntroPage.m in Sources */,
 				C28D0F4B1BF345B700D265A9 /* CollectionHeaderReusableView.m in Sources */,
 				C28FAE971BF5A88900721C1C /* PhotoItemView.m in Sources */,
 				C27B43FC1BF6E45400BFDD66 /* CityRequestHandle.m in Sources */,
@@ -1781,6 +1820,7 @@
 				C2D9F3661BF61C27002CA9E0 /* CHTumblrMenuView.m in Sources */,
 				C26ADC701BF4C14700010217 /* ADLivelyTableView.m in Sources */,
 				C28FAF201BF5A89B00721C1C /* UIImage+Water.m in Sources */,
+				C28CA9F31BFC28960077C668 /* EAIntroView.m in Sources */,
 				C28FAF1B1BF5A89B00721C1C /* UIFont+Extend.m in Sources */,
 				575F8BD81BF9BBA200F695AB /* ShowPhotoViewController.m in Sources */,
 				57086D771BF09059006530C1 /* WJYHomeViewController.m in Sources */,
@@ -1940,7 +1980,7 @@
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1956,7 +1996,7 @@
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

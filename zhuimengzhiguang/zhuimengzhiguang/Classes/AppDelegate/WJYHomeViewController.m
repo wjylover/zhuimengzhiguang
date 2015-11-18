@@ -24,7 +24,7 @@
 
 #define kImageHight [UIScreen mainScreen].bounds.size.width / (490 / 285.0)
 
-@interface WJYHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface WJYHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,EAIntroDelegate>
 // 轮播图控件
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 // 轮播图数据数组
@@ -57,8 +57,8 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
 
 - (void)viewWillAppear:(BOOL)animated
 {
-  
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:176/255.0 green:222/255.0 blue:246/255.0 alpha:0.1];
+    
+   self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:176/255.0 green:222/255.0 blue:246/255.0 alpha:0.1];
 
     // 获取城市列表的回调(调用在定位当前位置方法中)
     [WJYDataManager sharedManager].cityBlock = ^(){
@@ -86,6 +86,10 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //设置引导页
+    [self showIntroWithCrossDissolve];
+    
     // 轮播图
     _city = @"北京";
     self.carouselImageArray = @[[UIImage imageNamed:@"beijing.jpg"],
@@ -123,6 +127,40 @@ static NSString *const weatherCellIdentify = @"weatherCellID";
 
     
 }
+
+
+
+-(void)showIntroWithCrossDissolve{
+    EAIntroPage *page1 = [EAIntroPage page];
+    page1.title = @"This is page 1";
+    page1.desc = @"";
+    page1.bgImage = [UIImage imageNamed:@"tutorial_background_03@2x.jpg"];
+    //page1.titleImage = [UIImage imageNamed:@"original"];
+
+    EAIntroPage *page2 = [EAIntroPage page];
+    page2.title = @"This is page 2";
+    page2.desc = @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.";
+    page2.bgImage = [UIImage imageNamed:@"tutorial_background_01@2x.jpg"];
+    //page2.titleImage = [UIImage imageNamed:@"supportcat"];
+
+    EAIntroPage *page3 = [EAIntroPage page];
+    page3.title = @"This is page 3";
+    page3.desc = @"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.";
+    page3.bgImage = [UIImage imageNamed:@"tutorial_background_00@2x.jpg"];
+    //page3.titleImage = [UIImage imageNamed:@"femalecodertocat"];
+
+    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:CGRectMake(0, 0, kUIScreenWidth , kUIScreenHeight) andPages:@[page1,page2,page3]];
+
+    [intro setDelegate:self];
+    [intro showInView:self.view animateDuration:0.0];
+}
+
+
+- (void)introDidFinish {
+    NSLog(@"Intro callback");
+}
+
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

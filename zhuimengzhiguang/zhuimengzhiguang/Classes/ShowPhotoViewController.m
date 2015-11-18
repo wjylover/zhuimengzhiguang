@@ -109,9 +109,6 @@
     
       [self loadViews];
     
-   
-    
-
 }
 
 //加载视图
