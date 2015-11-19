@@ -42,7 +42,7 @@
     }else{
         last = [first substringToIndex:4];
     }
-    self.price.text = last;
+    self.price.text = [NSString stringWithFormat:@"%@元起",last];
     
     [self.picView sd_setImageWithURL:[NSURL URLWithString:model.photo] completed:nil];
 }

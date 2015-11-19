@@ -1,24 +1,22 @@
 //
-//  DesCityRequestHandle.h
+//  GoodLocalRequestHandle.h
 //  zhuimengzhiguang
 //
-//  Created by lanou3g on 15/11/14.
+//  Created by lanou3g on 15/11/18.
 //  Copyright © 2015年 王建业. All rights reserved.
 //
 
 #import "SJPublicObject.h"
 
 typedef void (^Result)();
-@interface DesCityRequestHandle : SJPublicObject
+@interface GoodLocalRequestHandle : SJPublicObject
 
-//接收id
 @property (nonatomic, assign) NSInteger ID;
 @property (nonatomic, copy) Result result;
 @property (nonatomic, strong) NSArray *dataArray;
 
-+(instancetype) shareDesCityRequestHandle;
++(instancetype) shareGoodLocalRequestHandle;
 
--(void)requestHandleDesCityRequestHandle;
-
+-(void)requestGoodLocalRequestHandle;
 
 @end

@@ -10,6 +10,6 @@
 
 @interface RegionViewController : SJPublicViewController
 
-@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, assign) NSInteger ID;
 
 @end

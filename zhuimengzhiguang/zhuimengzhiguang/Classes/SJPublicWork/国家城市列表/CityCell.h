@@ -11,7 +11,6 @@
 
 @interface CityCell : UICollectionViewCell
 
-
 @property (nonatomic, strong) CityModel *model;
 
 @end

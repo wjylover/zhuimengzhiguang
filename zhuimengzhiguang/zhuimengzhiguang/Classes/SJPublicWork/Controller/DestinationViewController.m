@@ -18,22 +18,35 @@
 #import "DesCityRequestHandle.h"
 #import "DesCityPriceHandle.h"
 #import "URL.h"
-@interface DestinationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
+
+#import "ColorWithRandom.h"
+
+#import "AboutCityViewController.h"
+#import "GoodLocalRequestHandle.h"
+
+//9376  9891 10437 62 7239 9376
+#define kCountryModela @"countryModel.ID == 62"
+#define kCountryModelb @"countryModel.ID == 9376"
+#define kCountryModelc @"countryModel.ID == 9891"
+#define kCountryModeld @"countryModel.ID == 10437"
+#define kCountryModele @"countryModel.ID == 7239"
+#define kCountryModelf @"countryModel.ID == 9376"
+
+
+@interface DestinationViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate,MONActivityIndicatorViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *detailView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+//tableView的背景
+@property (weak, nonatomic) IBOutlet UIView *tableViewBackGround;
+
 
 //目的地列表对象数组
 @property (nonatomic,strong) NSArray *destinationArray;
-//collectionView
-@property (nonatomic, strong) UICollectionView *collectionView;
+
 //传递点击的洲的所在cell的坐标 indexPath.row
 @property (nonatomic,assign)NSInteger index;
-
-//弃用
-//国家对象数组
-//@property (nonatomic,strong) NSMutableArray *countryArray;
-//@property (nonatomic,assign)NSInteger countIndex;
 
 @end
 
@@ -45,10 +58,14 @@ static NSString *const cellIdentifier = @"destinationCell";
     [super viewDidLoad];
     self.navigationController.navigationBar.backgroundColor = [UIColor lightGrayColor];
     
-    //设置 tableView的代理
-    [self initTableView];
+    
+    
     //网络请求
     [self getvalues];
+    
+    //设置 tableView的代理
+    [self initTableView];
+    
     //布局collectionView
     [self layoutCollectionView];
     
@@ -59,8 +76,6 @@ static NSString *const cellIdentifier = @"destinationCell";
 //布局collectionView
 -(void)layoutCollectionView
 {
-    
-    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     
     //设置item的大小
@@ -69,7 +84,8 @@ static NSString *const cellIdentifier = @"destinationCell";
     //距离上下左右
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 20, 20, 20);
     
-    self.collectionView = [[UICollectionView alloc]initWithFrame:self.detailView.bounds collectionViewLayout:flowLayout];
+    
+    self.collectionView.collectionViewLayout = flowLayout;
     //隐藏滚动条
     _collectionView.showsVerticalScrollIndicator = NO;
     //设置代理
@@ -93,35 +109,11 @@ static NSString *const cellIdentifier = @"destinationCell";
 //网络请求
 -(void)getvalues
 {
-    /*
-    [self.destinationArray removeAllObjects];
+    MONActivityIndicatorView *indicatorView = [[MONActivityIndicatorView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self layoutIndicatorView:indicatorView];
+    [self.view addSubview:indicatorView];
+    [indicatorView startAnimating];
     
-    NSURLSession *urlSession = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:UrlDestination]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingAllowFragments) error:nil];
-        
-        NSMutableArray *array = [NSMutableArray array];
-        array = [dic valueForKey:@"data"];
-        
-        self.destinationArray = [NSMutableArray arrayWithCapacity:20];
-        self.countryArray = [NSMutableArray arrayWithCapacity:20];
-        
-        for (NSDictionary *dict in array) {
-            
-            //接收五大洲的模型数据
-            DestinationContinentsModel *continentsModel = [DestinationContinentsModel new];
-            [continentsModel setValuesForKeysWithDictionary:dict];
-            [self.destinationArray addObject:continentsModel];
-        }
-        
-        [self.tableView reloadData];
-        [self.collectionView reloadData];
-    }];
-    
-    [dataTask resume];
-     */
     //网络请求
     [[DestinationRequestHandle shareDDestinationRequestHandle]destinationRequestHandle];
     [DestinationRequestHandle shareDDestinationRequestHandle].result = ^(){
@@ -131,7 +123,26 @@ static NSString *const cellIdentifier = @"destinationCell";
         //刷新
         [self.collectionView reloadData];
         [self.tableView reloadData];
+        [indicatorView stopAnimating];
+        self.tableViewBackGround.backgroundColor = [UIColor colorWithRed:0.536 green:0.466 blue:1.000 alpha:1.000];
     };
+}
+//动画设置
+-(void)layoutIndicatorView:(MONActivityIndicatorView *)indicatorView
+{
+    indicatorView.numberOfCircles = 3;
+    indicatorView.radius = 20;
+    indicatorView.internalSpacing = 3;
+    indicatorView.duration = 0.5;
+    indicatorView.delay = 0.5;
+    indicatorView.center = self.view.center;
+    
+    indicatorView.delegate = self;
+}
+
+-(UIColor *)activityIndicatorView:(MONActivityIndicatorView *)activityIndicatorView circleBackgroundColorAtIndex:(NSUInteger)index
+{
+    return [ColorWithRandom colorWithRandom];
 }
 
 //设置tableView的代理
@@ -140,6 +151,8 @@ static NSString *const cellIdentifier = @"destinationCell";
     //设置代理 UITableViewDelegate  UITableViewDataSource
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.scrollEnabled = NO;
+    
 }
 
 #pragma mark -- UITableViewDelegate - UITableViewDataSource --
@@ -197,6 +210,11 @@ static NSString *const cellIdentifier = @"destinationCell";
     
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [UIScreen mainScreen].bounds.size.height - 593;
+}
+
 
 #pragma mark -- CollectionView 代理 --
 
@@ -211,7 +229,12 @@ static NSString *const cellIdentifier = @"destinationCell";
     DestinationContinentsModel *model = [DestinationContinentsModel new];
     model = self.destinationArray[_index];
     
-    return model.array.count;
+    if (model.array.count == 0) {
+        return 0;
+    }else{
+        return model.array.count;
+    }
+    
 }
 
 //设置cell
@@ -230,32 +253,6 @@ static NSString *const cellIdentifier = @"destinationCell";
     //传递数据模型信息
     collectionCell.model = countryModel;
     return collectionCell;
-    /*
-    //如果itme的个数和count的个数相等或者小于count 就显示 热门 中的国家
-    if (model.hot_countries.count - 1 >= indexPath.item) {
-        
-        countryModel = model.hot_countries[indexPath.item];
-        
-        //赋值cell
-        collectionCell.cnnameLabel.text = countryModel.cnname;
-        collectionCell.ennameLabel.text = countryModel.enname;
-        [collectionCell.picView sd_setImageWithURL:[NSURL URLWithString:countryModel.photo] placeholderImage:[UIImage imageNamed:@"12"] completed:nil];
-        
-        return collectionCell;
-        
-        
-    }else{
-        //否则 显示普通的国家(从 hot_countries.count 往后展示)
-        countryModel = model.countries[indexPath.item - model.hot_countries.count];
-        
-        //赋值cell
-        collectionCell.cnnameLabel.text = countryModel.cnname;
-        collectionCell.ennameLabel.text = countryModel.enname;
-        [collectionCell.picView sd_setImageWithURL:[NSURL URLWithString:countryModel.photo] placeholderImage:[UIImage imageNamed:@"12"] completed:nil];
-        
-        return collectionCell;
-    }
-     */
     
 }
 //点击item
@@ -268,32 +265,32 @@ static NSString *const cellIdentifier = @"destinationCell";
     
     //赋值给国家的数据模型
     countryModel = model.array[indexPath.item];
-    //传递用来拼接的id
-    [CityRequestHandle shareCityReqeustHandle].ID = countryModel.ID;
     
-    /*
-    NSLog(@"=========%ld===========",indexPath.item);
-    //判断点击的item
-    if (model.hot_countries.count - 1 >= indexPath.item) {
-        countryModel = model.hot_countries[indexPath.item];
+    if (!(countryModel.ID == 62)) {
+        
+        
+        //传递用来拼接的id
         [CityRequestHandle shareCityReqeustHandle].ID = countryModel.ID;
+        
+        //push到第二界面
+        RegionViewController *regionVC = [[RegionViewController alloc]init];
+        regionVC.ID = countryModel.ID;
+        //传值到 国家城市详情中的网络请求中
+        [DesCityRequestHandle shareDesCityRequestHandle].ID = [CityRequestHandle shareCityReqeustHandle].ID;
+        //传值 这个国家城市的个数
+        [DesCityPriceHandle shareDesCityPriceHandle].ID = countryModel.ID;
+        NSLog(@"desCountry:  %ld",[DesCityPriceHandle shareDesCityPriceHandle].ID);
+        regionVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"region"];
+        [self.navigationController pushViewController:regionVC animated:YES];
     }else{
-        countryModel = model.countries[indexPath.item];
-        [CityRequestHandle shareCityReqeustHandle].ID = countryModel.ID;
+    
+        [GoodLocalRequestHandle shareGoodLocalRequestHandle].ID = countryModel.ID;
+        
+        AboutCityViewController *about = [[AboutCityViewController alloc]init];
+        about = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"aboutVC"];
+        [self.navigationController pushViewController:about animated:YES];
     }
-     */
     
-    //push到第二界面
-     RegionViewController *regionVC = [[RegionViewController alloc]init];
-    regionVC.ID = countryModel.ID;
-    //传值到 国家城市详情中的网络请求中
-    [DesCityRequestHandle shareDesCityRequestHandle].ID = [CityRequestHandle shareCityReqeustHandle].ID;
-    [DesCityPriceHandle shareDesCityPriceHandle].ID = [CityRequestHandle shareCityReqeustHandle].ID;
-    //传值 这个国家城市的个数
-    [DesCityPriceHandle shareDesCityPriceHandle].count = countryModel.count;
-    
-    regionVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"region"];
-    [self.navigationController pushViewController:regionVC animated:YES];
 }
 
 

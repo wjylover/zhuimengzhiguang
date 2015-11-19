@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *beenstr;//95875人去过
 @property (nonatomic, copy) NSString *catename;//地名 -->曼谷
 @property (nonatomic, copy) NSString *catename_en;//英文名
-@property (nonatomic, copy) NSString *ID;//原本为id
+@property (nonatomic, assign) NSInteger ID;//原本为id
 @property (nonatomic, assign) BOOL isguide;
 @property (nonatomic, assign) BOOL ishot;
 @property (nonatomic, copy) NSString *lat; //未知,例如: 8.066667

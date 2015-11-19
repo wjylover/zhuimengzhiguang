@@ -23,7 +23,7 @@
 {
     self.cnname.text = [model valueForKey:@"cnname"];
     self.cityEname.text = [model valueForKey:@"enname"];
-    [self.picView sd_setImageWithURL:[NSURL URLWithString:[model valueForKey:@"photo"]] completed:nil];
+    [self.picView sd_setImageWithURL:[NSURL URLWithString:[model valueForKey:@"photo"]] placeholderImage:[UIImage imageNamed:@"goodCity.jpg"]];
 }
 
 - (void)awakeFromNib {

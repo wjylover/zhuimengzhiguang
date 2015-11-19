@@ -1,19 +1,19 @@
 //
-//  DesCityModel.m
+//  MoreDesCityModel.m
 //  zhuimengzhiguang
 //
-//  Created by lanou3g on 15/11/14.
+//  Created by lanou3g on 15/11/17.
 //  Copyright © 2015年 王建业. All rights reserved.
 //
 
-#import "DesCityModel.h"
+#import "MoreDesCityModel.h"
 
-@implementation DesCityModel
+@implementation MoreDesCityModel
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     if ([key isEqualToString:@"id"]) {
-        self.ID = [value integerValue];
+        self.ID = value;
     }
 }
 

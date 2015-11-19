@@ -7,11 +7,15 @@
 //
 
 #import "DesCityCollectionViewController.h"
+#import "MoreDesCityRequestHandle.h"
+#import "GoodLocalRequestHandle.h"
+#import "AboutCityViewController.h"
 #import "DesCityRequestHandle.h"
 #import "DesCityCell.h"
+#import "ColorWithRandom.h"
 
 
-@interface DesCityCollectionViewController ()
+@interface DesCityCollectionViewController ()<MONActivityIndicatorViewDelegate>
 
 @property (nonatomic,strong) NSArray *array;
 
@@ -23,6 +27,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //注意  注意  注意: 重要的事情要说三遍  --->>> 设置的是collectionView的背景,不是self.view   要不然   界面会一直是黑色的
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
@@ -31,7 +36,10 @@ static NSString * const reuseIdentifier = @"Cell";
     [self layoutCollectionView];
     //网络请求
     [self getValuesWithRequest];
+
 }
+
+
 
 //布局
 -(void)layoutCollectionView
@@ -52,15 +60,38 @@ static NSString * const reuseIdentifier = @"Cell";
 //网络请求
 -(void)getValuesWithRequest
 {
+    MONActivityIndicatorView *indicatorView = [[MONActivityIndicatorView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self layoutIndicatorView:indicatorView];
+    [self.view addSubview:indicatorView];
+    [indicatorView startAnimating];
+    
     [[DesCityRequestHandle shareDesCityRequestHandle]requestHandleDesCityRequestHandle];
     [DesCityRequestHandle shareDesCityRequestHandle].result = ^(){
         //将对象数组中的数据给array
         self.array = [NSArray arrayWithArray:[DesCityRequestHandle shareDesCityRequestHandle].dataArray];
         //刷新
         [self.collectionView reloadData];
+        [indicatorView stopAnimating];
     };
 }
 
+//动画设置
+-(void)layoutIndicatorView:(MONActivityIndicatorView *)indicatorView
+{
+    indicatorView.numberOfCircles = 3;
+    indicatorView.radius = 20;
+    indicatorView.internalSpacing = 3;
+    indicatorView.duration = 0.5;
+    indicatorView.delay = 0.5;
+    indicatorView.center = self.view.center;
+    
+    indicatorView.delegate = self;
+}
+
+-(UIColor *)activityIndicatorView:(MONActivityIndicatorView *)activityIndicatorView circleBackgroundColorAtIndex:(NSUInteger)index
+{
+    return [ColorWithRandom colorWithRandom];
+}
 
 
 #pragma mark <UICollectionViewDataSource>
@@ -94,36 +125,20 @@ static NSString * const reuseIdentifier = @"Cell";
     return CGSizeMake(self.collectionView.bounds.size.width/2 - 60, 180);
 }
 
-
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+//点击item
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //将国家的id传递出去
+    DesCityModel *model = [[DesCityModel alloc]init];
+    model = self.array[indexPath.item];
+    [MoreDesCityRequestHandle shareMoreDesCityRequestHandle].ID = model.ID;
+    
+    [GoodLocalRequestHandle shareGoodLocalRequestHandle].ID = model.ID;
+    
+    AboutCityViewController *aboutVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"aboutVC"];
+    
+    [self.navigationController pushViewController:aboutVC animated:YES];
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

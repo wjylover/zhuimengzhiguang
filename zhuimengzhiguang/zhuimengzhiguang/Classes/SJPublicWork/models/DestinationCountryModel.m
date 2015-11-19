@@ -13,7 +13,7 @@
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     if ([key isEqualToString:@"id"]) {
-        self.ID = value;
+        self.ID = [value integerValue];
     }
     if ([key isEqualToString:@"cnname"]) {
         self.cnname = value;

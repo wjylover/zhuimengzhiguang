@@ -7,7 +7,9 @@
 //
 
 #import "RegionViewController.h"
+//轮播图
 #import <SDCycleScrollView.h>
+
 #import "CityRequestHandle.h"
 #import "CityCell.h"
 #import "CityPriceCell.h"
@@ -16,8 +18,14 @@
 #import "DesCityPriceTableViewController.h"
 #import "DesCityCollectionViewController.h"
 #import "DesCityRequestHandle.h"
+#import "ColorWithRandom.h"
 
-@interface RegionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate>
+//城市详情界面
+#import "AboutCityViewController.h"
+
+#import "GoodLocalRequestHandle.h"
+
+@interface RegionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,MONActivityIndicatorViewDelegate>
 //轮播图
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 //collectionView的背景
@@ -29,6 +37,12 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scroView;
 //最大的内容视图
 @property (weak, nonatomic) IBOutlet UIView *maxViewBCG;
+//更多热门城市
+@property (weak, nonatomic) IBOutlet UIButton *moreFierAction;
+//超值自由行
+@property (weak, nonatomic) IBOutlet UIButton *freeAction;
+//collectionView的背景
+@property (weak, nonatomic) IBOutlet UIView *collectionBackGround;
 
 
 @end
@@ -44,13 +58,17 @@
     //设置tableView
     [self layoutTableView];
     
-    
 }
 //轮播图
 -(void)layoutViewShuff
 {
-    //网络数据的请求
+    MONActivityIndicatorView *indicatorView = [[MONActivityIndicatorView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
+    [self.view addSubview:indicatorView];
+    [self layoutIndicatorView:indicatorView];
+    [indicatorView startAnimating];
+    
+    //网络数据的请求
     [[CityRequestHandle shareCityReqeustHandle]CityWithRequestHandle];
     
     //刷新传值
@@ -73,21 +91,41 @@
         
         [self.collectionView reloadData];
         [self.tableView reloadData];
-    
-    };
+        [indicatorView stopAnimating];
+        self.collectionBackGround.backgroundColor = [UIColor colorWithRed:0.556 green:0.562 blue:1.000 alpha:1.000];
+};
     
     //设置pageControl为不显示
     _cycleScrollView.showPageControl = NO;
     
 
 }
+//加载动画设置
+-(void)layoutIndicatorView:(MONActivityIndicatorView *)indicatorView
+{
+    indicatorView.numberOfCircles = 5;
+    indicatorView.radius = 20;
+    indicatorView.internalSpacing = 3;
+    indicatorView.duration = 0.5;
+    indicatorView.delay = 0.5;
+    indicatorView.center = self.view.center;
+    
+    indicatorView.delegate = self;
+    
+}
+
+-(UIColor *)activityIndicatorView:(MONActivityIndicatorView *)activityIndicatorView circleBackgroundColorAtIndex:(NSUInteger)index
+{
+    return [ColorWithRandom colorWithRandom];
+}
+
 //设置热门城市
 -(void)layoutCity
 {
     //设置UICollectionView
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     //设置距离
-    flowLayout.sectionInset = UIEdgeInsetsMake(20, 40, 10, 40);
+    flowLayout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20);
     //设置是否能滑动
     self.collectionView.scrollEnabled = NO;
     _collectionView.collectionViewLayout = flowLayout;
@@ -104,6 +142,7 @@
 {
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"CityPriceCell" bundle:nil] forCellReuseIdentifier:@"cityPriceCell"];
+    //代理
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
@@ -114,10 +153,14 @@
     CountryDesModel *model = [CountryDesModel new];
     //赋值给数据模型
     model = [[[CityRequestHandle shareCityReqeustHandle] dataArray] firstObject];
-    
+    //判断 数据是否为空
     if (model.discount.count == 0) {
+        //关闭滑动
         self.scroView.scrollEnabled = NO;
+        //将button隐藏
+        self.freeAction.hidden = YES;
     }else{
+        self.freeAction.hidden = NO;
         //控制滚动视图能否滑动
         self.scroView.scrollEnabled = YES;
         //控制滚动视图能否超出内容边缘再弹回
@@ -125,10 +168,21 @@
         self.scroView.showsVerticalScrollIndicator = NO;
         
     }
-
     
-    //返回热门国家的个数
-    return model.hot_city.count;
+    //如果热门城市为空 就将点击更多的button隐藏
+    if (model.hot_city.count == 0) {
+        
+        self.moreFierAction.hidden = YES;
+        
+        return 1;
+    }else{
+        
+        self.moreFierAction.hidden = NO;
+        //返回热门国家的个数
+        return model.hot_city.count;
+
+    }
+        
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -136,11 +190,16 @@
     
     CountryDesModel *model = [CountryDesModel new];
     model = [CityRequestHandle shareCityReqeustHandle].dataArray.firstObject;
-    CityModel *cityModel = [CityModel new];
-    cityModel = model.hot_city[indexPath.row];
-    cell.model = cityModel;
     
-    return cell;
+    if (model.hot_city.count == 0) {
+        return cell;
+    }else{
+        CityModel *cityModel = [CityModel new];
+        cityModel = model.hot_city[indexPath.row];
+        cell.model = cityModel;
+        return cell;
+    }
+    
 }
 
 //设置item的大小
@@ -151,17 +210,13 @@
     model = [[[CityRequestHandle shareCityReqeustHandle] dataArray] firstObject];
     
     //根据item的个数来返回大小
-    if (model.hot_city.count == 1 || model.hot_city.count == 2){
-        return CGSizeMake(self.collectionView.bounds.size.width/2 - 50, self.collectionView.bounds.size.height - 40);
-    }else if (model.hot_city.count == 3){
-        return CGSizeMake(self.collectionView.bounds.size.width/3 - 25, self.collectionView.bounds.size.height - 80);
+    if (model.hot_city.count == 1 || model.hot_city.count == 0 ) {
+        return CGSizeMake(self.collectionView.bounds.size.width - 50, self.collectionView.bounds.size.height - 40);
+    }else if (model.hot_city.count == 2){
+        return CGSizeMake(self.collectionView.bounds.size.width/2 - 40, self.collectionView.bounds.size.height - 40);
+    }else {
+        return CGSizeMake(self.collectionView.bounds.size.width/2 - 25, self.collectionView.bounds.size.height/2 - 20);
     }
-    
-    return CGSizeMake(110, 130);
-}
-//设置item的点击事件
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
     
 }
 
@@ -194,15 +249,10 @@
     return 100;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
 
 //更多热门城市
 - (IBAction)moreCity:(UIButton *)sender {
     
-//    [DesCityRequestHandle shareDesCityRequestHandle].ID = [CityRequestHandle shareCityReqeustHandle].ID;
     
     DesCityCollectionViewController *desCity = [[DesCityCollectionViewController alloc]init];
     desCity = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"desCity"];
@@ -217,11 +267,6 @@
     [self.navigationController pushViewController:desCityPrice animated:YES];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 

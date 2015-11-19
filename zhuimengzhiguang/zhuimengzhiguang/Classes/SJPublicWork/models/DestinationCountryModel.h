@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *enname;//英文名字
 @property (nonatomic, copy) NSString *count;//国家编号
 @property (nonatomic, copy) NSString *flag;//未知参数
-@property (nonatomic, copy) NSString *ID;//原本为id
+@property (nonatomic, assign) NSInteger ID;//原本为id
 @property (nonatomic, copy) NSString *label;//标注 '城市'
 @property (nonatomic, copy) NSString *photo;//图片链接
 

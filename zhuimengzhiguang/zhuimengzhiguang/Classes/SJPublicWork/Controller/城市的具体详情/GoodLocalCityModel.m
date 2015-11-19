@@ -1,19 +1,19 @@
 //
-//  DesCityModel.m
+//  GoodLocalCityModel.m
 //  zhuimengzhiguang
 //
-//  Created by lanou3g on 15/11/14.
+//  Created by lanou3g on 15/11/18.
 //  Copyright © 2015年 王建业. All rights reserved.
 //
 
-#import "DesCityModel.h"
+#import "GoodLocalCityModel.h"
 
-@implementation DesCityModel
+@implementation GoodLocalCityModel
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     if ([key isEqualToString:@"id"]) {
-        self.ID = [value integerValue];
+        self.ID = value;
     }
 }
 

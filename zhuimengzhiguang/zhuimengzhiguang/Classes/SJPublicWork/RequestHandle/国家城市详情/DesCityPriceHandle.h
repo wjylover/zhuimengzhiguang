@@ -11,7 +11,7 @@
 typedef void (^Result)();
 @interface DesCityPriceHandle : SJPublicObject
 
-@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, assign) NSInteger ID;
 @property (nonatomic, copy) NSString *count;
 
 @property (nonatomic, copy) Result result;

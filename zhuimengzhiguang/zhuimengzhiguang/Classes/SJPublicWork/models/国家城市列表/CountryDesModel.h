@@ -18,7 +18,6 @@
 @property (nonatomic, assign) BOOL has_plan;
 @property (nonatomic, assign) BOOL has_trip;
 @property (nonatomic, strong) NSMutableArray *hot_city;//热门城市对象数组
-//@property (nonatomic, strong) NSMutableArray *hot_mguide;
 @property (nonatomic, strong) NSMutableArray *discount;//new_discount
 @property (nonatomic, copy) NSString *ID;
 @property (nonatomic, strong)NSArray *photos;//轮播图片

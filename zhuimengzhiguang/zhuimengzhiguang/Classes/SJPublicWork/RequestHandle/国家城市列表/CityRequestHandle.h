@@ -16,7 +16,7 @@ typedef void (^Result)();
 //返回数组
 @property (nonatomic, strong) NSArray *dataArray;
 //接收传递来的国家的id
-@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, assign) NSInteger ID;
 
 //单例
 +(instancetype)shareCityReqeustHandle;

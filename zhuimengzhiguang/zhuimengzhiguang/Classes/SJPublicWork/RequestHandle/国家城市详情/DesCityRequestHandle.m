@@ -35,9 +35,7 @@
     //子线程
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
        
-        NSString *url = [NSString stringWithFormat:@"%@%@",UrlMoreFire,self.ID];
-        //打印
-        NSLog(@"%@",url);
+        NSString *url = [NSString stringWithFormat:@"%@%ld",UrlMoreFire,self.ID];
         //网络请求
         NSURLSession *urlSession = [NSURLSession sharedSession];
         

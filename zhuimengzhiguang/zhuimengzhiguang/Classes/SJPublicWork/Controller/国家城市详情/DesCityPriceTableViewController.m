@@ -22,11 +22,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //关闭滚动条
+    self.tableView.showsVerticalScrollIndicator = NO;
    //网络请求
     [self getValuesReuqestHandle];
     //上拉刷新
     [self mjRefreshWithReLoad];
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = 100;
 }
+//上拉刷新
 -(void)mjRefreshWithReLoad
 {
     MJRefreshBackGifFooter *footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshAction:)];
