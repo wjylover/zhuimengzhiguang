@@ -7,6 +7,8 @@
 //
 
 #import "WJYHomeViewController.h"
+#import "UIApplication+Extend.h"
+#import "CoreArchive.h"
 #import "NSString+Characters.h"
 #import "WJYWeatherView.h"
 #import "HotContentViewController.h"
@@ -25,7 +27,7 @@
 #import <MJRefresh.h>
 
 #define kImageHight [UIScreen mainScreen].bounds.size.width / (490 / 285.0)
-
+NSString *const NewFeatureVersionKey = @"NewFeatureVersionKey";
 @interface WJYHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,EAIntroDelegate,UIScrollViewDelegate>
 #define kWeatherImageURL @"http://php.weather.sina.com.cn/images/yb3/180_180/%@_0.png"
 
@@ -88,21 +90,37 @@
     };
 }
 
-
-
+// 欢迎页方法
+- (BOOL)canShowNewFeature{
+    
+    //系统直接读取的版本号
+    NSString *versionValueStringForSystemNow=[UIApplication sharedApplication].version;
+    
+    //读取本地版本号
+    NSString *versionLocal = [CoreArchive strForKey:NewFeatureVersionKey];
+    
+    if(versionLocal!=nil && [versionValueStringForSystemNow isEqualToString:versionLocal]){//说明有本地版本记录，且和当前系统版本一致
+        
+        return NO;
+        
+    }else{//无本地版本记录或本地版本记录与当前系统版本不一致
+        
+        //保存
+        [CoreArchive setStr:versionValueStringForSystemNow key:NewFeatureVersionKey];
+        
+        return YES;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-//   
-//    for (NSString *fontName in [UIFont familyNames]) {
-//        NSLog(@"%@",fontName);
-//    }
-    
-    
-    //设置引导页
-    [self showIntroWithCrossDissolve];
-    
+    //判断是否需要显示：（内部已经考虑版本及本地版本缓存）
+    BOOL canShow = [self canShowNewFeature];
+    if (canShow) {
+        
+        //设置引导页
+        [self showIntroWithCrossDissolve];
+    }
     // 轮播图
     _city = @"北京";
     self.carouselImageArray = @[[UIImage imageNamed:@"beijing.jpg"],
@@ -140,7 +158,7 @@
 }
 
 
-
+// 欢迎页
 -(void)showIntroWithCrossDissolve{
     EAIntroPage *page1 = [EAIntroPage page];
     page1.title = @"我有故事,你有酒吗";
@@ -152,7 +170,6 @@
     page2.title = @"世界那么大,我想去看看";
     page2.desc = @"当你觉得拥有的一切不能够让自己快乐和满足的时候,要不要出来走走,看看这个世界,也许能帮你领悟什么是人生!";
     page2.bgImage = [UIImage imageNamed:@"tutorial_background_02@2x.jpg"];
-    //page2.titleImage = [UIImage imageNamed:@"supportcat"];
 
     EAIntroPage *page3 = [EAIntroPage page];
     page3.title = @"身未动，心已远";
@@ -169,9 +186,7 @@
 }
 
 
-- (void)introDidFinish {
-    NSLog(@"Intro callback");
-}
+
 
 
 
@@ -234,7 +249,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+// 选择城市
 - (IBAction)cityBarButtonAcyion:(UIBarButtonItem *)sender {
     self.hidesBottomBarWhenPushed = YES;
 
@@ -270,13 +285,37 @@
 
 //在tableView的区头视图
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if (_weatherArray.count == 0) {
-        return nil;
-    }
+    
     NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"WJYWeatherView" owner:self options:nil];
-    Weather *weather = _weatherArray[0];
     WJYWeatherView *weatherView = [nib objectAtIndex:0];
+    
     weatherView.cityLabel.text = self.city;
+    NSDate *currentDate = [NSDate date];//获取当前时间，日期
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd"];
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    weatherView.dayLabel.text = dateString;
+    
+    UIImageView *backImage= [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, weatherView.frame.size.width, 150)];
+    backImage.image = [UIImage imageNamed:@"5.jpg"];
+    [weatherView addSubview:backImage];
+    [weatherView insertSubview:backImage atIndex:0];
+    
+    //毛玻璃效果
+    UIVisualEffectView *visualView = [[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:(UIBlurEffectStyleLight)]];
+    visualView.frame = weatherView.bounds;
+    
+    visualView.alpha = 0.88;
+    [weatherView addSubview:visualView];
+    [weatherView insertSubview:visualView atIndex:1];
+    weatherView.clipsToBounds = YES;
+
+    if (_weatherArray.count == 0) {
+        return weatherView;
+    }
+    
+    // 添加数据
+    Weather *weather = _weatherArray[0];
     weatherView.typeLabel.text = weather.type;
     weatherView.windLabel.text = [weather.fengli substringToIndex:[weather.fengli length] - 1];
     weatherView.weekLabel.text = [weather.date substringFromIndex:[weather.date length] - 3];
@@ -286,19 +325,7 @@
     NSString *strUrl = [type stringByReplacingOccurrencesOfString:@" " withString:@""];
     [weatherView.typeImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:kWeatherImageURL,strUrl]]];
     
-    NSDate *currentDate = [NSDate date];//获取当前时间，日期
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM/dd"];
-    NSString *dateString = [dateFormatter stringFromDate:currentDate];
-    weatherView.dayLabel.text = dateString;
-    
-//    UIImageView *backImage= [[UIImageView alloc] initWithFrame:CGRectMake(0, 3, weatherView.frame.size.width, 146)];
-//    backImage.image = [UIImage imageNamed:nil];
-//    [weatherView addSubview:backImage];
-    //[weatherView insertSubview:backImage atIndex:0];
-    weatherView.backgroundColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
-    weatherView.clipsToBounds = YES;
-    return weatherView;
+       return weatherView;
 }
 
 

@@ -22,17 +22,15 @@ static NSString *const cellIdentify = @"pinLunCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"日志详情";
-
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(returnAction:)] ;
-    
-
+    self.title = @"日志详情";
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_arrow"] style:UIBarButtonItemStyleDone target:self action:@selector(returnAction:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
   
     //自定义cell的高度
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 100;
-
-    
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"pinLunTableViewCell" bundle:nil]    forCellReuseIdentifier:cellIdentify];
     
@@ -49,8 +47,6 @@ static NSString *const cellIdentify = @"pinLunCellID";
 
 
 -(void)loadData{
-    NSLog(@"%ld",self.logList.logId);
-    
     
     //根据得到的日志id解析数据
     NSString *urlString = [NSString stringWithFormat:@"%@%ld",kDetailRecommandURL,self.logList.logId ];
@@ -70,17 +66,13 @@ static NSString *const cellIdentify = @"pinLunCellID";
                                    [self.allDatas addObject:pinlun];
                                }
                                
-                               for (pinLun *pinlun in self.allDatas) {
-                                   NSLog(@"%@",pinlun);
-                               }
-                               
                                [self.tableView reloadData];
                            }];
 }
 
 //返回上个页面
 -(void)returnAction:(UIBarButtonItem *)sender{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,10 +104,9 @@ static NSString *const cellIdentify = @"pinLunCellID";
     //创建毛玻璃视图对象
     UIVisualEffectView *visualEV = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     visualEV.alpha = 0.8;
-    visualEV.frame = cell.bounds;
-    visualEV.alpha = 0.1;
+    visualEV.frame = cell.imageView.bounds;
     //将毛玻璃视图对象加入cell上
-    [cell.contentView addSubview:visualEV];
+    [cell.imageView addSubview:visualEV];
     
     
     return cell;

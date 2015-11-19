@@ -31,9 +31,10 @@ static NSString *const cellIdentify = @"recommandCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+
+    self.navigationItem.title = @"说走就走的旅行";
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
     
     //设置加载视图的颜色
     UIColor *ballColor = [UIColor colorWithRed:0.47 green:0.60 blue:0.89 alpha:1];
@@ -127,6 +128,7 @@ static NSString *const cellIdentify = @"recommandCellID";
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 60;
 }
+
 
 //设置表视图的头视图
 

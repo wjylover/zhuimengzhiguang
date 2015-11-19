@@ -54,27 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ln8-Ku-EZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027.5" y="116.5"/>
-        </scene>
-        <!--发现-->
-        <scene sceneID="rTG-Wx-jyL">
-            <objects>
-                <viewController id="pUU-YU-G28" customClass="FZQFindViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qoe-GU-xzp"/>
-                        <viewControllerLayoutGuide type="bottom" id="nbP-7M-OhX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EbX-uN-WKs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="发现" id="E7f-23-qWz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pWM-AY-59M" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="211" y="780"/>
+            <point key="canvasLocation" x="1839.5" y="116.5"/>
         </scene>
         <!--My View Controller-->
         <scene sceneID="NBB-Hf-OIg">
@@ -88,7 +68,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeImage8.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Fb0-Fk-COu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fb0-Fk-COu">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <animations/>
                             </imageView>
@@ -447,11 +427,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="MWQ-tU-gin" kind="relationship" relationship="viewControllers" id="Ktu-yr-AtS"/>
                         <segue destination="flD-5v-ADR" kind="relationship" relationship="viewControllers" id="AWX-Zi-SHF"/>
-                        <segue destination="pUU-YU-G28" kind="relationship" relationship="viewControllers" id="zYi-pI-clm"/>
+                        <segue destination="6Vb-5Z-A0A" kind="relationship" relationship="viewControllers" id="RbI-1R-NdO"/>
                         <segue destination="Mfg-RW-YE5" kind="relationship" relationship="viewControllers" id="nU5-Ht-eLO"/>
                     </connections>
                 </tabBarController>
@@ -478,7 +459,39 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVb-zj-edS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216" y="117"/>
+            <point key="canvasLocation" x="1027.5" y="116.5"/>
+        </scene>
+        <!--Recommand Table View Controller-->
+        <scene sceneID="Ivh-FI-7ja">
+            <objects>
+                <tableViewController id="mZK-mq-ADI" customClass="FZQRecommandTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="age-eI-0kV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jCO-vI-ji1">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jCO-vI-ji1" id="mTA-W5-V69">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mZK-mq-ADI" id="2Fr-WF-Kty"/>
+                            <outlet property="delegate" destination="mZK-mq-ADI" id="eaj-Wg-h8f"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Qhe-EN-5ZQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HDW-yf-41y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917" y="735"/>
         </scene>
         <!--首页-->
         <scene sceneID="H6K-13-rkR">
@@ -643,7 +656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdS-sQ-kHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572.5" y="116.5"/>
+            <point key="canvasLocation" x="2384.5" y="116.5"/>
         </scene>
         <!--Des City Price Table View Controller-->
         <scene sceneID="756-71-hB1">
@@ -743,7 +756,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdZ-TY-m6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270.5" y="558.5"/>
+            <point key="canvasLocation" x="3082.5" y="558.5"/>
         </scene>
         <!--Des City Collection View Controller-->
         <scene sceneID="4cb-NC-DnM">
@@ -804,10 +817,29 @@
             </objects>
             <point key="canvasLocation" x="148" y="1476"/>
         </scene>
+        <!--发现-->
+        <scene sceneID="WZ0-Ed-D3B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Vb-5Z-A0A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" id="z11-QH-Ug5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vnc-Wd-aPv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mZK-mq-ADI" kind="relationship" relationship="rootViewController" id="VeH-Y2-asI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d1c-dV-bms" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="484"/>
+        </scene>
     </scenes>
     <resources>
         <image name="iconfont-shoucang.png" width="43" height="43"/>
         <image name="loginback_icon.png" width="81" height="81"/>
-        <image name="placeImage8.jpg" width="680" height="453"/>
     </resources>
 </document>

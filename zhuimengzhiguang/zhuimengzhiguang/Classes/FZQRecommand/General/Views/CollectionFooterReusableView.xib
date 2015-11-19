@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,22 +10,25 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XpQ-uA-tv1">
+                    <rect key="frame" x="0.0" y="50" width="320" height="15"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wE8-cp-CCr">
-                    <rect key="frame" x="272" y="24" width="28" height="26"/>
+                    <rect key="frame" x="272" y="21" width="28" height="26"/>
+                    <animations/>
                     <state key="normal" image="icon_bubble3.png">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XpQ-uA-tv1">
-                    <rect key="frame" x="0.0" y="50" width="320" height="15"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </imageView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="XpQ-uA-tv1" secondAttribute="bottom" id="FPH-W2-Dfw"/>
-                <constraint firstAttribute="bottom" secondItem="wE8-cp-CCr" secondAttribute="bottom" constant="15" id="ZEp-rz-mr9"/>
-                <constraint firstItem="XpQ-uA-tv1" firstAttribute="top" secondItem="wE8-cp-CCr" secondAttribute="bottom" id="cAV-W1-K9Y"/>
+                <constraint firstAttribute="bottom" secondItem="wE8-cp-CCr" secondAttribute="bottom" constant="18" id="ZEp-rz-mr9"/>
+                <constraint firstItem="XpQ-uA-tv1" firstAttribute="top" secondItem="wE8-cp-CCr" secondAttribute="bottom" constant="3" id="cAV-W1-K9Y"/>
                 <constraint firstItem="XpQ-uA-tv1" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="cDa-nv-I26"/>
                 <constraint firstAttribute="trailing" secondItem="wE8-cp-CCr" secondAttribute="trailing" constant="20" id="mRZ-vS-nvO"/>
                 <constraint firstAttribute="trailing" secondItem="XpQ-uA-tv1" secondAttribute="trailing" id="qpC-hK-GOd"/>

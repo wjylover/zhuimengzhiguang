@@ -41,8 +41,8 @@
     __weak typeof(self) temp = self;
     _tumblrMenuView = [[CHTumblrMenuView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 49)];
     
-//    _tumblrMenuView.backgroundColor = [UIColor colorWithRed:46/255.0 green:62/255.0 blue:82/255.0 alpha:1];
-    _tumblrMenuView.backgroundColor = [UIColor whiteColor];
+    
+    _tumblrMenuView.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
     // 背景图片
     
     // 头视图

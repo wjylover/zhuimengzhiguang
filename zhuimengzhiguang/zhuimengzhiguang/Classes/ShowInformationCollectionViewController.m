@@ -43,7 +43,9 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
+
+    self.collectionView.bouncesZoom = NO;
+
    
 
     //注册item
@@ -116,15 +118,18 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     //让子类自动布局
     _spaceImgView.autoresizesSubviews = YES;
     
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
+    backView.backgroundColor = [UIColor blackColor];
+    backView.alpha = 0.2;
+    [self.view addSubview:backView];
     //创建返回按钮
     _returnBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    _returnBtn.frame = CGRectMake(2, 20, 30, 30);
-    _returnBtn.backgroundColor = [UIColor lightGrayColor];
-    _returnBtn.alpha = 0.5;
-    [_returnBtn setBackgroundImage:[UIImage imageNamed:@"com_taobao_tae_sdk_web_view_title_bar_back.9.png"] forState:UIControlStateNormal];
+    _returnBtn.frame = CGRectMake(5, 20, 30, 30);
+
+    [_returnBtn setBackgroundImage:[UIImage imageNamed:@"back_arrow"] forState:UIControlStateNormal];
     //给按钮绑定事件
     [_returnBtn addTarget:self action:@selector(returnAction:) forControlEvents:UIControlEventTouchUpInside];
-    [_spaceImgView addSubview:_returnBtn];
+    [self.view addSubview:_returnBtn];
     
     
     //创建目的地文本框
@@ -174,18 +179,17 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 
 
 //当滑动视图时,判断imageView的大小,改变图片视图的坐标和大小
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat y = scrollView.contentOffset.y;
-    if (y<-imageHeight) {
-        //NSLog(@"%.2f",_spaceImgView.frame.size.height);
-        CGRect frame = _spaceImgView.frame;
-        frame.origin.y = y;
-        frame.size.height = -y;
-        _spaceImgView.frame = frame;
-        
-    }
-    
-}
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    CGFloat y = scrollView.contentOffset.y;
+//    if (y<-imageHeight) {
+//        CGRect frame = _spaceImgView.frame;
+//        frame.origin.y = y;
+//        frame.size.height = -y;
+//        _spaceImgView.frame = frame;
+//        
+//    }
+//    
+//}
 
 
 
@@ -315,21 +319,6 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     
     //根据section获得每个日志对象
     Loglist *logList = [ShowInformationDataManager sharedShowInformationDataManager].allLogs[indexPath.section];
-    
-    //根据item获得日志对象中点击的大图片对应的url
-   // NSString *bigImgUrl = logList.bigImageUrls[indexPath.item];
-    
-    
-//    //创建图片显示控制器
-//    ShowPhotoViewController *photoVC = [[ShowPhotoViewController alloc]init];
-//
-//    //传值
-//    photoVC.log = logList;
-//    
-//    photoVC.bigUrlString = bigImgUrl;
-//    
-//    //跳转页面
-//    [self.navigationController pushViewController:photoVC animated:YES];
   
   
     //创建布局对象
@@ -356,9 +345,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     
     //跳转到评论视图控制器中
     PinLunTableViewController *pinLnTVC = [[PinLunTableViewController alloc] init];
-    
-    //设置导航控制器
-    UINavigationController *pinLunNC = [[UINavigationController alloc] initWithRootViewController:pinLnTVC];
+
 
     //根据按钮的标题判断日志对象
     for (Loglist *log in [ShowInformationDataManager sharedShowInformationDataManager].allLogs) {
@@ -370,7 +357,7 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
         }
     }
     //跳转
-    [self showViewController:pinLunNC sender:nil];
+    [self showViewController:pinLnTVC sender:nil];
     
 }
 
