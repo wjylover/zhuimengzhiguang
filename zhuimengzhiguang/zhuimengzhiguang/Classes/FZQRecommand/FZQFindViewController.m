@@ -40,7 +40,7 @@
     [view addSubview:label];
     view.backgroundColor =  [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];   
     [scNTC.view addSubview:view];
-    
+
     
 }
 

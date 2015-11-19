@@ -724,6 +724,7 @@
 		C26ADC251BF42A0A00010217 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				575F8BCB1BF9BB0B00F695AB /* FZQFindViewController.m */,
 				C26ADC2B1BF42AD500010217 /* HotContentCell.h */,
 				C26ADC2C1BF42AD500010217 /* HotContentCell.m */,
 				C26ADC2D1BF42AD500010217 /* HotContentCell.xib */,
@@ -903,7 +904,6 @@
 			isa = PBXGroup;
 			children = (
 				575F8BCA1BF9BB0B00F695AB /* FZQFindViewController.h */,
-				575F8BCB1BF9BB0B00F695AB /* FZQFindViewController.m */,
 				575F8BCD1BF9BB3600F695AB /* FZQRecommandTableViewController.h */,
 				575F8BCE1BF9BB3600F695AB /* FZQRecommandTableViewController.m */,
 				575F8BD01BF9BB8000F695AB /* ShowInformationCollectionViewController.h */,

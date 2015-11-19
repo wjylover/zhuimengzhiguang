@@ -11,4 +11,6 @@
 @interface HomeCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *homeImage;
 @property (weak, nonatomic) IBOutlet UILabel *homeLabel;
+- (void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view;
+
 @end

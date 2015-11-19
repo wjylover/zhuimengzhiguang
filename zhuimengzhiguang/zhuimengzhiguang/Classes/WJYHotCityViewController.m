@@ -15,7 +15,7 @@
 #define kImageHight [UIScreen mainScreen].bounds.size.width / (490 / 285.0)
 
 
-@interface WJYHotCityViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface WJYHotCityViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *hotTanelView;
 @property (nonatomic, strong) NSMutableArray *hotDataArray;
 @end
@@ -98,7 +98,26 @@ static NSInteger page = 1;
     
     [cell.homeImage sd_setImageWithURL:[NSURL URLWithString:hot.cover] placeholderImage:nil];
     cell.homeLabel.text = hot.title;
+    
     return cell;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // Get visible cells on table view.
+    NSArray *visibleCells = [self.hotTanelView visibleCells];
+    
+    for (HomeCell *cell in visibleCells) {
+        [cell cellOnTableView:self.hotTanelView didScrollOnView:self.view];
+    }
+}
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self scrollViewDidScroll:nil];
+}
 @end
