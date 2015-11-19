@@ -41,10 +41,10 @@
     __weak typeof(self) temp = self;
     _tumblrMenuView = [[CHTumblrMenuView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 49)];
     
-    _tumblrMenuView.backgroundColor = [UIColor colorWithRed:46/255.0 green:62/255.0 blue:82/255.0 alpha:1];
+//    _tumblrMenuView.backgroundColor = [UIColor colorWithRed:46/255.0 green:62/255.0 blue:82/255.0 alpha:1];
+    _tumblrMenuView.backgroundColor = [UIColor whiteColor];
     // 背景图片
-    UIImageView *backImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"placeImage8.jpg"]];
-    backImage.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 49);
+    
     // 头视图
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
     view.backgroundColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
@@ -55,8 +55,7 @@
     titelLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
     titelLabel.text = @"设置";
     [view addSubview:titelLabel];
-    [_tumblrMenuView addSubview:backImage];
-    [_tumblrMenuView addMenuItemWithTitle:@"我的收藏" andIcon:[UIImage imageNamed:@"save.png"] andSelectedBlock:^{
+    [_tumblrMenuView addMenuItemWithTitle:@"我的收藏" andIcon:[UIImage imageNamed:@"soucang2"] andSelectedBlock:^{
         WJYCollectViewController *collectVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CollectVC"];
         temp.hidesBottomBarWhenPushed = YES;
 
@@ -65,7 +64,7 @@
 
     }];
     
-    [_tumblrMenuView addMenuItemWithTitle:@"清除缓存" andIcon:[UIImage imageNamed:@"clean.jpg"]  andSelectedBlock:^{
+    [_tumblrMenuView addMenuItemWithTitle:@"清除缓存" andIcon:[UIImage imageNamed:@"qingchu"]  andSelectedBlock:^{
         NSLog(@"清除缓存");
         
         //获得该应用程序的缓存路径
@@ -102,10 +101,10 @@
     
     //判断此时的模式
         //如果是日间模式,则显示夜间模式的样式
-        [_tumblrMenuView addMenuItemWithTitle:@"夜间模式" andIcon:[UIImage imageNamed:@"night.jpg"]  andSelectedBlock:^{
+        [_tumblrMenuView addMenuItemWithTitle:@"夜间模式" andIcon:[UIImage imageNamed:@"yejian"]  andSelectedBlock:^{
             if ([WJYDataManager sharedManager].isDay == NO) {
             [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"日间模式";
-                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"sun"];
+                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"rijian"];
             //将视图加载该应用程序的窗口上
             [[UIApplication sharedApplication].keyWindow addSubview:temp.dayView];
               
@@ -114,7 +113,7 @@
             }else{
                 [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"夜间模式";
                  //移除在该应用程序的窗口上的视图
-                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"night.jpg"];
+                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"yejian"];
                 [temp.dayView removeFromSuperview];
                 //并将样式设为YES
                 [WJYDataManager sharedManager].isDay = NO;
@@ -123,22 +122,12 @@
     // 修正图片文字
     if ([WJYDataManager sharedManager].isDay == YES) {
         [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"日间模式";
-        [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"sun"];
+        [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"rijian"];
     }
 
 
-    [_tumblrMenuView addMenuItemWithTitle:@"意见箱" andIcon:[UIImage imageNamed:@"ideas.jpg"]  andSelectedBlock:^{
-        NSLog(@"意见箱");
-        
-        //创建意见箱控制器对象
-        IdeaViewController *ideaVC = [[IdeaViewController alloc] initWithNibName:@"IdeaViewController" bundle:nil];
-        
-        //设置变换样式
-        ideaVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        
-        //跳转
-        [temp presentViewController:ideaVC animated:YES completion:nil];
-        
+    [_tumblrMenuView addMenuItemWithTitle:@"关于我们" andIcon:[UIImage imageNamed:@"guanyuwomen"]  andSelectedBlock:^{
+
         
         
         

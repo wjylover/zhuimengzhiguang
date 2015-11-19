@@ -23,7 +23,7 @@
         self.titleLabel_ = [UILabel new];
         self.titleLabel_.textAlignment = NSTextAlignmentCenter;
         self.titleLabel_.backgroundColor = [UIColor clearColor];
-        self.titleLabel_.textColor = [UIColor whiteColor];
+        self.titleLabel_.textColor = [UIColor blackColor];
         self.titleLabel_.text = title;
         _selectedBlock = block;
         [self addSubview:self.iconView_];

@@ -49,6 +49,13 @@
 		57870A841BFB507500CDC7BA /* WJYWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57870A831BFB507500CDC7BA /* WJYWeatherView.m */; };
 		57870A871BFB5A9700CDC7BA /* NSString+Characters.m in Sources */ = {isa = PBXBuildFile; fileRef = 57870A861BFB5A9700CDC7BA /* NSString+Characters.m */; };
 		57BB41081BF041AA00EB915E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BB40FB1BF041AA00EB915E /* AppDelegate.m */; };
+		57D548321BFD5A8500905257 /* iconfont-baitianmoshi.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D5482E1BFD5A8500905257 /* iconfont-baitianmoshi.png */; };
+		57D548351BFD5A8500905257 /* iconfont-yejianmoshi-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D548311BFD5A8500905257 /* iconfont-yejianmoshi-2.png */; };
+		57D5483B1BFD61E200905257 /* soucang2.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D5483A1BFD61E200905257 /* soucang2.png */; };
+		57D5483D1BFD637800905257 /* qingchu.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D5483C1BFD637700905257 /* qingchu.png */; };
+		57D5483F1BFD64DE00905257 /* yejian.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D5483E1BFD64DE00905257 /* yejian.png */; };
+		57D548411BFD65AC00905257 /* rijian.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D548401BFD65AC00905257 /* rijian.png */; };
+		57D548431BFD691900905257 /* guanyuwomen.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D548421BFD691900905257 /* guanyuwomen.png */; };
 		57DEF4F31BF040A200E0134A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEF4F21BF040A200E0134A /* main.m */; };
 		57DEF4FC1BF040A200E0134A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DEF4FA1BF040A200E0134A /* Main.storyboard */; };
 		57DEF4FF1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57DEF4FD1BF040A200E0134A /* zhuimengzhiguang.xcdatamodeld */; };
@@ -271,6 +278,13 @@
 		57870A861BFB5A9700CDC7BA /* NSString+Characters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Characters.m"; sourceTree = "<group>"; };
 		57BB40FA1BF041AA00EB915E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57BB40FB1BF041AA00EB915E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		57D5482E1BFD5A8500905257 /* iconfont-baitianmoshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-baitianmoshi.png"; sourceTree = "<group>"; };
+		57D548311BFD5A8500905257 /* iconfont-yejianmoshi-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-yejianmoshi-2.png"; sourceTree = "<group>"; };
+		57D5483A1BFD61E200905257 /* soucang2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soucang2.png; sourceTree = "<group>"; };
+		57D5483C1BFD637700905257 /* qingchu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qingchu.png; sourceTree = "<group>"; };
+		57D5483E1BFD64DE00905257 /* yejian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yejian.png; sourceTree = "<group>"; };
+		57D548401BFD65AC00905257 /* rijian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rijian.png; sourceTree = "<group>"; };
+		57D548421BFD691900905257 /* guanyuwomen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guanyuwomen.png; sourceTree = "<group>"; };
 		57DEF4EE1BF040A200E0134A /* zhuimengzhiguang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zhuimengzhiguang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DEF4F21BF040A200E0134A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57DEF4FB1BF040A200E0134A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -604,6 +618,7 @@
 		57086D781BF09513006530C1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				57D548421BFD691900905257 /* guanyuwomen.png */,
 				575F8BC41BF9809700F695AB /* iconfont-shoucang.png */,
 				575F8BB51BF973F900F695AB /* navigation_bar_background.png */,
 				C27CAE3E1BF6C57A004FCC38 /* ScenerySpot.h */,
@@ -620,6 +635,12 @@
 				57086D7A1BF0BDC0006530C1 /* HotCity.m */,
 				575F8BA21BF7266700F695AB /* KCAnnotation.h */,
 				575F8BA31BF7266700F695AB /* KCAnnotation.m */,
+				57D548401BFD65AC00905257 /* rijian.png */,
+				57D5483E1BFD64DE00905257 /* yejian.png */,
+				57D5483C1BFD637700905257 /* qingchu.png */,
+				57D5483A1BFD61E200905257 /* soucang2.png */,
+				57D5482E1BFD5A8500905257 /* iconfont-baitianmoshi.png */,
+				57D548311BFD5A8500905257 /* iconfont-yejianmoshi-2.png */,
 				575F8BB71BF9799100F695AB /* loginback_icon.png */,
 				575F8BB81BF9799100F695AB /* back_arrow.png */,
 				572F8E6C1BFC118400F96CC8 /* QingTian.jpg */,
@@ -1624,6 +1645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				572F8E791BFC191F00F96CC8 /* 6.jpg in Resources */,
+				57D548321BFD5A8500905257 /* iconfont-baitianmoshi.png in Resources */,
 				C2A101E31BF97FA6005B0396 /* clean.jpg in Resources */,
 				C27CAE7E1BF72565004FCC38 /* sun.png in Resources */,
 				C28D0F4C1BF345B700D265A9 /* CollectionHeaderReusableView.xib in Resources */,
@@ -1645,6 +1667,7 @@
 				C26ADC2A1BF42A7100010217 /* HomeCell.xib in Resources */,
 				C2D9F2E21BF5FC87002CA9E0 /* placeImage6.jpg in Resources */,
 				C2D9F2E01BF5E9A0002CA9E0 /* placeImage.jpg in Resources */,
+				57D548351BFD5A8500905257 /* iconfont-yejianmoshi-2.png in Resources */,
 				C28FAF251BF5A89B00721C1C /* CoreSDWebImage.bundle in Resources */,
 				C28FAF3B1BF5A89B00721C1C /* SVProgressHUD.bundle in Resources */,
 				C27B44041BF6E45400BFDD66 /* DestinationCell.xib in Resources */,
@@ -1654,11 +1677,14 @@
 				575F8BC51BF9809700F695AB /* iconfont-shoucang.png in Resources */,
 				C28FAE9A1BF5A88900721C1C /* PhotoBroswerVC.xib in Resources */,
 				C2D9F36C1BF61ED6002CA9E0 /* 36H8K@1II%`9WGOW4669%N7.jpg in Resources */,
+				57D548431BFD691900905257 /* guanyuwomen.png in Resources */,
 				572F8E6D1BFC118400F96CC8 /* QingTian.jpg in Resources */,
 				C27CAE741BF6DC6A004FCC38 /* night.jpg in Resources */,
 				C28D0F421BF3245D00D265A9 /* com_taobao_tae_sdk_web_view_title_bar_back.9.png in Resources */,
+				57D5483B1BFD61E200905257 /* soucang2.png in Resources */,
 				572F8E781BFC191F00F96CC8 /* 5.jpg in Resources */,
 				C2A102031BF9ECAA005B0396 /* duoyun.png in Resources */,
+				57D5483D1BFD637800905257 /* qingchu.png in Resources */,
 				C2D9F3761BF6212E002CA9E0 /* (null) in Resources */,
 				57DEF5041BF040A200E0134A /* LaunchScreen.storyboard in Resources */,
 				C2D9F36D1BF61ED6002CA9E0 /* FYE_E)J63%{V3~HG)`6BX[E.jpg in Resources */,
@@ -1691,7 +1717,9 @@
 				572F8E751BFC171500F96CC8 /* 4.jpg in Resources */,
 				C2A102041BF9ECAA005B0396 /* iconfont-duoyun.png in Resources */,
 				C27CAE691BF6D69D004FCC38 /* WjyHeadView.xib in Resources */,
+				57D548411BFD65AC00905257 /* rijian.png in Resources */,
 				57DEF5011BF040A200E0134A /* Assets.xcassets in Resources */,
+				57D5483F1BFD64DE00905257 /* yejian.png in Resources */,
 				C2A1020E1BF9F27D005B0396 /* WeatherTableViewCell.xib in Resources */,
 				C2A102071BF9ECAA005B0396 /* iconfont-yin.png in Resources */,
 				C27B43FF1BF6E45400BFDD66 /* SJPbulicTableViewCell.xib in Resources */,
@@ -1995,7 +2023,7 @@
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2013,7 +2041,7 @@
 				INFOPLIST_FILE = zhuimengzhiguang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguang11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wjy.zhuimengzhiguan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

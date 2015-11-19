@@ -111,13 +111,13 @@ static NSInteger page = 1;
         [cell cellOnTableView:self.hotTanelView didScrollOnView:self.view];
     }
 }
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self scrollViewDidScroll:nil];
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle
+//{
+//    return UIStatusBarStyleLightContent;
+//}
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    [self scrollViewDidScroll:nil];
+//}
 @end

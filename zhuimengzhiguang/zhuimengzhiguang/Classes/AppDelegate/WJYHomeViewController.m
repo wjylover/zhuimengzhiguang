@@ -27,7 +27,7 @@
 #define kImageHight [UIScreen mainScreen].bounds.size.width / (490 / 285.0)
 
 #define kWeatherImageURL @"http://php.weather.sina.com.cn/images/yb3/180_180/%@_0.png"
-@interface WJYHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface WJYHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 // 轮播图控件
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 // 轮播图数据数组
@@ -241,11 +241,12 @@
     NSString *dateString = [dateFormatter stringFromDate:currentDate];
     weatherView.dayLabel.text = dateString;
     
-    UIImageView *backImage= [[UIImageView alloc] initWithFrame:CGRectMake(0, 3, weatherView.frame.size.width, 146)];
-    backImage.image = [UIImage imageNamed:@"5.jpg"];
-    [weatherView addSubview:backImage];
-    [weatherView insertSubview:backImage atIndex:0];
-    weatherView.backgroundColor = [UIColor whiteColor];
+//    UIImageView *backImage= [[UIImageView alloc] initWithFrame:CGRectMake(0, 3, weatherView.frame.size.width, 146)];
+//    backImage.image = [UIImage imageNamed:nil];
+//    [weatherView addSubview:backImage];
+    //[weatherView insertSubview:backImage atIndex:0];
+    weatherView.backgroundColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
+    weatherView.clipsToBounds = YES;
     return weatherView;
 }
 
@@ -288,7 +289,15 @@
     
 }
 
-
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // Get visible cells on table view.
+    NSArray *visibleCells = [self.homeTableview visibleCells];
+    
+    for (HomeCell *cell in visibleCells) {
+        [cell cellOnTableView:self.homeTableview didScrollOnView:self.view];
+    }
+}
 -(NSMutableArray *)weatherArray{
     if (!_weatherArray) {
         _weatherArray = [NSMutableArray array];
