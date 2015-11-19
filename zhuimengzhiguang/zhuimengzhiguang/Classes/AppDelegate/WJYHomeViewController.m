@@ -92,6 +92,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+//   
+//    for (NSString *fontName in [UIFont familyNames]) {
+//        NSLog(@"%@",fontName);
+//    }
+    
+    
     //设置引导页
     [self showIntroWithCrossDissolve];
     
@@ -135,27 +142,29 @@
 
 -(void)showIntroWithCrossDissolve{
     EAIntroPage *page1 = [EAIntroPage page];
-    page1.title = @"This is page 1";
-    page1.desc = @"";
+    page1.title = @"我有故事,你有酒吗";
+    page1.desc = @"旅行就是,即使是同一个世界,你们发现的却是不一样的世界。——《露西亚的情人》";
     page1.bgImage = [UIImage imageNamed:@"tutorial_background_03@2x.jpg"];
     //page1.titleImage = [UIImage imageNamed:@"original"];
 
     EAIntroPage *page2 = [EAIntroPage page];
-    page2.title = @"This is page 2";
-    page2.desc = @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.";
-    page2.bgImage = [UIImage imageNamed:@"tutorial_background_01@2x.jpg"];
+    page2.title = @"世界那么大,我想去看看";
+    page2.desc = @"当你觉得拥有的一切不能够让自己快乐和满足的时候,要不要出来走走,看看这个世界,也许能帮你领悟什么是人生!";
+    page2.bgImage = [UIImage imageNamed:@"tutorial_background_02@2x.jpg"];
     //page2.titleImage = [UIImage imageNamed:@"supportcat"];
 
     EAIntroPage *page3 = [EAIntroPage page];
-    page3.title = @"This is page 3";
-    page3.desc = @"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.";
+    page3.title = @"身未动，心已远";
+    page3.desc = @"一个背包,几本书,所有喜欢的歌,一张单程车票,一颗潇洒的心。一个人的旅行,在路上遇见最真实的自己";
     page3.bgImage = [UIImage imageNamed:@"tutorial_background_00@2x.jpg"];
     //page3.titleImage = [UIImage imageNamed:@"femalecodertocat"];
 
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:CGRectMake(0, 0, kUIScreenWidth , kUIScreenHeight) andPages:@[page1,page2,page3]];
 
     [intro setDelegate:self];
-    [intro showInView:self.view animateDuration:0.0];
+    
+    //将该引导视图加到根视图控制器上
+    [intro showInView:self.tabBarController.view animateDuration:0.0];
 }
 
 

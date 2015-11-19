@@ -124,12 +124,11 @@
     
     [_bigImgView sd_setImageWithURL:[NSURL URLWithString:self.bigUrlString]];
     
+    _bigImgView.contentMode = UIViewContentModeScaleAspectFill;
+    
     //移除提示信息视图
     [_indicatorView removeFromSuperview];
     [_indicatorView stopAnimating];
-
-    
-    _bigImgView.contentMode = UIViewContentModeScaleAspectFill;
     
 // 给图片添加双击事件,恢复正常比例
     UITapGestureRecognizer *doubleTap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap)];

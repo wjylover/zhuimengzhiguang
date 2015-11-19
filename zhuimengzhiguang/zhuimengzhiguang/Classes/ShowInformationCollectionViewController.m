@@ -67,17 +67,11 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
 
     //调用block
     [ShowInformationDataManager sharedShowInformationDataManager].getValue = ^(User *user,Mileage *mileage){
-    
         
-        
-        
-            //获得图片网址
+        //获得图片网址
             NSString *urlString = user.spaceImage;
         
-        
-        
-        
-            //设置变焦图片的大小和位置
+        //设置变焦图片的大小和位置
             [_spaceImgView sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"placeImage5.jpg"]];
         
         //设置图片视图的内容尺寸
@@ -323,21 +317,36 @@ static NSString *const reuseFooterIdentifier = @"FooterID";
     Loglist *logList = [ShowInformationDataManager sharedShowInformationDataManager].allLogs[indexPath.section];
     
     //根据item获得日志对象中点击的大图片对应的url
-    NSString *bigImgUrl = logList.bigImageUrls[indexPath.item];
+   // NSString *bigImgUrl = logList.bigImageUrls[indexPath.item];
     
     
-    //创建图片显示控制器
-    ShowPhotoViewController *photoVC = [[ShowPhotoViewController alloc]init];
-
-    //传值
-    photoVC.log = logList;
-    
-    photoVC.bigUrlString = bigImgUrl;
-    
-    //跳转页面
-    [self.navigationController pushViewController:photoVC animated:YES];
+//    //创建图片显示控制器
+//    ShowPhotoViewController *photoVC = [[ShowPhotoViewController alloc]init];
+//
+//    //传值
+//    photoVC.log = logList;
+//    
+//    photoVC.bigUrlString = bigImgUrl;
+//    
+//    //跳转页面
+//    [self.navigationController pushViewController:photoVC animated:YES];
   
   
+    //创建布局对象
+    RGCardViewLayout *layout =  [[RGCardViewLayout alloc] init];
+    
+        //创建图片显示控制器
+       showPhotosCollectionViewController *photoVC = [[showPhotosCollectionViewController alloc]initWithCollectionViewLayout:layout];
+    
+        //传值
+        photoVC.log = logList;
+    
+        photoVC.bigUrlStrings = logList.bigImageUrls;
+    
+        //跳转页面
+        [self.navigationController pushViewController:photoVC animated:YES];
+    
+    
     
 }
 
