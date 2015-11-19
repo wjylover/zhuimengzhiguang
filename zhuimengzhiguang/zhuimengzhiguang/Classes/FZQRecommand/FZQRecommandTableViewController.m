@@ -10,9 +10,8 @@
 
 @interface FZQRecommandTableViewController ()
 
-//声明一个刷新控制器
-
-
+//添加一个加载动画
+@property(nonatomic,strong)PendulumView *pendulunView;
 
 @end
 
@@ -35,9 +34,22 @@ static NSString *const cellIdentify = @"recommandCellID";
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-     
     
-    //注册cell
+    //设置加载视图的颜色
+    UIColor *ballColor = [UIColor colorWithRed:0.47 green:0.60 blue:0.89 alpha:1];
+    
+    //创建一个加载视图动画
+    _pendulunView = [[PendulumView alloc] initWithFrame:[UIScreen mainScreen].bounds ballColor:ballColor];
+    
+    //将动画加在tableView上
+    [self.tableView addSubview:_pendulunView];
+    
+    //开始动画
+    [_pendulunView startAnimating];
+
+    
+    
+     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"FZQRecommandTableViewCell" bundle:nil]  forCellReuseIdentifier:cellIdentify];
     
     //设置cell的自定义高度
@@ -58,8 +70,7 @@ static NSString *const cellIdentify = @"recommandCellID";
         [self.tableView.mj_footer endRefreshing];
     }];
     
-  
-   }
+}
 
 
 //请求数据
@@ -70,6 +81,10 @@ static NSString *const cellIdentify = @"recommandCellID";
     //刷新表数据
     [RecommandDataManager sharedRecommandDataManager].flash = ^(){
         [self.tableView reloadData];
+        
+        //结束加载动画
+        [_pendulunView stopAnimating];
+        [_pendulunView removeFromSuperview];
     };
 
 }

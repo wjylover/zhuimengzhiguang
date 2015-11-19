@@ -26,8 +26,7 @@
 //图片展示页面
 #import "ShowPhotoViewController.h"
 
-//意见箱页面
-#import "IdeaViewController.h"
+
 
 
 
@@ -73,20 +72,23 @@
 //上拉刷新
 #import "MJRefresh.h"
 
-//动画表示图
-#import "ADLivelyTableView.h"
-
-//展示图片
-#import "PhotoCotentView.h"
-#import "PhotoBroswerVC.h"
-
 //提示图片
 #import "MONActivityIndicatorView.h"
 
 //动画按钮
 #import "CHTumblrMenuView.h"
 
-//发送短信或邮件的系统库
-#import <MessageUI/MessageUI.h>
+//引导页
+#import "EAIntroPage.h"
+#import "EAIntroView.h"
+
+//加载动画
+#import "PendulumView.h"
+
+//显示图片
+#import "RGCardViewLayout.h"
+#import "showPhotosCollectionViewController.h"
+#import "photoCollectionViewCell.h"
+
 
 #endif /* FZQPrefixHeader_pch */
