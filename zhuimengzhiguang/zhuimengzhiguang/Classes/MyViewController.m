@@ -44,6 +44,9 @@
     
     _tumblrMenuView.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
     // 背景图片
+    UIImageView *headImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ec708b4a489f8f71ca3750e1e8af2493.jpg"]];
+    headImage.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 115);
+    [_tumblrMenuView addSubview:headImage];
     
     // 头视图
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
@@ -55,7 +58,7 @@
     titelLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
     titelLabel.text = @"设置";
     [view addSubview:titelLabel];
-    [_tumblrMenuView addMenuItemWithTitle:@"我的收藏" andIcon:[UIImage imageNamed:@"soucang2"] andSelectedBlock:^{
+    [_tumblrMenuView addMenuItemWithTitle:@"我的收藏" andIcon:[UIImage imageNamed:@"soucang"] andSelectedBlock:^{
         WJYCollectViewController *collectVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CollectVC"];
         temp.hidesBottomBarWhenPushed = YES;
 
@@ -69,11 +72,9 @@
         
         //获得该应用程序的缓存路径
         NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        NSLog(@"%@",cachePath);
         
         //计算文件缓存的大小
         CGFloat cacheSize = [temp folderSizeAtPath:cachePath];
-        NSLog(@"%.2f",cacheSize);
         
         NSString *cacheSizeString = [NSString stringWithFormat:@"是否要清除%.2fM缓存内容",cacheSize];
         
@@ -101,10 +102,10 @@
     
     //判断此时的模式
         //如果是日间模式,则显示夜间模式的样式
-        [_tumblrMenuView addMenuItemWithTitle:@"夜间模式" andIcon:[UIImage imageNamed:@"yejian"]  andSelectedBlock:^{
+        [_tumblrMenuView addMenuItemWithTitle:@"夜间模式" andIcon:[UIImage imageNamed:@"yejian1"]  andSelectedBlock:^{
             if ([WJYDataManager sharedManager].isDay == NO) {
             [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"日间模式";
-                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"rijian"];
+                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"rijian1"];
             //将视图加载该应用程序的窗口上
             [[UIApplication sharedApplication].keyWindow addSubview:temp.dayView];
               
@@ -113,7 +114,7 @@
             }else{
                 [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"夜间模式";
                  //移除在该应用程序的窗口上的视图
-                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"yejian"];
+                [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"yejian1"];
                 [temp.dayView removeFromSuperview];
                 //并将样式设为YES
                 [WJYDataManager sharedManager].isDay = NO;
@@ -122,11 +123,11 @@
     // 修正图片文字
     if ([WJYDataManager sharedManager].isDay == YES) {
         [[temp.tumblrMenuView getButtons][2] titleLabel_].text = @"日间模式";
-        [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"rijian"];
+        [[temp.tumblrMenuView getButtons][2] iconView_].image = [UIImage imageNamed:@"rijian1"];
     }
 
 
-    [_tumblrMenuView addMenuItemWithTitle:@"关于我们" andIcon:[UIImage imageNamed:@"guanyuwomen"]  andSelectedBlock:^{
+    [_tumblrMenuView addMenuItemWithTitle:@"关于我们" andIcon:[UIImage imageNamed:@"wode"]  andSelectedBlock:^{
 
         
         

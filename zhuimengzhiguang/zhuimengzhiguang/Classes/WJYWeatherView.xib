@@ -10,28 +10,36 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAt-sV-mnI">
-                    <rect key="frame" x="28" y="20" width="100" height="20"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-ij-vHk">
+                    <rect key="frame" x="70" y="450" width="200" height="200"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="qiX-vo-BOa"/>
+                        <constraint firstAttribute="height" constant="200" id="JTt-Jn-8nQ"/>
+                        <constraint firstAttribute="width" constant="200" id="n1H-Oc-Iez"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAt-sV-mnI">
+                    <rect key="frame" x="20" y="20" width="80" height="20"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="qiX-vo-BOa"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="多云" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTu-oK-rXk">
-                    <rect key="frame" x="20" y="80.5" width="50" height="20.5"/>
+                    <rect key="frame" x="20" y="80.5" width="80" height="20.5"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="yaj-0K-pMA"/>
+                        <constraint firstAttribute="width" constant="80" id="yaj-0K-pMA"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3S-4R-yMW">
-                    <rect key="frame" x="480" y="20" width="100" height="20.5"/>
+                    <rect key="frame" x="470" y="20" width="100" height="20.5"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="21X-CX-iPx"/>
@@ -41,17 +49,17 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微风" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldk-lR-VuE">
-                    <rect key="frame" x="20" y="49.5" width="50" height="20.5"/>
+                    <rect key="frame" x="20" y="49.5" width="80" height="20.5"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="wX1-yW-kSz"/>
+                        <constraint firstAttribute="width" constant="80" id="wX1-yW-kSz"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期六" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnQ-xv-LSZ">
-                    <rect key="frame" x="480" y="50" width="100" height="20.5"/>
+                    <rect key="frame" x="470" y="50" width="100" height="20.5"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="gB8-5k-TwE"/>
@@ -61,7 +69,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10C/34C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZw-hb-end">
-                    <rect key="frame" x="480" y="81" width="100" height="20"/>
+                    <rect key="frame" x="470" y="81" width="100" height="20"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="3ug-G7-GzF"/>
@@ -70,32 +78,24 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-ij-vHk">
-                    <rect key="frame" x="70" y="450" width="200" height="200"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="200" id="JTt-Jn-8nQ"/>
-                        <constraint firstAttribute="width" constant="200" id="n1H-Oc-Iez"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="tZw-hb-end" firstAttribute="top" secondItem="dnQ-xv-LSZ" secondAttribute="bottom" constant="10" id="5jN-wL-UT4"/>
-                <constraint firstAttribute="trailing" secondItem="u3S-4R-yMW" secondAttribute="trailing" constant="20" id="9ln-Is-lko"/>
+                <constraint firstAttribute="trailing" secondItem="u3S-4R-yMW" secondAttribute="trailing" constant="30" id="9ln-Is-lko"/>
                 <constraint firstItem="Ldk-lR-VuE" firstAttribute="top" secondItem="iAt-sV-mnI" secondAttribute="bottom" constant="10" id="DGv-Df-Bim"/>
-                <constraint firstItem="iAt-sV-mnI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="28" id="ENC-6S-7cY"/>
+                <constraint firstItem="iAt-sV-mnI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ENC-6S-7cY"/>
                 <constraint firstItem="u3S-4R-yMW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="HLH-05-YXc"/>
                 <constraint firstAttribute="bottom" secondItem="c4j-ij-vHk" secondAttribute="bottom" constant="-50" id="He3-Cb-0Qd"/>
                 <constraint firstItem="Ldk-lR-VuE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="JFn-9O-shs"/>
                 <constraint firstItem="iTu-oK-rXk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="cBz-gC-rm8"/>
-                <constraint firstAttribute="trailing" secondItem="dnQ-xv-LSZ" secondAttribute="trailing" constant="20" id="cHt-WC-UBq"/>
+                <constraint firstAttribute="trailing" secondItem="dnQ-xv-LSZ" secondAttribute="trailing" constant="30" id="cHt-WC-UBq"/>
                 <constraint firstItem="dnQ-xv-LSZ" firstAttribute="top" secondItem="u3S-4R-yMW" secondAttribute="bottom" constant="10" id="l1d-OL-ElO"/>
                 <constraint firstItem="iAt-sV-mnI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="mbS-HH-mkd"/>
                 <constraint firstItem="iTu-oK-rXk" firstAttribute="top" secondItem="Ldk-lR-VuE" secondAttribute="bottom" constant="10" id="rYp-qX-d1y"/>
                 <constraint firstItem="c4j-ij-vHk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="tBw-BC-E4U"/>
-                <constraint firstAttribute="trailing" secondItem="tZw-hb-end" secondAttribute="trailing" constant="20" id="xzi-Vh-tcV"/>
+                <constraint firstAttribute="trailing" secondItem="tZw-hb-end" secondAttribute="trailing" constant="30" id="xzi-Vh-tcV"/>
             </constraints>
             <connections>
                 <outlet property="cityLabel" destination="iAt-sV-mnI" id="sSw-KB-Y3X"/>

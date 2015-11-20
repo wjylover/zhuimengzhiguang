@@ -50,7 +50,8 @@
         [self.scenerySpotTableView reloadData];
     };
     // 自适应高度
-    
+    [_headImageView sd_setImageWithURL:[NSURL URLWithString:_scenery.cover] placeholderImage:nil];
+    [self.scenerySpotTableView reloadData];
     _scenerySpotTableView.rowHeight = UITableViewAutomaticDimension;
     _scenerySpotTableView.estimatedRowHeight = 100;
     // 初始化cell

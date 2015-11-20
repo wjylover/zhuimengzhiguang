@@ -29,10 +29,11 @@ static NSString * const reuseIdentifier = @"photoCellID";
     
     self.navigationItem.title = @"旅者足迹";
     
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:160/255.0 green:213/255.0 blue:243/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.313 green:0.782 blue:1.000 alpha:1.000];
     
     //添加一个返回按钮
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"weibosdk_navigationbar_back.png"] style:UIBarButtonItemStylePlain target:self action:@selector(returnAction:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_arrow"] style:UIBarButtonItemStylePlain target:self action:@selector(returnAction:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
 
     
     self.collectionView.backgroundColor = [UIColor blackColor];

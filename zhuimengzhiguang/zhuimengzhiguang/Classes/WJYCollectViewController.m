@@ -59,15 +59,13 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[WJYDataManager sharedManager] getScenicSpotContentArrayWithTypeID:[_collectArray[indexPath.row] typeID]];
-    
     self.hidesBottomBarWhenPushed = YES;
     WJYScenerySpotViewController *scenerySpotVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ScenetySpot"];
-    scenerySpotVC.typeID = [_collectArray[indexPath.row] typeID];
+    scenerySpotVC.scenery = _collectContentArray[indexPath.row];
+    [scenerySpotVC.headImageView sd_setImageWithURL:[NSURL URLWithString:[_collectContentArray[indexPath.row] cover]]];
     scenerySpotVC.headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -kImageHight, self.view.frame.size.width, kImageHight)];
     [self.navigationController pushViewController:scenerySpotVC animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
-}
+    self.hidesBottomBarWhenPushed = NO;}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _collectContentArray.count;

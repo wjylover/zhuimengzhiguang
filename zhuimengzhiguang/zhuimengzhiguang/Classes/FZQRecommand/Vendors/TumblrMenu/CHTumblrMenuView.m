@@ -85,7 +85,7 @@
     NSUInteger rowCount = buttons_.count / columnCount + (buttons_.count%columnCount>0?1:0);
     NSUInteger rowIndex = index / columnCount;
 
-    CGFloat itemHeight = (CHTumblrMenuViewImageHeight + CHTumblrMenuViewTitleHeight) * rowCount + (rowCount > 1?(rowCount - 1) * CHTumblrMenuViewHorizontalMargin:0);
+    CGFloat itemHeight = (CHTumblrMenuViewImageHeight + CHTumblrMenuViewTitleHeight) * rowCount /2 - 40  + (rowCount > 1?(rowCount - 1) * CHTumblrMenuViewHorizontalMargin:0);
     CGFloat offsetY = (self.bounds.size.height - itemHeight) / 2.0;
     CGFloat verticalPadding = (self.bounds.size.width - CHTumblrMenuViewHorizontalMargin * 2 - CHTumblrMenuViewImageHeight * 3) / 2.0;
     

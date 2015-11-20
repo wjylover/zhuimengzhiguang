@@ -297,7 +297,7 @@ NSString *const NewFeatureVersionKey = @"NewFeatureVersionKey";
     weatherView.dayLabel.text = dateString;
     
     UIImageView *backImage= [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, weatherView.frame.size.width, 150)];
-    backImage.image = [UIImage imageNamed:@"5.jpg"];
+    backImage.image = [UIImage imageNamed:@"0556bc93612abbb78abe85866a2b5115.jpg"];
     [weatherView addSubview:backImage];
     [weatherView insertSubview:backImage atIndex:0];
     
