@@ -62,6 +62,21 @@
     [foot endRefreshing];
 }
 
+//设置navigationbar的渐变颜色
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    UIColor *color = [UIColor colorWithRed:0.325 green:0.317 blue:1.000 alpha:1.000];
+    
+    //将tablView的高度的偏移量赋给  offset
+    CGFloat offset = self.tableView.contentOffset.y;
+    //判断
+    if (offset < 0) {
+        self.navigationController.navigationBar.backgroundColor = [color colorWithAlphaComponent:0];
+    }else{
+        CGFloat alpha = 1 - ((300 - offset)/100);
+        self.navigationController.navigationBar.backgroundColor = [color colorWithAlphaComponent:alpha];
+    }
+}
 
 //网络请求
 -(void)getValuesReuqestHandle

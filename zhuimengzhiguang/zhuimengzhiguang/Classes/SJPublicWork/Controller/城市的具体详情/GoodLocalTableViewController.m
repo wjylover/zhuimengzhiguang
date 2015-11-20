@@ -109,19 +109,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.array.count;
+    if (self.array.count == 0) {
+        return 1;
+    }else{
+        return self.array.count;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GoodLocalCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"goodLocalCell" forIndexPath:indexPath];
     
-    GoodLocalCityModel *model = [[GoodLocalCityModel alloc]init];
-    model = self.array[indexPath.row];
+    if (self.array.count == 0) {
+        return cell;
+    }else{
+        GoodLocalCityModel *model = [[GoodLocalCityModel alloc]init];
+        model = self.array[indexPath.row];
+        
+        cell.model = model;
+        
+        return cell;
+    }
     
-    cell.model = model;
-    
-    return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

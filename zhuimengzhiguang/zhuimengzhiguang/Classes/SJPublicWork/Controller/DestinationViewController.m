@@ -151,8 +151,7 @@ static NSString *const cellIdentifier = @"destinationCell";
     //设置代理 UITableViewDelegate  UITableViewDataSource
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.scrollEnabled = NO;
-    
+    self.tableView.showsVerticalScrollIndicator = NO;
 }
 
 #pragma mark -- UITableViewDelegate - UITableViewDataSource --
@@ -212,7 +211,7 @@ static NSString *const cellIdentifier = @"destinationCell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [UIScreen mainScreen].bounds.size.height - 593;
+    return [UIScreen mainScreen].bounds.size.height / 7;
 }
 
 
@@ -298,7 +297,7 @@ static NSString *const cellIdentifier = @"destinationCell";
 //设置item的大小
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(120, 160);
+    return CGSizeMake([UIScreen mainScreen].bounds.size.height / 6, [UIScreen mainScreen].bounds.size.width / 2 - 20);
 }
 
 

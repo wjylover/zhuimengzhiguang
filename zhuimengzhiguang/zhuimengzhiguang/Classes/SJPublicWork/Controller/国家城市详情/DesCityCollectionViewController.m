@@ -93,6 +93,21 @@ static NSString * const reuseIdentifier = @"Cell";
     return [ColorWithRandom colorWithRandom];
 }
 
+//设置navigationBar的渐变颜色
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    UIColor *color = [UIColor colorWithRed:0.576 green:0.545 blue:1.000 alpha:1.000];
+    
+    //将collectionView的高度的偏移量赋给  offset
+    CGFloat offset = self.collectionView.contentOffset.y;
+    //判断
+    if (offset < 0) {
+        self.navigationController.navigationBar.backgroundColor = [color colorWithAlphaComponent:0];
+    }else{
+        CGFloat alpha = 1 - ((self.collectionView.bounds.size.height - 500 - offset)/100);
+        self.navigationController.navigationBar.backgroundColor = [color colorWithAlphaComponent:alpha];
+    }
+}
 
 #pragma mark <UICollectionViewDataSource>
 
